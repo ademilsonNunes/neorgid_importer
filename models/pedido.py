@@ -31,7 +31,7 @@ class Pedido:
         sumario = raw_data["order"]["sumario"]
         itens = raw_data["order"]["itens"]["item"]
 
-        self.numero_pedido = cabecalho["numeroPedidoComprador"]
+        self.numero_pedido = cabecalho["numeroPedidoComprador"] # Add no modelo para gravar no banco de dados
         self.cnpj_destino = cabecalho["cnpjComprador"]
         self.cnpj_fornecedor = cabecalho["cnpjFornecedor"]
         self.data_emissao = self._formatar_data(cabecalho["dataHoraEmissao"])

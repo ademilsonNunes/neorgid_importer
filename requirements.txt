@@ -1,5 +1,24 @@
-requests
-python-dotenv
-pyodbc
-pytest
-requests-mock
+# Dependências principais
+requests>=2.31.0
+python-dotenv>=1.0.0
+pyodbc>=4.0.39
+pydantic>=2.0.0
+
+# Interface web
+streamlit>=1.28.0
+
+# Testes
+pytest>=7.4.0
+requests-mock>=1.11.0
+pytest-mock>=3.11.0
+
+# Utilitários
+pandas>=2.0.0  
+openpyxl>=3.1.0  
+
+# Logging e monitoramento
+colorlog>=6.7.0  # Para logs coloridos no console
+
+# Desenvolvimento
+black>=23.0.0  
+flake8>=6.0.0  

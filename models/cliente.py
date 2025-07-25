@@ -5,6 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from dataclasses import dataclass
+from typing import Optional
 
 @dataclass
 class Cliente:
@@ -24,7 +25,6 @@ class Cliente:
     data_cadastro: str
     codigo_entrega: str
     codigo_regiao: int
-    codigo_anal_cliente: str
     codigo_tab_preco: str
     codigo_cond_pagto: str
     codigo_cliente_pai: str
@@ -34,32 +34,58 @@ class Cliente:
     flag_entrega_agendada: int
     qtde_dias_min_entrega: str
 
+    @property
+    def nome(self) -> str:
+        """Retorna o nome fantasia ou razão social como nome do cliente"""
+        if self.nome_fantasia and self.nome_fantasia.strip():
+            return self.nome_fantasia.strip()
+        return self.razao_social.strip() if self.razao_social else ""
+    
+    @property
+    def cnpj_formatado(self) -> str:
+        """Retorna CNPJ formatado XX.XXX.XXX/XXXX-XX"""
+        if not self.cnpj or len(self.cnpj) != 14:
+            return self.cnpj
+        
+        return f"{self.cnpj[:2]}.{self.cnpj[2:5]}.{self.cnpj[5:8]}/{self.cnpj[8:12]}-{self.cnpj[12:14]}"
+    
+    @property
+    def ativo(self) -> bool:
+        """Verifica se o cliente está ativo (não bloqueado)"""
+        return self.codigo_status != "1"  # No Protheus, 1 = bloqueado
+
     @staticmethod
     def from_dict(row: dict) -> "Cliente":
+        """Cria instância de Cliente a partir de dicionário"""
         return Cliente(
-            codigo=row.get("CODIGO"),
-            razao_social=row.get("RAZAOSOCIAL"),
-            cnpj=row.get("CGCCPF"),
-            inscricao_estadual=row.get("INSCR_ESTADUAL"),
-            endereco=row.get("ENDERECO"),
-            codigo_nome_cidade=row.get("CODIGONOMECIDADE"),
-            estado=row.get("ESTADO"),
-            bairro=row.get("BAIRRO"),
-            telefone=row.get("TELEFONE"),
-            fax=row.get("FAX"),
-            cep=row.get("CEP"),
-            codigo_status=row.get("CODIGOSTATUSCLI"),
-            nome_fantasia=row.get("NOMEFANTASIA"),
-            data_cadastro=row.get("DATACADASTRO"),
-            codigo_entrega=row.get("CODIGOENDENTREGA"),
-            codigo_regiao=row.get("CODIGOREGIAO"),
-            codigo_anal_cliente=row.get("CODIGOANALCLIENTE"),
-            codigo_tab_preco=row.get("CODIGOTABPRECO"),
-            codigo_cond_pagto=row.get("CODIGOCONDPAGTO"),
-            codigo_cliente_pai=row.get("CODIGOCLIENTEPAI"),
-            obs_fechamento=row.get("OBSFETCHATURAMENTO"),
-            email_copia_pedido=row.get("EMAILCOPIAPEDIDO"),
-            flag_envia_copia=row.get("FLAGENVIACOPIAPEDIDO"),
-            flag_entrega_agendada=row.get("CESP_FLAGENTREGAAGENDADA"),
-            qtde_dias_min_entrega=row.get("Cesp_QtdeDiasMinEntrega")
+            codigo=str(row.get("CODIGO", "")).strip(),
+            razao_social=str(row.get("RAZAOSOCIAL", "")).strip(),
+            cnpj=str(row.get("CGCCPF", "")).strip(),
+            inscricao_estadual=str(row.get("INSCR_ESTADUAL", "")).strip(),
+            endereco=str(row.get("ENDERECO", "")).strip(),
+            codigo_nome_cidade=str(row.get("CODIGONOMECIDADE", "")).strip(),
+            estado=str(row.get("ESTADO", "")).strip(),
+            bairro=str(row.get("BAIRRO", "")).strip(),
+            telefone=str(row.get("TELEFONE", "")).strip(),
+            fax=str(row.get("FAX", "")).strip(),
+            cep=str(row.get("CEP", "")).strip(),
+            codigo_status=str(row.get("CODIGOSTATUSCLI", "")).strip(),
+            nome_fantasia=str(row.get("NOMEFANTASIA", "")).strip(),
+            data_cadastro=str(row.get("DATACADASTRO", "")).strip(),
+            codigo_entrega=str(row.get("CODIGOENDENTREGA", "")).strip(),
+            codigo_regiao=int(row.get("CODIGOREGIAO", 0)),
+            codigo_tab_preco=str(row.get("CODIGOTABPRECO", "")).strip(),
+            codigo_cond_pagto=str(row.get("CODIGOCONDPAGTO", "")).strip(),
+            codigo_cliente_pai=str(row.get("CODIGOCLIENTEPAI", "")).strip(),
+            obs_fechamento=str(row.get("OBSFETCHATURAMENTO", "")).strip(),
+            email_copia_pedido=str(row.get("EMAILCOPIAPEDIDO", "")).strip(),
+            flag_envia_copia=str(row.get("FLAGENVIACOPIAPEDIDO", "")).strip(),
+            flag_entrega_agendada=int(row.get("CESP_FLAGENTREGAAGENDADA", 0)),
+            qtde_dias_min_entrega=str(row.get("Cesp_QtdeDiasMinEntrega", "0")).strip()
         )
+
+    def __str__(self):
+        return f"{self.codigo} - {self.nome}"
+    
+    def __repr__(self):
+        return f"<Cliente {self.codigo}: {self.nome}>"

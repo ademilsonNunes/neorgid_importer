@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis de cores TOTVS */
+:root {
+    --totvs-primary: #1976D2;
+    --totvs-primary-dark: #0D47A1;
+    --totvs-primary-light: #42A5F5;
+    --totvs-secondary: #FF6B35;
+    --totvs-success: #2E7D32;
+    --totvs-warning: #F57C00;
+    --totvs-error: #D32F2F;
+    --totvs-info: #0288D1;
+    --totvs-neutral-900: #212121;
+    --totvs-neutral-700: #424242;
+    --totvs-neutral-500: #757575;
+    --totvs-neutral-300: #BDBDBD;
+    --totvs-neutral-100: #F5F5F5;
+    --totvs-neutral-50: #FAFAFA;
+    --totvs-bg-gradient: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+}
+
+/* Reset e configurações globais */
+.main {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--totvs-neutral-50);
+}
+
+/* Header personalizado */
+.totvs-header {
+    background: var(--totvs-bg-gradient);
+    padding: 1.5rem 2rem;
+    margin: -1rem -1rem 2rem -1rem;
+    border-radius: 0 0 16px 16px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15);
+}
+
+.totvs-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.totvs-header .subtitle {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Cards */
+.totvs-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(25, 118, 210, 0.08);
+    margin-bottom: 1rem;
+}
+
+.totvs-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--totvs-neutral-900);
+}
+
+/* Botões */
+.stButton > button {
+    background: var(--totvs-bg-gradient) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.2) !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(25, 118, 210, 0.3) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+}
+
+/* Botão secundário */
+.secondary-button {
+    background: white !important;
+    color: var(--totvs-primary) !important;
+    border: 2px solid var(--totvs-primary) !important;
+}
+
+.secondary-button:hover {
+    background: var(--totvs-primary) !important;
+    color: white !important;
+}
+
+/* Métricas */
+[data-testid="metric-container"] {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--totvs-primary);
+}
+
+[data-testid="metric-container"] .css-1wivap2 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: var(--totvs-neutral-900) !important;
+}
+
+[data-testid="metric-container"] .css-12w0qpk {
+    font-weight: 500 !important;
+    color: var(--totvs-neutral-700) !important;
+}
+
+/* Progress bar */
+.stProgress > div > div > div > div {
+    background: var(--totvs-bg-gradient) !important;
+    border-radius: 8px !important;
+}
+
+.stProgress > div > div > div {
+    background-color: rgba(25, 118, 210, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+/* Alertas customizados */
+.success-alert {
+    background: linear-gradient(90deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+    border-left: 4px solid var(--totvs-success);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    color: var(--totvs-success);
+    font-weight: 500;
+}
+
+.warning-alert {
+    background: linear-gradient(90deg, rgba(245, 124, 0, 0.1) 0%, rgba(255, 152, 0, 0.05) 100%);
+    border-left: 4px solid var(--totvs-warning);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    color: var(--totvs-warning);
+    font-weight: 500;
+}
+
+.error-alert {
+    background: linear-gradient(90deg, rgba(211, 47, 47, 0.1) 0%, rgba(244, 67, 54, 0.05) 100%);
+    border-left: 4px solid var(--totvs-error);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    color: var(--totvs-error);
+    font-weight: 500;
+}
+
+/* Sidebar */
+.css-1d391kg {
+    background: white;
+    border-right: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+/* Info boxes */
+.stInfo {
+    background: linear-gradient(90deg, rgba(2, 136, 209, 0.1) 0%, rgba(66, 165, 245, 0.05) 100%);
+    border-left: 4px solid var(--totvs-info);
+    border-radius: 8px;
+}
+
+/* Text areas */
+.stTextArea textarea {
+    border-radius: 12px !important;
+    border: 2px solid rgba(25, 118, 210, 0.2) !important;
+    font-family: 'Fira Code', monospace !important;
+    font-size: 0.85rem !important;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--totvs-primary) !important;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2) !important;
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(25, 118, 210, 0.2);
+    font-weight: 500;
+    color: var(--totvs-primary);
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.status-online {
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--totvs-success);
+    border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+.status-offline {
+    background: rgba(158, 158, 158, 0.1);
+    color: var(--totvs-neutral-500);
+    border: 1px solid rgba(158, 158, 158, 0.2);
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.loading-text {
+    animation: pulse 1.5s ease-in-out infinite;
+    color: var(--totvs-primary);
+    font-weight: 500;
+}
+
+/* Hide streamlit elements */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+.stApp > header {
+    background-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--totvs-neutral-100);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--totvs-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--totvs-primary-dark);
+}
