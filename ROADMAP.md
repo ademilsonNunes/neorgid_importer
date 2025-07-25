@@ -8,4 +8,5 @@
     [ ] - Criar tabela para gravar dados recebidos do json da neogrid
     [ ] - Criar tabela de log para ocorrências
     [ ] - Realizar teste de leitura de gravação dos dados em banco de dados BISOBEL
-
+    [ ] - Implementar a camada de UI
+   
