@@ -15,8 +15,8 @@ class PedidoItemSobel(BaseModel):
     valor_unitario: float
     valor_total: float
     unidade: str
-    ean13: str
-    dun14: str
+    ean13: str = ""
+    dun14: str = ""
 
     @classmethod
     def from_json(cls, item_json: dict, produto: Produto) -> "PedidoItemSobel":
