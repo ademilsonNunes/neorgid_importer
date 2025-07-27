@@ -17,18 +17,18 @@ class ProdutoRepository:
         cursor = self.conn.cursor()
 
         # 1ª tentativa: EAN13
-        row = cursor.execute("SELECT * FROM V_PRODUTO WHERE EAN13 = ?", ean13).fetchone()
+        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_CODBAR = ?", ean13).fetchone()
         if row:
             return self._mapear(row)
 
         # 2ª tentativa: DUN14
-        row = cursor.execute("SELECT * FROM V_PRODUTO WHERE DUN14 = ?", dun14).fetchone()
+        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_ZZCODBA = ?", dun14).fetchone()
         if row:
             return self._mapear(row)
 
         # 3ª tentativa: CODPROD (sem sufixo)
         cod_sem_sufixo = re.sub(r"\.\w+$", "", codprod)
-        row = cursor.execute("SELECT * FROM V_PRODUTO WHERE CODIGO LIKE ?", f"{cod_sem_sufixo}.%").fetchone()
+        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_COD LIKE ?", f"{cod_sem_sufixo}.%").fetchone()
         if row:
             return self._mapear(row)
 

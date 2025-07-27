@@ -81,33 +81,56 @@ class Cliente:
         return self.codigo_status != "1"  # No Protheus, 1 = bloqueado
 
     @staticmethod
+    def _safe_int(value, default=0):
+        """Converte valor para int de forma segura"""
+        if value is None:
+            return default
+        
+        if isinstance(value, str):
+            value = value.strip()
+            if not value or value == '':
+                return default
+        
+        try:
+            return int(value)
+        except (ValueError, TypeError):
+            return default
+
+    @staticmethod
+    def _safe_str(value, default=""):
+        """Converte valor para string de forma segura"""
+        if value is None:
+            return default
+        return str(value).strip()
+
+    @staticmethod
     def from_dict(row: dict) -> "Cliente":
-        """Cria instância de Cliente a partir de dicionário"""
+        """Cria instância de Cliente a partir de dicionário com tratamento robusto"""
         return Cliente(
-            codigo=str(row.get("CODIGO", "")).strip(),
-            razao_social=str(row.get("RAZAOSOCIAL", "")).strip(),
-            cnpj=str(row.get("CGCCPF", "")).strip(),
-            inscricao_estadual=str(row.get("INSCR_ESTADUAL", "")).strip(),
-            endereco=str(row.get("ENDERECO", "")).strip(),
-            codigo_nome_cidade=str(row.get("CODIGONOMECIDADE", "")).strip(),
-            estado=str(row.get("ESTADO", "")).strip(),
-            bairro=str(row.get("BAIRRO", "")).strip(),
-            telefone=str(row.get("TELEFONE", "")).strip(),
-            fax=str(row.get("FAX", "")).strip(),
-            cep=str(row.get("CEP", "")).strip(),
-            codigo_status=str(row.get("CODIGOSTATUSCLI", "")).strip(),
-            nome_fantasia=str(row.get("NOMEFANTASIA", "")).strip(),
-            data_cadastro=str(row.get("DATACADASTRO", "")).strip(),
-            codigo_entrega=str(row.get("CODIGOENDENTREGA", "")).strip(),
-            codigo_regiao=int(row.get("CODIGOREGIAO", 0)),
-            codigo_tab_preco=str(row.get("CODIGOTABPRECO", "")).strip(),
-            codigo_cond_pagto=str(row.get("CODIGOCONDPAGTO", "")).strip(),
-            codigo_cliente_pai=str(row.get("CODIGOCLIENTEPAI", "")).strip(),
-            obs_fechamento=str(row.get("OBSFETCHATURAMENTO", "")).strip(),
-            email_copia_pedido=str(row.get("EMAILCOPIAPEDIDO", "")).strip(),
-            flag_envia_copia=str(row.get("FLAGENVIACOPIAPEDIDO", "")).strip(),
-            flag_entrega_agendada=int(row.get("CESP_FLAGENTREGAAGENDADA", 0)),
-            qtde_dias_min_entrega=str(row.get("Cesp_QtdeDiasMinEntrega", "0")).strip()
+            codigo=Cliente._safe_str(row.get("CODIGO", "")),
+            razao_social=Cliente._safe_str(row.get("RAZAOSOCIAL", "")),
+            cnpj=Cliente._safe_str(row.get("CGCCPF", "")),
+            inscricao_estadual=Cliente._safe_str(row.get("INSCR_ESTADUAL", "")),
+            endereco=Cliente._safe_str(row.get("ENDERECO", "")),
+            codigo_nome_cidade=Cliente._safe_str(row.get("CODIGONOMECIDADE", "")),
+            estado=Cliente._safe_str(row.get("ESTADO", "")),
+            bairro=Cliente._safe_str(row.get("BAIRRO", "")),
+            telefone=Cliente._safe_str(row.get("TELEFONE", "")),
+            fax=Cliente._safe_str(row.get("FAX", "")),
+            cep=Cliente._safe_str(row.get("CEP", "")),
+            codigo_status=Cliente._safe_str(row.get("CODIGOSTATUSCLI", "")),
+            nome_fantasia=Cliente._safe_str(row.get("NOMEFANTASIA", "")),
+            data_cadastro=Cliente._safe_str(row.get("DATACADASTRO", "")),
+            codigo_entrega=Cliente._safe_str(row.get("CODIGOENDENTREGA", "")),
+            codigo_regiao=Cliente._safe_int(row.get("CODIGOREGIAO", 0)),
+            codigo_tab_preco=Cliente._safe_str(row.get("CODIGOTABPRECO", "")),
+            codigo_cond_pagto=Cliente._safe_str(row.get("CODIGOCONDPAGTO", "")),
+            codigo_cliente_pai=Cliente._safe_str(row.get("CODIGOCLIENTEPAI", "")),
+            obs_fechamento=Cliente._safe_str(row.get("OBSFETCHATURAMENTO", "")),
+            email_copia_pedido=Cliente._safe_str(row.get("EMAILCOPIAPEDIDO", "")),
+            flag_envia_copia=Cliente._safe_str(row.get("FLAGENVIACOPIAPEDIDO", "")),
+            flag_entrega_agendada=Cliente._safe_int(row.get("CESP_FLAGENTREGAAGENDADA", 0)),
+            qtde_dias_min_entrega=Cliente._safe_str(row.get("Cesp_QtdeDiasMinEntrega", "0"))
         )
 
     def __str__(self):

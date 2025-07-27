@@ -20,6 +20,28 @@ class ValidadorCliente:
         
         self.db = Database(settings.DB_NAME_PROTHEUS)
     
+    def _safe_int(self, value, default=0):
+        """Converte valor para int de forma segura, tratando strings vazias e None"""
+        if value is None:
+            return default
+        
+        # Se for string, limpar espaços
+        if isinstance(value, str):
+            value = value.strip()
+            if not value or value == '':
+                return default
+        
+        try:
+            return int(value)
+        except (ValueError, TypeError):
+            return default
+    
+    def _safe_str(self, value, default=""):
+        """Converte valor para string de forma segura, tratando None"""
+        if value is None:
+            return default
+        return str(value).strip()
+    
     def validar_cliente(self, cnpj: str) -> Optional[Cliente]:
         """
         Valida cliente consultando a tabela SA1010 do Protheus
@@ -75,9 +97,18 @@ class ValidadorCliente:
             row = cursor.fetchone()
             
             if row:
-                # Converter row em dicionário
+                # Converter row em dicionário com tratamento seguro
                 columns = [column[0] for column in cursor.description]
-                cliente_dict = dict(zip(columns, row))
+                cliente_dict = {}
+                
+                for i, column in enumerate(columns):
+                    value = row[i]
+                    
+                    # Tratamento especial para campos numéricos
+                    if column in ['CODIGOREGIAO', 'CESP_FLAGENTREGAAGENDADA']:
+                        cliente_dict[column] = self._safe_int(value)
+                    else:
+                        cliente_dict[column] = self._safe_str(value)
                 
                 return Cliente.from_dict(cliente_dict)
             
@@ -136,7 +167,17 @@ class ValidadorCliente:
             
             if row:
                 columns = [column[0] for column in cursor.description]
-                cliente_dict = dict(zip(columns, row))
+                cliente_dict = {}
+                
+                for i, column in enumerate(columns):
+                    value = row[i]
+                    
+                    # Tratamento especial para campos numéricos
+                    if column in ['CODIGOREGIAO', 'CESP_FLAGENTREGAAGENDADA']:
+                        cliente_dict[column] = self._safe_int(value)
+                    else:
+                        cliente_dict[column] = self._safe_str(value)
+                
                 return Cliente.from_dict(cliente_dict)
             
             return None
@@ -175,6 +216,7 @@ class ValidadorCliente:
             for row in rows:
                 columns = [column[0] for column in cursor.description]
                 cliente_dict = dict(zip(columns, row))
+                
                 # Preencher campos obrigatórios com valores padrão
                 cliente_dict.update({
                     'INSCR_ESTADUAL': '',
@@ -184,11 +226,10 @@ class ValidadorCliente:
                     'TELEFONE': '',
                     'FAX': '',
                     'CEP': '',
-                    'CODIGOSTATUSCLI': '1',
+                    'CODIGOSTATUSCLI': '0',  # Ativo por padrão
                     'DATACADASTRO': '',
                     'CODIGOENDENTREGA': cliente_dict['CODIGO'],
                     'CODIGOREGIAO': 0,
-                    'CODIGOANALCLIENTE': '',
                     'CODIGOTABPRECO': '',
                     'CODIGOCONDPAGTO': '',
                     'CODIGOCLIENTEPAI': '',
@@ -207,4 +248,4 @@ class ValidadorCliente:
             return []
         finally:
             if conn:
-                conn.close()
+                conn.close()    

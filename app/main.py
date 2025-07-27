@@ -11,6 +11,10 @@ from services.validador_cliente import ValidadorCliente
 from services.validador_produto import ValidadorProduto
 from repositories.pedido_repository import PedidoRepository
 from models.pedido import Pedido
+from utils.error_handler import (
+    NeogridError, ErrorHandler, ClienteNaoEncontradoError, 
+    ProdutoNaoEncontradoError, PedidoDuplicadoError, APIError, BancoDadosError
+)
 from datetime import datetime
 import json
 import os
@@ -29,13 +33,16 @@ def registrar_log(mensagem: str):
         f.write(f"[{timestamp}] {mensagem}\n")
 
 def processar_pedido_neogrid(doc, processador_pedido, repo):
-    """Processa um documento de pedido da Neogrid"""
+    """Processa um documento de pedido da Neogrid com tratamento robusto de erros"""
     doc_id = doc.get("docId", "N/A")
     
     try:
-        # O JSON já vem parseado da API - pegar o primeiro content
+        # Validar estrutura do documento
         if not doc.get("content") or len(doc["content"]) == 0:
-            raise ValueError("Documento sem conteúdo válido")
+            raise NeogridError(
+                f"Documento {doc_id} sem conteúdo válido",
+                "ERRO_VALIDACAO"
+            )
             
         pedido_content = doc["content"][0]
         
@@ -57,7 +64,7 @@ def processar_pedido_neogrid(doc, processador_pedido, repo):
         # Processar itens do pedido
         for item in pedido_neogrid.itens:
             item_para_processar = {
-                "ean13": "",  # Neogrid não mapeia diretamente EAN13 no código
+                "ean13": "",  
                 "dun14": "",
                 "codprod": item.codigo_produto,
                 "qtd": float(item.quantidade),
@@ -81,11 +88,34 @@ def processar_pedido_neogrid(doc, processador_pedido, repo):
             registrar_log(mensagem)
             return {"status": "duplicado", "mensagem": mensagem, "pedido": pedido_final.num_pedido}
             
-    except Exception as e:
-        erro_msg = f"❌ Erro ao processar documento {doc_id}: {str(e)}"
+    except ClienteNaoEncontradoError as e:
+        erro_msg = ErrorHandler.format_error_for_ui(e)
         registrar_log(erro_msg)
         repo.log_processamento("ERROR", erro_msg, doc_id)
-        return {"status": "erro", "mensagem": erro_msg, "doc_id": doc_id}
+        return {"status": "erro", "mensagem": erro_msg, "doc_id": doc_id, "error_type": "cliente"}
+        
+    except ProdutoNaoEncontradoError as e:
+        erro_msg = ErrorHandler.format_error_for_ui(e)
+        registrar_log(erro_msg)
+        repo.log_processamento("ERROR", erro_msg, doc_id)
+        return {"status": "erro", "mensagem": erro_msg, "doc_id": doc_id, "error_type": "produto"}
+        
+    except PedidoDuplicadoError as e:
+        erro_msg = ErrorHandler.format_error_for_ui(e)
+        registrar_log(erro_msg)
+        return {"status": "duplicado", "mensagem": erro_msg, "doc_id": doc_id}
+        
+    except NeogridError as e:
+        erro_msg = ErrorHandler.format_error_for_ui(e)
+        registrar_log(erro_msg)
+        repo.log_processamento("ERROR", erro_msg, doc_id)
+        return {"status": "erro", "mensagem": erro_msg, "doc_id": doc_id, "error_type": "processamento"}
+        
+    except Exception as e:
+        erro_msg = f"❌ Erro inesperado ao processar documento {doc_id}: {str(e)}"
+        registrar_log(erro_msg)
+        repo.log_processamento("ERROR", erro_msg, doc_id)
+        return {"status": "erro", "mensagem": erro_msg, "doc_id": doc_id, "error_type": "inesperado"}
 
 # Função para carregar CSS externo
 def load_totvs_css():
@@ -148,7 +178,7 @@ with st.sidebar:
         <div class="totvs-card-header">
             ℹ️ Informações do Sistema
         </div>
-        <p><strong>Versão:</strong> 2.1.0</p>
+        <p><strong>Versão:</strong> 2.1.1</p>
         <p><strong>Ambiente:</strong> Produção</p>
         <p><strong>Última atualização:</strong> Jul 2025</p>
     </div>
@@ -170,8 +200,35 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
+    # Testar conectividade
+    if st.button("🔧 Testar Conectividade", help="Testa conexão com API e Banco"):
+        with st.spinner("Testando conectividade..."):
+            # Testar API
+            try:
+                api = NeogridAPIClient()
+                api_ok = api.test_connection()
+                if api_ok:
+                    st.success("✅ API Neogrid: OK")
+                else:
+                    st.error("❌ API Neogrid: Falha")
+            except Exception as e:
+                st.error(f"❌ API Neogrid: {str(e)}")
+            
+            # Testar Banco
+            try:
+                from services.database import Database
+                from config.settings import settings
+                db = Database(settings.DB_NAME_PROTHEUS)
+                banco_ok = db.test_connection()
+                if banco_ok:
+                    st.success("✅ Banco Protheus: OK")
+                else:
+                    st.error("❌ Banco Protheus: Falha")
+            except Exception as e:
+                st.error(f"❌ Banco Protheus: {str(e)}")
+    
     # Status do sistema
-    status_sistema = "🟢 Online" if True else "🔴 Offline"  # Simular status
+    status_sistema = "🟢 Online"
     st.markdown(f"""
     <div class="totvs-card">
         <div class="totvs-card-header">
@@ -228,7 +285,13 @@ with col1:
                 
                 # Etapa 2: Consulta API
                 status_placeholder.markdown('<div class="loading-text">🔍 Consultando API da Neogrid...</div>', unsafe_allow_html=True)
-                resposta = api.buscar_pedidos()
+                
+                try:
+                    resposta = api.buscar_pedidos()
+                except APIError as e:
+                    st.markdown(f'<div class="error-alert">{ErrorHandler.format_error_for_ui(e)}</div>', unsafe_allow_html=True)
+                    registrar_log(f"Erro na API: {e.message}")
+                    st.stop()
                 
                 if "documents" not in resposta or not resposta["documents"]:
                     st.markdown('<div class="warning-alert">🔍 Nenhum pedido encontrado na Neogrid no momento.</div>', unsafe_allow_html=True)
@@ -243,6 +306,7 @@ with col1:
                     # Etapa 3: Processamento
                     resultados = {"sucesso": 0, "duplicados": 0, "erros": 0}
                     detalhes_processamento = []
+                    estatisticas_erro = {"cliente": 0, "produto": 0, "processamento": 0, "inesperado": 0}
                     
                     with PedidoRepository() as repo:
                         for i, doc in enumerate(documentos):
@@ -258,6 +322,10 @@ with col1:
                                 resultados["duplicados"] += 1
                             else:
                                 resultados["erros"] += 1
+                                # Contar tipos de erro
+                                error_type = resultado.get("error_type", "inesperado")
+                                if error_type in estatisticas_erro:
+                                    estatisticas_erro[error_type] += 1
                             
                             # Atualizar progress bar
                             progress = 30 + (70 * (i + 1) / total_docs)
@@ -269,26 +337,42 @@ with col1:
                     
                     # Exibir métricas
                     st.markdown("<br>", unsafe_allow_html=True)
-                    metric_col1, metric_col2, metric_col3 = st.columns(3)
+                    metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
                     
                     with metric_col1:
                         st.metric(
-                            label="✅ Pedidos Processados", 
+                            label="✅ Processados", 
                             value=resultados["sucesso"],
                             delta=f"+{resultados['sucesso']}" if resultados["sucesso"] > 0 else None
                         )
                     with metric_col2:
                         st.metric(
                             label="⚠️ Duplicados", 
-                            value=resultados["duplicados"],
-                            delta=f"{resultados['duplicados']}" if resultados["duplicados"] > 0 else None
+                            value=resultados["duplicados"]
                         )
                     with metric_col3:
                         st.metric(
                             label="❌ Erros", 
-                            value=resultados["erros"],
-                            delta=f"{resultados['erros']}" if resultados["erros"] > 0 else None
+                            value=resultados["erros"]
                         )
+                    with metric_col4:
+                        st.metric(
+                            label="📊 Total", 
+                            value=total_docs
+                        )
+                    
+                    # Estatísticas de erro detalhadas
+                    if resultados["erros"] > 0:
+                        st.markdown("**📊 Detalhamento dos Erros:**")
+                        error_cols = st.columns(4)
+                        with error_cols[0]:
+                            st.metric("👤 Cliente", estatisticas_erro["cliente"])
+                        with error_cols[1]:
+                            st.metric("📦 Produto", estatisticas_erro["produto"])
+                        with error_cols[2]:
+                            st.metric("⚙️ Processamento", estatisticas_erro["processamento"])
+                        with error_cols[3]:
+                            st.metric("❓ Outros", estatisticas_erro["inesperado"])
                     
                     # Detalhes dos processamentos
                     if detalhes_processamento:
@@ -301,13 +385,48 @@ with col1:
                         </div>
                         """, unsafe_allow_html=True)
                         
-                        for resultado in detalhes_processamento:
-                            if resultado["status"] == "sucesso":
+                        # Agrupar resultados por tipo
+                        sucessos = [r for r in detalhes_processamento if r["status"] == "sucesso"]
+                        duplicados = [r for r in detalhes_processamento if r["status"] == "duplicado"]
+                        erros = [r for r in detalhes_processamento if r["status"] == "erro"]
+                        
+                        # Mostrar sucessos (limitado)
+                        if sucessos:
+                            st.markdown("**✅ Pedidos Processados com Sucesso:**")
+                            for resultado in sucessos[:5]:  # Mostrar apenas os primeiros 5
                                 st.markdown(f'<div class="success-alert">{resultado["mensagem"]}</div>', unsafe_allow_html=True)
-                            elif resultado["status"] == "duplicado":
+                            if len(sucessos) > 5:
+                                st.markdown(f"*... e mais {len(sucessos) - 5} pedidos processados com sucesso.*")
+                        
+                        # Mostrar duplicados (limitado)
+                        if duplicados:
+                            st.markdown("**⚠️ Pedidos Duplicados:**")
+                            for resultado in duplicados[:3]:
                                 st.markdown(f'<div class="warning-alert">{resultado["mensagem"]}</div>', unsafe_allow_html=True)
-                            else:
+                            if len(duplicados) > 3:
+                                st.markdown(f"*... e mais {len(duplicados) - 3} pedidos duplicados.*")
+                        
+                        # Mostrar erros (limitado)
+                        if erros:
+                            st.markdown("**❌ Erros de Processamento:**")
+                            for resultado in erros[:10]:  # Mostrar mais erros para análise
                                 st.markdown(f'<div class="error-alert">{resultado["mensagem"]}</div>', unsafe_allow_html=True)
+                            if len(erros) > 10:
+                                st.markdown(f"*... e mais {len(erros) - 10} erros. Consulte os logs para detalhes completos.*")
+                
+            except APIError as e:
+                erro_msg = ErrorHandler.format_error_for_ui(e)
+                registrar_log(f"Erro na API: {e.message}")
+                st.markdown(f'<div class="error-alert">{erro_msg}</div>', unsafe_allow_html=True)
+                progress_bar.progress(0)
+                status_placeholder.markdown('<div class="error-alert">❌ Falha na consulta da API</div>', unsafe_allow_html=True)
+                
+            except BancoDadosError as e:
+                erro_msg = ErrorHandler.format_error_for_ui(e)
+                registrar_log(f"Erro no banco: {e.message}")
+                st.markdown(f'<div class="error-alert">{erro_msg}</div>', unsafe_allow_html=True)
+                progress_bar.progress(0)
+                status_placeholder.markdown('<div class="error-alert">❌ Falha na conexão com o banco</div>', unsafe_allow_html=True)
                 
             except Exception as e:
                 erro_msg = f"💥 Erro crítico no processamento: {str(e)}"
@@ -405,7 +524,7 @@ st.markdown("""
     border-top: 1px solid rgba(25, 118, 210, 0.1);
     margin-top: 2rem;
 ">
-    <strong>TOTVS</strong> | Importador Neogrid v2.1.0<br>
-    Desenvolvido para integração automatizada de pedidos
+    <strong>TOTVS</strong> | Importador Neogrid v2.1.1<br>
+    Desenvolvido para integração automatizada de pedidos | 🔧 <strong>Correções aplicadas:</strong> Tratamento robusto de erros
 </div>
 """, unsafe_allow_html=True)
