@@ -12,6 +12,8 @@ from models.cliente import Cliente
 
 class PedidoSobel(BaseModel):
     num_pedido: str
+    doc_id: Optional[str] = None
+    ordem_compra: Optional[str] = None
     data_pedido: str
     hora_inicio: str
     hora_fim: Optional[str]
@@ -28,6 +30,8 @@ class PedidoSobel(BaseModel):
     def from_json(cls, pedido_json: dict, cliente: Cliente, itens: List[PedidoItemSobel]) -> "PedidoSobel":
         return cls(
             num_pedido=pedido_json.get("num_pedido", ""),
+            doc_id=pedido_json.get("doc_id"),
+            ordem_compra=pedido_json.get("ordem_compra"),
             data_pedido=pedido_json.get("data_pedido", ""),
             hora_inicio=pedido_json.get("hora_inicio", ""),
             hora_fim=pedido_json.get("hora_fim"),

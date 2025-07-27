@@ -44,7 +44,9 @@ def processar_pedido_neogrid(doc, processador_pedido, repo):
         
         # Montar estrutura para processamento interno
         pedido_para_processar = {
-            "num_pedido": pedido_neogrid.numero_pedido,
+            "num_pedido": doc_id,
+            "doc_id": doc_id,
+            "ordem_compra": pedido_neogrid.numero_pedido,
             "data_pedido": pedido_neogrid.data_emissao.strftime("%Y-%m-%d") if pedido_neogrid.data_emissao else "",
             "data_entrega": pedido_neogrid.data_entrega.strftime("%Y-%m-%d") if pedido_neogrid.data_entrega else None,
             "hora_inicio": datetime.now().strftime("%H:%M"),

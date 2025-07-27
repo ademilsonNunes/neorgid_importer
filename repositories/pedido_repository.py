@@ -26,16 +26,16 @@ class PedidoRepository:
             print(f"Erro ao conectar no banco: {e}")
             raise
 
-    def pedido_existe(self, num_pedido: str) -> bool:
-        """Verifica se o pedido já existe na base"""
+    def pedido_existe(self, doc_id: str) -> bool:
+        """Verifica se o pedido já existe na base utilizando doc_id"""
         try:
             self.cursor.execute(
-                "SELECT 1 FROM T_PEDIDO_SOBEL WHERE NUM_PEDIDO = ?", 
-                num_pedido
+                "SELECT 1 FROM T_PEDIDO_SOBEL WHERE DOC_ID = ?",
+                doc_id
             )
             return self.cursor.fetchone() is not None
         except Exception as e:
-            print(f"Erro ao verificar existência do pedido {num_pedido}: {e}")
+            print(f"Erro ao verificar existência do pedido {doc_id}: {e}")
             return False
 
     def inserir_pedido(self, pedido: PedidoSobel) -> bool:
@@ -43,8 +43,8 @@ class PedidoRepository:
         Insere pedido completo (cabeçalho + itens) no banco de dados
         com controle de transação
         """
-        if self.pedido_existe(pedido.num_pedido):
-            print(f"⚠️ Pedido {pedido.num_pedido} já existe. Ignorando inserção.")
+        if self.pedido_existe(pedido.doc_id):
+            print(f"⚠️ Pedido {pedido.doc_id} já existe. Ignorando inserção.")
             return False
 
         try:
@@ -74,20 +74,24 @@ class PedidoRepository:
         """Insere o cabeçalho do pedido"""
         query = """
             INSERT INTO T_PEDIDO_SOBEL (
-                NUM_PEDIDO, 
-                CODIGO_CLIENTE, 
-                DATA_PEDIDO, 
-                DATA_ENTREGA, 
-                QTDE_ITENS, 
-                VALOR_TOTAL, 
+                NUM_PEDIDO,
+                DOC_ID,
+                ORDEM_COMPRA,
+                CODIGO_CLIENTE,
+                DATA_PEDIDO,
+                DATA_ENTREGA,
+                QTDE_ITENS,
+                VALOR_TOTAL,
                 OBSERVACAO,
                 CREATED_AT
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         
         self.cursor.execute(
             query,
             pedido.num_pedido,
+            pedido.doc_id,
+            pedido.ordem_compra,
             pedido.codigo_cliente,
             pedido.data_pedido,
             pedido.data_entrega,

@@ -5,11 +5,34 @@ from models.cliente import Cliente
 
 
 def test_criacao_pedido_sobel_completo():
-    cliente = Cliente(
-        codigo="276134",
-        nome="LOJA265-CARRETA",
-        cnpj="12345678000199"
-    )
+    cliente_data = {
+        "CODIGO": "276134",
+        "RAZAOSOCIAL": "LOJA265-CARRETA",
+        "CGCCPF": "12345678000199",
+        "INSCR_ESTADUAL": "",
+        "ENDERECO": "",
+        "CODIGONOMECIDADE": "",
+        "ESTADO": "",
+        "BAIRRO": "",
+        "TELEFONE": "",
+        "FAX": "",
+        "CEP": "",
+        "CODIGOSTATUSCLI": "0",
+        "NOMEFANTASIA": "LOJA265-CARRETA",
+        "DATACADASTRO": "",
+        "CODIGOENDENTREGA": "",
+        "CODIGOREGIAO": 0,
+        "CODIGOANALCLIENTE": "",
+        "CODIGOTABPRECO": "",
+        "CODIGOCONDPAGTO": "",
+        "CODIGOCLIENTEPAI": "",
+        "OBSFETCHATURAMENTO": "",
+        "EMAILCOPIAPEDIDO": "",
+        "FLAGENVIACOPIAPEDIDO": "",
+        "CESP_FLAGENTREGAAGENDADA": 0,
+        "Cesp_QtdeDiasMinEntrega": "0"
+    }
+    cliente = Cliente.from_dict(cliente_data)
 
     itens = [
         PedidoItemSobel(
@@ -19,7 +42,8 @@ def test_criacao_pedido_sobel_completo():
             valor_unitario=25.00,
             valor_total=250.00,
             unidade="CX",
-            ean13="7896524726150"
+            ean13="7896524726150",
+            dun14=""
         ),
         PedidoItemSobel(
             cod_produto="1002",
@@ -28,12 +52,15 @@ def test_criacao_pedido_sobel_completo():
             valor_unitario=30.00,
             valor_total=150.00,
             unidade="CX",
-            ean13="7896524726151"
+            ean13="7896524726151",
+            dun14=""
         )
     ]
 
     pedido_json = {
-        "num_pedido": "W512407251801490",
+        "num_pedido": "DOC123",
+        "doc_id": "DOC123",
+        "ordem_compra": "W512407251801490",
         "data_pedido": "2025-07-24",
         "hora_inicio": "18:01",
         "hora_fim": "18:08",
@@ -44,7 +71,9 @@ def test_criacao_pedido_sobel_completo():
 
     pedido = PedidoSobel.from_json(pedido_json, cliente, itens)
 
-    assert pedido.num_pedido == "W512407251801490"
+    assert pedido.num_pedido == "DOC123"
+    assert pedido.doc_id == "DOC123"
+    assert pedido.ordem_compra == "W512407251801490"
     assert pedido.data_pedido == "2025-07-24"
     assert pedido.hora_inicio == "18:01"
     assert pedido.data_entrega == "2025-07-31"
