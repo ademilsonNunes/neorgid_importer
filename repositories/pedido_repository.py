@@ -30,7 +30,7 @@ class PedidoRepository:
         """Verifica se o pedido já existe na base"""
         try:
             self.cursor.execute(
-                "SELECT 1 FROM T_PEDIDO_SOBEL WHERE NUM_PEDIDO = ?", 
+                "SELECT 1 FROM T_PEDIDO_SOBEL WHERE NUMPEDIDOSOBEL = ?",
                 num_pedido
             )
             return self.cursor.fetchone() is not None
@@ -72,25 +72,34 @@ class PedidoRepository:
 
     def _inserir_cabecalho_pedido(self, pedido: PedidoSobel):
         """Insere o cabeçalho do pedido"""
+        # As tabelas do ambiente Protheus utilizam outros nomes de colunas.
+        # Mapeamos os campos do modelo ``PedidoSobel`` para as colunas reais
+        # existentes no banco.
         query = """
             INSERT INTO T_PEDIDO_SOBEL (
-                NUM_PEDIDO, 
-                CODIGO_CLIENTE, 
-                DATA_PEDIDO, 
-                DATA_ENTREGA, 
-                QTDE_ITENS, 
-                VALOR_TOTAL, 
-                OBSERVACAO,
-                CREATED_AT
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                NUMPEDIDOSOBEL,
+                LOJACLIENTE,
+                DATAPEDIDO,
+                HORAINICIAL,
+                HORAFINAL,
+                DATAENTREGA,
+                CODIGOCLIENTE,
+                QTDEITENS,
+                VALORBRUTO,
+                OBSERVACAOI,
+                DATAGRAVACAOACACIA
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         
         self.cursor.execute(
             query,
-            pedido.num_pedido,
-            pedido.codigo_cliente,
+            pedido.num_pedido,      # NUMPEDIDOSOBEL
+            pedido.loja_cliente,
             pedido.data_pedido,
+            pedido.hora_inicio,
+            pedido.hora_fim,
             pedido.data_entrega,
+            pedido.codigo_cliente,
             pedido.qtde_itens,
             pedido.valor_total,
             pedido.observacao,
@@ -99,32 +108,43 @@ class PedidoRepository:
 
     def _inserir_itens_pedido(self, pedido: PedidoSobel):
         """Insere os itens do pedido"""
+        # Inserção de itens utilizando as colunas presentes na base Protheus
         query = """
             INSERT INTO T_PEDIDOITEM_SOBEL (
-                NUM_PEDIDO, 
-                COD_PRODUTO, 
-                DESCRICAO_PRODUTO, 
-                QUANTIDADE, 
-                VALOR_UNITARIO, 
-                VALOR_TOTAL,
-                UNIDADE, 
-                EAN13, 
-                DUN14
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                NUMPEDIDOAFV,
+                DATAPEDIDO,
+                HORAINICIAL,
+                CODIGOCLIENTE,
+                CODIGOPRODUTO,
+                QTDEVENDA,
+                QTDEBONIFICADA,
+                VALORVENDA,
+                VALORBRUTO,
+                DESCONTOI,
+                DESCONTOII,
+                VALORVERBA,
+                CODIGOVENDEDORESP,
+                MSGIMPORTACAO
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         
         for item in pedido.itens:
             self.cursor.execute(
                 query,
-                pedido.num_pedido,
+                pedido.num_pedido,          # NUMPEDIDOAFV
+                pedido.data_pedido,
+                pedido.hora_inicio,
+                pedido.codigo_cliente,
                 item.cod_produto,
-                item.descricao_produto,
                 item.quantidade,
+                0,                           # QTDEBONIFICADA
                 item.valor_unitario,
                 item.valor_total,
-                item.unidade,
-                item.ean13,
-                item.dun14
+                0,                           # DESCONTOI
+                0,                           # DESCONTOII
+                0,                           # VALORVERBA
+                None,                        # CODIGOVENDEDORESP
+                None                         # MSGIMPORTACAO
             )
 
     def buscar_pedido(self, num_pedido: str) -> dict:
@@ -132,10 +152,10 @@ class PedidoRepository:
         try:
             # Buscar cabeçalho
             self.cursor.execute("""
-                SELECT NUM_PEDIDO, CODIGO_CLIENTE, DATA_PEDIDO, DATA_ENTREGA,
-                       QTDE_ITENS, VALOR_TOTAL, OBSERVACAO, CREATED_AT
-                FROM T_PEDIDO_SOBEL 
-                WHERE NUM_PEDIDO = ?
+                SELECT NUMPEDIDOSOBEL, CODIGOCLIENTE, DATAPEDIDO, DATAENTREGA,
+                       QTDEITENS, VALORBRUTO, OBSERVACAOI, DATAGRAVACAOACACIA
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOSOBEL = ?
             """, num_pedido)
             
             cabecalho = self.cursor.fetchone()
@@ -144,11 +164,11 @@ class PedidoRepository:
             
             # Buscar itens
             self.cursor.execute("""
-                SELECT COD_PRODUTO, DESCRICAO_PRODUTO, QUANTIDADE, 
-                       VALOR_UNITARIO, VALOR_TOTAL, UNIDADE, EAN13, DUN14
-                FROM T_PEDIDOITEM_SOBEL 
-                WHERE NUM_PEDIDO = ?
-                ORDER BY ID
+                SELECT CODIGOPRODUTO, QTDEVENDA, VALORVENDA, VALORBRUTO,
+                       QTDEBONIFICADA, DESCONTOI, DESCONTOII, VALORVERBA,
+                       MSGIMPORTACAO
+                FROM T_PEDIDOITEM_SOBEL
+                WHERE NUMPEDIDOAFV = ?
             """, num_pedido)
             
             itens = self.cursor.fetchall()
@@ -166,11 +186,11 @@ class PedidoRepository:
         """Lista pedidos por período"""
         try:
             query = """
-                SELECT NUM_PEDIDO, CODIGO_CLIENTE, DATA_PEDIDO, 
-                       QTDE_ITENS, VALOR_TOTAL, CREATED_AT
-                FROM T_PEDIDO_SOBEL 
-                WHERE DATA_PEDIDO BETWEEN ? AND ?
-                ORDER BY DATA_PEDIDO DESC, CREATED_AT DESC
+                SELECT NUMPEDIDOSOBEL, CODIGOCLIENTE, DATAPEDIDO,
+                       QTDEITENS, VALORBRUTO, DATAGRAVACAOACACIA
+                FROM T_PEDIDO_SOBEL
+                WHERE DATAPEDIDO BETWEEN ? AND ?
+                ORDER BY DATAPEDIDO DESC, DATAGRAVACAOACACIA DESC
             """
             
             self.cursor.execute(query, data_inicio, data_fim)
