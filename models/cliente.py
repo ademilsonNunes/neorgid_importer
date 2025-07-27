@@ -5,34 +5,60 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from dataclasses import dataclass
-from typing import Optional
 
-@dataclass
+
+@dataclass(init=False)
 class Cliente:
-    codigo: str
-    razao_social: str
-    cnpj: str
-    inscricao_estadual: str
-    endereco: str
-    codigo_nome_cidade: str
-    estado: str
-    bairro: str
-    telefone: str
-    fax: str
-    cep: str
-    codigo_status: str
-    nome_fantasia: str
-    data_cadastro: str
-    codigo_entrega: str
-    codigo_regiao: int
-    codigo_tab_preco: str
-    codigo_cond_pagto: str
-    codigo_cliente_pai: str
-    obs_fechamento: str
-    email_copia_pedido: str
-    flag_envia_copia: str
-    flag_entrega_agendada: int
-    qtde_dias_min_entrega: str
+    codigo: str = ""
+    razao_social: str = ""
+    cnpj: str = ""
+    inscricao_estadual: str = ""
+    endereco: str = ""
+    codigo_nome_cidade: str = ""
+    estado: str = ""
+    bairro: str = ""
+    telefone: str = ""
+    fax: str = ""
+    cep: str = ""
+    codigo_status: str = ""
+    nome_fantasia: str = ""
+    data_cadastro: str = ""
+    codigo_entrega: str = ""
+    codigo_regiao: int = 0
+    codigo_tab_preco: str = ""
+    codigo_cond_pagto: str = ""
+    codigo_cliente_pai: str = ""
+    obs_fechamento: str = ""
+    email_copia_pedido: str = ""
+    flag_envia_copia: str = ""
+    flag_entrega_agendada: int = 0
+    qtde_dias_min_entrega: str = ""
+
+    def __init__(self, codigo: str = "", nome: str = "", cnpj: str = "", **kwargs):
+        self.codigo = codigo
+        self.razao_social = kwargs.get("razao_social", nome)
+        self.cnpj = cnpj
+        self.inscricao_estadual = kwargs.get("inscricao_estadual", "")
+        self.endereco = kwargs.get("endereco", "")
+        self.codigo_nome_cidade = kwargs.get("codigo_nome_cidade", "")
+        self.estado = kwargs.get("estado", "")
+        self.bairro = kwargs.get("bairro", "")
+        self.telefone = kwargs.get("telefone", "")
+        self.fax = kwargs.get("fax", "")
+        self.cep = kwargs.get("cep", "")
+        self.codigo_status = kwargs.get("codigo_status", "")
+        self.nome_fantasia = nome
+        self.data_cadastro = kwargs.get("data_cadastro", "")
+        self.codigo_entrega = kwargs.get("codigo_entrega", "")
+        self.codigo_regiao = kwargs.get("codigo_regiao", 0)
+        self.codigo_tab_preco = kwargs.get("codigo_tab_preco", "")
+        self.codigo_cond_pagto = kwargs.get("codigo_cond_pagto", "")
+        self.codigo_cliente_pai = kwargs.get("codigo_cliente_pai", "")
+        self.obs_fechamento = kwargs.get("obs_fechamento", "")
+        self.email_copia_pedido = kwargs.get("email_copia_pedido", "")
+        self.flag_envia_copia = kwargs.get("flag_envia_copia", "")
+        self.flag_entrega_agendada = kwargs.get("flag_entrega_agendada", 0)
+        self.qtde_dias_min_entrega = kwargs.get("qtde_dias_min_entrega", "")
 
     @property
     def nome(self) -> str:
