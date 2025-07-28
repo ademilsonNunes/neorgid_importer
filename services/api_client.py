@@ -46,7 +46,7 @@ class NeogridAPIClient:
         
         return session
 
-    def buscar_pedidos(self, doc_type: str = "5", docs_qty: str = "50") -> Dict[str, Any]:
+    def buscar_pedidos(self, doc_type: str = "5", docs_qty: str = "2") -> Dict[str, Any]:
         """
         Consulta pedidos via API Neogrid com tratamento robusto de erros
         """

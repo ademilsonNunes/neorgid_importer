@@ -187,8 +187,8 @@ with st.sidebar:
         <div class="totvs-card-header">
             ℹ️ Informações do Sistema
         </div>
-        <p><strong>Versão:</strong> 2.1.1</p>
-        <p><strong>Ambiente:</strong> Produção</p>
+        <p><strong>Versão:</strong> 1.2.0</p>
+        <p><strong>Ambiente:</strong> QA</p>
         <p><strong>Última atualização:</strong> Jul 2025</p>
     </div>
     """, unsafe_allow_html=True)
@@ -201,7 +201,7 @@ with st.sidebar:
         <div style="font-size: 0.9rem; line-height: 1.6;">
             <strong>1.</strong> Consulta API Neogrid<br>
             <strong>2.</strong> Valida clientes cadastrados<br>
-            <strong>3.</strong> Valida produtos no estoque<br>
+            <strong>3.</strong> Valida produtos cadastrados<br>
             <strong>4.</strong> Processa regras de negócio<br>
             <strong>5.</strong> Grava pedidos no Protheus<br>
             <strong>6.</strong> Registra logs de auditoria
@@ -534,6 +534,6 @@ st.markdown("""
     margin-top: 2rem;
 ">
     <strong>TOTVS</strong> | Importador Neogrid v2.1.1<br>
-    Desenvolvido para integração automatizada de pedidos | 🔧 <strong>Correções aplicadas:</strong> Tratamento robusto de erros
+    Desenvolvido para integração automatizada de pedidos </strong> 
 </div>
 """, unsafe_allow_html=True)
