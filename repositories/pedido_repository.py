@@ -158,18 +158,18 @@ class PedidoRepository:
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
             
-            # Preparar valores com tratamento de None
+            # Preparar valores com tratamento de None e limites de tamanho
             valores = (
-                pedido.num_pedido,
-                pedido.loja_cliente or "1",  # Default para loja 1
-                pedido.data_pedido,
-                pedido.hora_inicio,
-                pedido.hora_fim,
-                pedido.data_entrega,
-                pedido.codigo_cliente,
+                str(pedido.num_pedido)[:50],
+                (pedido.loja_cliente or "1")[:10],
+                str(pedido.data_pedido)[:10],
+                (pedido.hora_inicio or "")[:8],
+                (pedido.hora_fim or "")[:8],
+                (pedido.data_entrega or "")[:10],
+                str(pedido.codigo_cliente)[:20],
                 pedido.qtde_itens,
                 pedido.valor_total,
-                pedido.observacao or "",
+                (pedido.observacao or "")[:500],
                 datetime.now()
             )
             
@@ -216,11 +216,11 @@ class PedidoRepository:
                         continue
                     
                     valores = (
-                        pedido.num_pedido,
-                        pedido.data_pedido,
-                        pedido.hora_inicio,
-                        pedido.codigo_cliente,
-                        item.cod_produto,
+                        str(pedido.num_pedido)[:50],
+                        str(pedido.data_pedido)[:10],
+                        (pedido.hora_inicio or "")[:8],
+                        str(pedido.codigo_cliente)[:20],
+                        str(item.cod_produto)[:30],
                         item.quantidade,
                         0,  # QTDEBONIFICADA
                         item.valor_unitario,
@@ -229,7 +229,7 @@ class PedidoRepository:
                         0,  # DESCONTOII
                         0,  # VALORVERBA
                         None,  # CODIGOVENDEDORESP
-                        f"Importado Neogrid - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                        f"Importado Neogrid - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"[:100]
                     )
                     
                     self.cursor.execute(query, valores)
