@@ -9,6 +9,7 @@ from services.processador_pedido import ProcessadorPedido
 from services.processador_pedido_item import ProcessadorPedidoItem
 from services.validador_cliente import ValidadorCliente
 from services.validador_produto import ValidadorProduto
+from utils.helpers import interpretar_codigo_produto
 from repositories.pedido_repository import PedidoRepository
 from models.pedido import Pedido
 from utils.error_handler import (
@@ -63,10 +64,11 @@ def processar_pedido_neogrid(doc, processador_pedido, repo, api_client=None):
         
         # Processar itens do pedido
         for item in pedido_neogrid.itens:
+            ean13, dun14, codprod = interpretar_codigo_produto(item.codigo_produto)
             item_para_processar = {
-                "ean13": "",  
-                "dun14": "",
-                "codprod": item.codigo_produto,
+                "ean13": ean13,
+                "dun14": dun14,
+                "codprod": codprod,
                 "qtd": float(item.quantidade),
                 "valor": float(item.preco_unitario)
             }
