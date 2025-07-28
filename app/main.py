@@ -32,7 +32,7 @@ def registrar_log(mensagem: str):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{timestamp}] {mensagem}\n")
 
-def processar_pedido_neogrid(doc, processador_pedido, repo):
+def processar_pedido_neogrid(doc, processador_pedido, repo, api_client=None):
     """Processa um documento de pedido da Neogrid com tratamento robusto de erros"""
     doc_id = doc.get("docId", "N/A")
     
@@ -79,9 +79,18 @@ def processar_pedido_neogrid(doc, processador_pedido, repo):
         sucesso = repo.inserir_pedido(pedido_final)
         
         if sucesso:
-            mensagem = f"✅ Pedido {pedido_final.num_pedido} processado e gravado com sucesso"
+            mensagem = (
+                f"✅ Pedido {pedido_final.num_pedido} processado e gravado com sucesso"
+            )
             registrar_log(mensagem)
             repo.log_processamento("INFO", mensagem, pedido_final.num_pedido)
+
+            if api_client:
+                try:
+                    api_client.atualizar_status([{"docId": doc_id, "status": "true"}])
+                except APIError as e:
+                    registrar_log(f"Falha ao atualizar status do documento {doc_id}: {e.message}")
+
             return {"status": "sucesso", "mensagem": mensagem, "pedido": pedido_final.num_pedido}
         else:
             mensagem = f"⚠️ Pedido {pedido_final.num_pedido} já existia no banco"
@@ -312,7 +321,7 @@ with col1:
                         for i, doc in enumerate(documentos):
                             status_placeholder.markdown(f'<div class="loading-text">⚙️ Processando documento {i+1} de {total_docs}...</div>', unsafe_allow_html=True)
                             
-                            resultado = processar_pedido_neogrid(doc, processador_pedido, repo)
+                            resultado = processar_pedido_neogrid(doc, processador_pedido, repo, api)
                             detalhes_processamento.append(resultado)
                             
                             # Contar resultados

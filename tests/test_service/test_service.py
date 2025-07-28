@@ -62,3 +62,14 @@ def test_buscar_pedidos_com_sucesso(client):
         assert "documents" in response
         assert len(response["documents"]) == 1
         assert response["documents"][0]["docId"] == "123456"
+
+
+def test_atualizar_status(client):
+    mock_url = client.status_url
+    payload = {"documents": [{"docId": "123456", "status": "true"}]}
+
+    with requests_mock.Mocker() as m:
+        m.post(mock_url, json={"result": "ok"}, status_code=200)
+
+        response = client.atualizar_status(payload["documents"])
+        assert response == {"result": "ok"}
