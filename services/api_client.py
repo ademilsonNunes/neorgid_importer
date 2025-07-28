@@ -17,6 +17,7 @@ import json
 class NeogridAPIClient:
     def __init__(self):
         self.url = settings.NEOGRID_URL
+        self.status_url = settings.NEOGRID_STATUS_URL
         self.auth = HTTPBasicAuth(settings.NEOGRID_USERNAME, settings.NEOGRID_PASSWORD)
         self.headers = {
             "Content-Type": "application/json",
@@ -129,6 +130,38 @@ class NeogridAPIClient:
             raise
         except Exception as e:
             raise APIError(f"Erro inesperado ao consultar API: {str(e)}")
+
+    def atualizar_status(self, documents: list) -> Dict[str, Any]:
+        """Envia atualização de status para a Neogrid."""
+        payload = {"documents": documents}
+
+        try:
+            response = self.session.post(
+                self.status_url,
+                auth=self.auth,
+                headers=self.headers,
+                json=payload,
+                timeout=(30, 60),
+            )
+
+            if response.status_code >= 400:
+                raise APIError(
+                    f"Erro HTTP {response.status_code}",
+                    response.status_code,
+                    response.text[:500] if response.text else None,
+                )
+
+            try:
+                return response.json()
+            except json.JSONDecodeError:
+                return {"status_code": response.status_code}
+
+        except requests.exceptions.Timeout:
+            raise APIError("Timeout na requisição - API não respondeu no tempo esperado")
+        except requests.exceptions.ConnectionError:
+            raise APIError("Erro de conexão - não foi possível conectar à API")
+        except requests.exceptions.RequestException as e:
+            raise APIError(f"Erro na requisição HTTP: {str(e)}")
 
     def test_connection(self) -> bool:
         """

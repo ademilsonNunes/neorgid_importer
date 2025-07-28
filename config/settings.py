@@ -19,7 +19,14 @@ class Settings:
 
     NEOGRID_USERNAME = os.getenv("NEOGRID_USERNAME", "NG#00000172168716111535")
     NEOGRID_PASSWORD = os.getenv("NEOGRID_PASSWORD", "SObel#24")
-    NEOGRID_URL = os.getenv("NEOGRID_URL", "https://integration-br-prd.neogrid.com/rest/neogrid/ngproxy/Neogrid/restNew/receiverDocsFromNGProxy")
+    NEOGRID_URL = os.getenv(
+        "NEOGRID_URL",
+        "https://integration-br-prd.neogrid.com/rest/neogrid/ngproxy/Neogrid/restNew/receiverDocsFromNGProxy",
+    )
+    NEOGRID_STATUS_URL = os.getenv(
+        "NEOGRID_STATUS_URL",
+        "https://integration-br-prd.neogrid.com/rest/neogrid/ngproxy/Neogrid/restNew/setStatusToNGProxy",
+    )
 
     @property
     def DB_CONN_STRING_AFV(self):
