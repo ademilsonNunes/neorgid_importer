@@ -162,6 +162,7 @@ class PedidoRepository:
             # Preparar valores com tratamento de None e limites de tamanho
             valores = (
                 str(pedido.num_pedido)[:50],
+                str(pedido.num_pedido)[:50],
                 (pedido.loja_cliente or "1")[:10],
                 str(pedido.data_pedido)[:10],
                 (pedido.hora_inicio or "")[:8],
