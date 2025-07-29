@@ -18,14 +18,16 @@ class PedidoService:
         Busca pedidos da Neogrid e transforma em instâncias da classe Pedido
         """
         dados_api = self.api_client.buscar_pedidos()
-        pedidos_json = dados_api.get("orders", [])
+        documentos = dados_api.get("documents", [])
 
         pedidos_processados = []
-        for pedido_raw in pedidos_json:
-            try:
-                pedido = Pedido(pedido_raw)
-                pedidos_processados.append(pedido)
-            except Exception as e:
-                print(f"Erro ao processar pedido: {e}")
+        for doc in documentos:
+            conteudos = doc.get("content", [])
+            for conteudo in conteudos:
+                try:
+                    pedido = Pedido(conteudo)
+                    pedidos_processados.append(pedido)
+                except Exception as e:
+                    print(f"Erro ao processar pedido: {e}")
 
         return pedidos_processados
