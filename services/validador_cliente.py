@@ -10,6 +10,7 @@ import pyodbc
 from models.cliente import Cliente
 from services.database import Database
 from config.settings import settings
+from utils.logger import logger
 
 class ValidadorCliente:
     def __init__(self):
@@ -93,6 +94,7 @@ class ValidadorCliente:
                 AND D_E_L_E_T_ = ''
             """
             
+            logger.sql(query, cnpj_limpo)
             cursor.execute(query, cnpj_limpo)
             row = cursor.fetchone()
             
@@ -162,6 +164,7 @@ class ValidadorCliente:
                 AND D_E_L_E_T_ = ''
             """
             
+            logger.sql(query, codigo.strip())
             cursor.execute(query, codigo.strip())
             row = cursor.fetchone()
             
@@ -209,6 +212,7 @@ class ValidadorCliente:
                 ORDER BY A1_NOME
             """
             
+            logger.sql(query)
             cursor.execute(query)
             rows = cursor.fetchall()
             
