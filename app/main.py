@@ -533,7 +533,7 @@ st.markdown("""
     border-top: 1px solid rgba(25, 118, 210, 0.1);
     margin-top: 2rem;
 ">
-    <strong>TOTVS</strong> | Importador Neogrid v1.2.0<br>
+    <strong>TOTVS</strong> | Importador Neogrid v1.2.1<br>
     Desenvolvido para integração automatizada de pedidos </strong> 
 </div>
 """, unsafe_allow_html=True)

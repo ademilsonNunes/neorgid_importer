@@ -1,2 +1,58 @@
-[2025-07-29 11:48:19] ❌ Nenhum item válido encontrado no pedido 5026396. Erros: Item 1: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524703332'; Item 2: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524726515'; Item 3: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524705104'; Item 4: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524700188'; Item 5: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524723153'; Item 6: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524703301'; Item 7: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524723146'; Item 8: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524723514'
-[2025-07-29 11:48:19] 🗄️ Erro no banco de dados: Erro no banco de dados: Erro inesperado ao gravar pedido 5026398: Erro no banco de dados: Erro ao inserir cabeçalho do pedido 5026398: ('The SQL contains 11 parameter markers, but 12 parameters were supplied', 'HY000')
+[2025-07-29 13:43:49] [DEBUG] SQL: SELECT 
+                    A1_COD as CODIGO,
+                    A1_NOME as RAZAOSOCIAL,
+                    A1_CGC as CGCCPF,
+                    A1_INSCR as INSCR_ESTADUAL,
+                    A1_END as ENDERECO,
+                    A1_COD_MUN as CODIGONOMECIDADE,
+                    A1_EST as ESTADO,
+                    A1_BAIRRO as BAIRRO,
+                    A1_TEL as TELEFONE,
+                    A1_FAX as FAX,
+                    A1_CEP as CEP,
+                    A1_MSBLQL as CODIGOSTATUSCLI,
+                    A1_NREDUZ as NOMEFANTASIA,
+                    A1_DTCAD as DATACADASTRO,
+                    A1_COD as CODIGOENDENTREGA,
+                    A1_REGIAO as CODIGOREGIAO,
+                    A1_TABELA as CODIGOTABPRECO,
+                    A1_COND as CODIGOCONDPAGTO,
+                    '' as CODIGOCLIENTEPAI,
+                    A1_OBSERV as OBSFETCHATURAMENTO,
+                    A1_EMAIL as EMAILCOPIAPEDIDO,
+                    'N' as FLAGENVIACOPIAPEDIDO,
+                    0 as CESP_FLAGENTREGAAGENDADA,
+                    '0' as Cesp_QtdeDiasMinEntrega
+                FROM SA1010
+                WHERE A1_CGC = ? 
+                AND D_E_L_E_T_ = '' | Params: 04737552000219
+[2025-07-29 13:43:49] ❌ Nenhum item válido encontrado no pedido 5026396. Erros: Item 1: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524703332'; Item 2: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524726515'; Item 3: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524705104'; Item 4: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524700188'; Item 5: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524723153'; Item 6: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524703301'; Item 7: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '27896524723146'; Item 8: Produto não encontrado - EAN13: '', DUN14: '', CodProd: '17896524723514'
+[2025-07-29 13:43:49] [DEBUG] SQL: SELECT 
+                    A1_COD as CODIGO,
+                    A1_NOME as RAZAOSOCIAL,
+                    A1_CGC as CGCCPF,
+                    A1_INSCR as INSCR_ESTADUAL,
+                    A1_END as ENDERECO,
+                    A1_COD_MUN as CODIGONOMECIDADE,
+                    A1_EST as ESTADO,
+                    A1_BAIRRO as BAIRRO,
+                    A1_TEL as TELEFONE,
+                    A1_FAX as FAX,
+                    A1_CEP as CEP,
+                    A1_MSBLQL as CODIGOSTATUSCLI,
+                    A1_NREDUZ as NOMEFANTASIA,
+                    A1_DTCAD as DATACADASTRO,
+                    A1_COD as CODIGOENDENTREGA,
+                    A1_REGIAO as CODIGOREGIAO,
+                    A1_TABELA as CODIGOTABPRECO,
+                    A1_COND as CODIGOCONDPAGTO,
+                    '' as CODIGOCLIENTEPAI,
+                    A1_OBSERV as OBSFETCHATURAMENTO,
+                    A1_EMAIL as EMAILCOPIAPEDIDO,
+                    'N' as FLAGENVIACOPIAPEDIDO,
+                    0 as CESP_FLAGENTREGAAGENDADA,
+                    '0' as Cesp_QtdeDiasMinEntrega
+                FROM SA1010
+                WHERE A1_CGC = ? 
+                AND D_E_L_E_T_ = '' | Params: 04737552000723
+[2025-07-29 13:43:49] 🗄️ Erro no banco de dados: Erro no banco de dados: Erro inesperado ao gravar pedido 5026398: Logger.debug() takes from 2 to 3 positional arguments but 4 were given
