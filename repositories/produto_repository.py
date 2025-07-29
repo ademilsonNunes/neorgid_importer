@@ -8,6 +8,7 @@ import re
 from typing import Optional
 import pyodbc
 from models.produto import Produto
+from utils.logger import logger
 
 class ProdutoRepository:
     def __init__(self, conn: pyodbc.Connection):
@@ -17,18 +18,24 @@ class ProdutoRepository:
         cursor = self.conn.cursor()
 
         # 1ª tentativa: EAN13
-        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_CODBAR = ?", ean13).fetchone()
+        query_ean = "SELECT * FROM SB1010 WHERE B1_CODBAR = ?"
+        logger.sql(query_ean, ean13)
+        row = cursor.execute(query_ean, ean13).fetchone()
         if row:
             return self._mapear(row)
 
         # 2ª tentativa: DUN14
-        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_ZZCODBA = ?", dun14).fetchone()
+        query_dun = "SELECT * FROM SB1010 WHERE B1_ZZCODBA = ?"
+        logger.sql(query_dun, dun14)
+        row = cursor.execute(query_dun, dun14).fetchone()
         if row:
             return self._mapear(row)
 
         # 3ª tentativa: CODPROD (sem sufixo)
         cod_sem_sufixo = re.sub(r"\.\w+$", "", codprod)
-        row = cursor.execute("SELECT * FROM SB1010 WHERE B1_COD LIKE ?", f"{cod_sem_sufixo}.%").fetchone()
+        query_cod = "SELECT * FROM SB1010 WHERE B1_COD LIKE ?"
+        logger.sql(query_cod, f"{cod_sem_sufixo}.%")
+        row = cursor.execute(query_cod, f"{cod_sem_sufixo}.%").fetchone()
         if row:
             return self._mapear(row)
 

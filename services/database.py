@@ -5,6 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
 
 import pyodbc
 from config.settings import settings
+from utils.logger import logger
 import time
 from typing import Optional
 
@@ -72,7 +73,9 @@ class Database:
         try:
             conn = self.connect()
             cursor = conn.cursor()
-            
+
+            logger.sql(query, params)
+
             if params:
                 cursor.execute(query, params)
             else:
@@ -86,10 +89,10 @@ class Database:
                 return cursor
                 
         except Exception as e:
-            print(f"Erro ao executar query: {e}")
-            print(f"Query: {query}")
+            logger.error(f"Erro ao executar query: {e}")
+            logger.error(f"Query: {query}")
             if params:
-                print(f"Params: {params}")
+                logger.error(f"Params: {params}")
             raise
         finally:
             if cursor:
