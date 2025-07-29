@@ -177,62 +177,89 @@ class PedidoRepository:
                 pass
 
     def _inserir_cabecalho_pedido(self, pedido: PedidoSobel):
-        """Insere o cabeçalho do pedido com validação de dados"""
+        """Insere o cabeçalho do pedido de forma completa"""
         try:
-            # Validar dados obrigatórios
             if not pedido.codigo_cliente:
-                raise ValueError(f"Código do cliente não pode ser vazio para pedido {pedido.num_pedido}")
-            
+                raise ValueError(
+                    f"Código do cliente não pode ser vazio para pedido {pedido.num_pedido}"
+                )
+
             if not pedido.num_pedido:
                 raise ValueError("Número do pedido não pode ser vazio")
-            
-            # CORREÇÃO: Query ajustada para garantir que NUMPEDIDOSOBEL seja preenchido corretamente
+
             query = """
                 INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDO,
                     NUMPEDIDOSOBEL,
                     LOJACLIENTE,
+                    NUMPEDIDOAFV,
                     DATAPEDIDO,
                     HORAINICIAL,
                     HORAFINAL,
                     DATAENTREGA,
                     CODIGOCLIENTE,
-                    QTDEITENS,
-                    VALORBRUTO,
+                    CODIGOTIPOPEDIDO,
+                    CODIGOCONDPAGTO,
+                    CODIGONOMEENDERECO,
+                    CODIGOUNIDFAT,
+                    CODIGOTABPRECO,
+                    ORDEMCOMPRA,
                     OBSERVACAOI,
-                    DATAGRAVACAOACACIA
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    OBSERVACAOII,
+                    VALORLIQUIDO,
+                    VALORBRUTO,
+                    CODIGOMOTIVOTIPOPED,
+                    CODIGOVENDEDORESP,
+                    CESP_DATAENTREGAFIM,
+                    CESP_NUMPEDIDOASSOC,
+                    DATAGRAVACAOACACIA,
+                    DATAINTEGRACAOERP,
+                    QTDEITENS,
+                    MSGIMPORTACAO,
+                    VOLUME
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
-            
-            # CORREÇÃO: Preparar valores com validação mais rigorosa
+
             valores = (
-                str(pedido.num_pedido).strip()[:50],  # NUMPEDIDOSOBEL - garantir que não seja None/vazio
-                str(pedido.loja_cliente or "01")[:10],  # LOJACLIENTE - valor padrão "01"
-                str(pedido.data_pedido)[:10],  # DATAPEDIDO
-                str(pedido.hora_inicio or "")[:8],  # HORAINICIAL
-                str(pedido.hora_fim or "")[:8],  # HORAFINAL
-                str(pedido.data_entrega or "")[:10],  # DATAENTREGA
-                str(pedido.codigo_cliente).strip()[:20],  # CODIGOCLIENTE
-                int(pedido.qtde_itens),  # QTDEITENS
-                float(pedido.valor_total),  # VALORBRUTO
-                str(pedido.observacao or "")[:500],  # OBSERVACAOI
-                datetime.now()  # DATAGRAVACAOACACIA
+                str(pedido.num_pedido).strip(),  # NUMPEDIDO
+                str(pedido.num_pedido).strip(),  # NUMPEDIDOSOBEL
+                str(pedido.loja_cliente or "01"),  # LOJACLIENTE
+                str(pedido.num_pedido_afv or pedido.num_pedido),  # NUMPEDIDOAFV
+                pedido.data_pedido,
+                pedido.hora_inicio or "",
+                pedido.hora_fim or "",
+                pedido.data_entrega,
+                pedido.codigo_cliente,
+                pedido.codigo_tipo_pedido or "N",
+                pedido.codigo_cond_pagto or "055",
+                pedido.codigo_nome_endereco or "E",
+                pedido.codigo_unid_fat or "01",
+                pedido.codigo_tab_preco or "038",
+                pedido.ordem_compra or "",
+                (pedido.observacao or "CIF")[:50],
+                pedido.observacao_ii,
+                pedido.valor_liquido or pedido.valor_total,
+                pedido.valor_bruto or pedido.valor_total,
+                pedido.codigo_motivo_tipo_ped,
+                pedido.codigo_vendedor_resp or "000559",
+                pedido.cesp_data_entrega_fim or pedido.data_entrega,
+                pedido.cesp_num_pedido_assoc,
+                datetime.now(),
+                pedido.data_integracao_erp,
+                pedido.qtde_itens,
+                pedido.msg_importacao,
+                pedido.volume or 0,
             )
 
-            # Log detalhado dos valores que serão inseridos
-            logger.debug(f"📝 Valores para inserção do cabeçalho:")
-            campos = ['NUMPEDIDOSOBEL', 'LOJACLIENTE', 'DATAPEDIDO', 'HORAINICIAL', 'HORAFINAL', 
-                     'DATAENTREGA', 'CODIGOCLIENTE', 'QTDEITENS', 'VALORBRUTO', 'OBSERVACAOI', 'DATAGRAVACAOACACIA']
-            for i, (campo, valor) in enumerate(zip(campos, valores)):
-                logger.debug(f"  {campo}: '{valor}' ({type(valor).__name__})")
+            self._execute_with_logging(
+                query, valores, "INSERIR_CABECALHO", pedido.num_pedido
+            )
 
-            # Executar com logging detalhado
-            self._execute_with_logging(query, valores, "INSERIR_CABECALHO", pedido.num_pedido)
-            
         except pyodbc.Error as e:
             raise BancoDadosError(
-                f"Erro ao inserir cabeçalho do pedido {pedido.num_pedido}: {str(e)}", 
-                e, 
-                "inserir_cabecalho"
+                f"Erro ao inserir cabeçalho do pedido {pedido.num_pedido}: {str(e)}",
+                e,
+                "inserir_cabecalho",
             )
 
     def _inserir_itens_pedido(self, pedido: PedidoSobel) -> int:
@@ -243,6 +270,8 @@ class PedidoRepository:
         try:
             query = """
                 INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
                     NUMPEDIDOAFV,
                     DATAPEDIDO,
                     HORAINICIAL,
@@ -257,7 +286,7 @@ class PedidoRepository:
                     VALORVERBA,
                     CODIGOVENDEDORESP,
                     MSGIMPORTACAO
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
             
             itens_inseridos = 0
@@ -273,28 +302,33 @@ class PedidoRepository:
                         continue
                     
                     valores = (
-                        str(pedido.num_pedido).strip()[:50],  # NUMPEDIDOAFV
-                        str(pedido.data_pedido)[:10],  # DATAPEDIDO
-                        str(pedido.hora_inicio or "")[:8],  # HORAINICIAL
-                        str(pedido.codigo_cliente).strip()[:20],  # CODIGOCLIENTE
-                        str(item.cod_produto).strip()[:30],  # CODIGOPRODUTO
-                        float(item.quantidade),  # QTDEVENDA
-                        0.0,  # QTDEBONIFICADA
-                        float(item.valor_unitario),  # VALORVENDA
-                        float(item.valor_total),  # VALORBRUTO
-                        0.0,  # DESCONTOI
-                        0.0,  # DESCONTOII
-                        0.0,  # VALORVERBA
-                        None,  # CODIGOVENDEDORESP
-                        f"Importado Neogrid - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"[:100]  # MSGIMPORTACAO
+                        str(pedido.num_pedido).strip(),        # NUMPEDIDO
+                        i,                                    # NUMITEM
+                        str(pedido.num_pedido).strip(),        # NUMPEDIDOAFV
+                        pedido.data_pedido,
+                        pedido.hora_inicio or "",
+                        pedido.codigo_cliente,
+                        item.cod_produto[:20],
+                        float(item.quantidade),
+                        float(getattr(item, 'qtde_bonificada', 0)),
+                        float(item.valor_unitario),
+                        float(getattr(item, 'valor_bruto', item.valor_total)),
+                        float(getattr(item, 'desconto_i', 0)),
+                        float(getattr(item, 'desconto_ii', 0)),
+                        float(getattr(item, 'valor_verba', 0)),
+                        item.codigo_vendedor_resp or "000559",
+                        item.msg_importacao,
                     )
 
                     # Log detalhado para o primeiro item (debug)
                     if i == 0:
                         logger.debug(f"📝 Exemplo de valores para item:")
-                        campos_item = ['NUMPEDIDOAFV', 'DATAPEDIDO', 'HORAINICIAL', 'CODIGOCLIENTE', 'CODIGOPRODUTO', 
-                                     'QTDEVENDA', 'QTDEBONIFICADA', 'VALORVENDA', 'VALORBRUTO', 'DESCONTOI', 
-                                     'DESCONTOII', 'VALORVERBA', 'CODIGOVENDEDORESP', 'MSGIMPORTACAO']
+                        campos_item = [
+                            'NUMPEDIDO', 'NUMITEM', 'NUMPEDIDOAFV', 'DATAPEDIDO', 'HORAINICIAL',
+                            'CODIGOCLIENTE', 'CODIGOPRODUTO', 'QTDEVENDA', 'QTDEBONIFICADA',
+                            'VALORVENDA', 'VALORBRUTO', 'DESCONTOI', 'DESCONTOII', 'VALORVERBA',
+                            'CODIGOVENDEDORESP', 'MSGIMPORTACAO'
+                        ]
                         for campo, valor in zip(campos_item, valores):
                             logger.debug(f"  {campo}: '{valor}' ({type(valor).__name__})")
 
