@@ -1,0 +1,51 @@
+[2025-07-29 16:02:04] [INFO] 🔧 Modo debug desativado
+[2025-07-29 16:02:09] [INFO] 🔧 Modo debug desativado
+[2025-07-29 16:02:09] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-07-29 16:02:09] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-07-29 16:02:11] [INFO] ⏱️ Performance [CONSULTA_API]: 2.273s
+[2025-07-29 16:02:11] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-07-29 16:02:11] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-07-29 16:02:11] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.026s | pedido=5026396 | itens=8
+[2025-07-29 16:02:11] [INFO] 💾 Iniciando inserção do pedido 5026396
+[2025-07-29 16:02:11] [ERROR] ❌ [INSERIR_CABECALHO] Erro ao executar query:
+[2025-07-29 16:02:11] [ERROR] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    QTDEITENS,
+                    VALORBRUTO,
+                    OBSERVACAOI,
+                    DATAGRAVACAOACACIA
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-07-29 16:02:11] [ERROR] Parâmetros: ('5026396', '01', '2025-05-15', '16:02', '', '2025-05-31', '256292', 8, 11709.539999999999, 'CIF', datetime.datetime(2025, 7, 29, 16, 2, 11, 815057))
+[2025-07-29 16:02:11] [ERROR] Erro: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Os dados de cadeia ou binários ficariam truncados. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A instrução foi terminada. (3621)')
+[2025-07-29 16:02:11] [ERROR] Pedido: 5026396
+[2025-07-29 16:02:11] [ERROR] 🔄 Rollback executado para pedido 5026396
+[2025-07-29 16:02:11] [ERROR] Erro de processamento no documento 41084731: Erro no banco de dados: Erro inesperado ao gravar pedido 5026396: Erro no banco de dados: Erro ao inserir cabeçalho do pedido 5026396: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Os dados de cadeia ou binários ficariam truncados. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A instrução foi terminada. (3621)')
+[2025-07-29 16:02:11] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.008s | pedido=5026398 | itens=14
+[2025-07-29 16:02:11] [INFO] 💾 Iniciando inserção do pedido 5026398
+[2025-07-29 16:02:11] [ERROR] ❌ [INSERIR_CABECALHO] Erro ao executar query:
+[2025-07-29 16:02:11] [ERROR] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    QTDEITENS,
+                    VALORBRUTO,
+                    OBSERVACAOI,
+                    DATAGRAVACAOACACIA
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-07-29 16:02:11] [ERROR] Parâmetros: ('5026398', '01', '2025-05-15', '16:02', '', '2025-05-31', '256282', 14, 52102.16, 'CIF', datetime.datetime(2025, 7, 29, 16, 2, 11, 924808))
+[2025-07-29 16:02:11] [ERROR] Erro: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Os dados de cadeia ou binários ficariam truncados. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A instrução foi terminada. (3621)')
+[2025-07-29 16:02:11] [ERROR] Pedido: 5026398
+[2025-07-29 16:02:11] [ERROR] 🔄 Rollback executado para pedido 5026398
+[2025-07-29 16:02:11] [ERROR] Erro de processamento no documento 41084732: Erro no banco de dados: Erro inesperado ao gravar pedido 5026398: Erro no banco de dados: Erro ao inserir cabeçalho do pedido 5026398: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Os dados de cadeia ou binários ficariam truncados. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]A instrução foi terminada. (3621)')
+[2025-07-29 16:02:11] [INFO] 🏁 Processamento concluído | sucessos=0 | duplicados=0 | erros=2
+[2025-07-29 16:02:11] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 2.699s | total_docs=2 | sucessos=0 | erros=2
