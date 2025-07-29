@@ -9,6 +9,11 @@ from services.processador_pedido import ProcessadorPedido
 from services.processador_pedido_item import ProcessadorPedidoItem
 from services.validador_cliente import ValidadorCliente
 from services.validador_produto import ValidadorProduto
+<<<<<<< HEAD
+=======
+from utils.helpers import interpretar_codigo_produto
+from utils.logger import logger
+>>>>>>> a2acc6782899b273e76fd9b6352329aff87befa4
 from repositories.pedido_repository import PedidoRepository
 from models.pedido import Pedido
 from utils.error_handler import (
@@ -252,10 +257,9 @@ with st.sidebar:
     # Botão para limpar logs
     st.markdown("<br>", unsafe_allow_html=True)
     if st.button("🗑️ Limpar Logs", key="clear_logs", help="Remove todos os arquivos de log"):
-        if os.path.exists(LOG_FILE):
-            os.remove(LOG_FILE)
-            st.success("✅ Logs removidos com sucesso!")
-            st.rerun()
+        logger.clear_logs()
+        st.success("✅ Logs removidos com sucesso!")
+        st.rerun()
 
 # Área principal
 col1, col2 = st.columns([2, 1])
