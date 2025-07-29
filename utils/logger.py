@@ -80,6 +80,13 @@ class Logger:
     def debug(self, mensagem: str, num_pedido: Optional[str] = None, **kwargs):
         """Log de debug"""
         self.log(LogLevel.DEBUG, mensagem, num_pedido, **kwargs)
+
+    def sql(self, query: str, params=None):
+        """Registra a consulta SQL enviada ao banco"""
+        if params is not None:
+            self.logger.debug("SQL: %s | Params: %s", query.strip(), params)
+        else:
+            self.logger.debug("SQL: %s", query.strip())
     
     def log_inicio_processamento(self, total_documentos: int):
         """Log específico para início de processamento"""
