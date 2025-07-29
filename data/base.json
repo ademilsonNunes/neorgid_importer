@@ -1,0 +1,306 @@
+{
+  "documents": [
+    {
+      "docId": "41084730",
+      "filename": "SRC_17473401015697989717",
+      "content": [
+        {
+          "order": {
+            "cabecalho": {
+              "funcao": "9",
+              "tipoPedido": "001",
+              "numeroPedidoComprador": "5026397",
+              "numeroPedidoEmissor": "",
+              "dataHoraEmissao": "150520250000",
+              "dataHoraInicialEntrega": "310520250000",
+              "dataHoraFinalEntrega": "310520250000",
+              "numeroContrato": "",
+              "listaPrecos": "",
+              "eanFornecedor": "7896524700013",
+              "eanComprador": "7898480430041",
+              "eanLocalFaturado": "7898480430041",
+              "eanLocalEntrega": "7898480430041",
+              "cnpjFornecedor": "62674627000185",
+              "cnpjComprador": "04737552000480",
+              "cnpjLocalFaturado": "04737552000480",
+              "cnpjLocalEntrega": "04737552000480",
+              "tipoCodTransportadora": "",
+              "codTransportadora": "00000000000000",
+              "nomeTransportadora": "",
+              "condicaoEntrega": "CIF",
+              "observacao": ""
+            },
+            "pagamento": {
+              "condicaoPagamento": "1",
+              "referenciaData": "5",
+              "referenciaTempoData": "1",
+              "tipoPeriodo": "CD",
+              "numeroPeriodos": "060",
+              "dataVencimento": "20250714",
+              "valorPagar": "0000000017126.38",
+              "percentualPagarValorFaturado": "100.00"
+            },
+            "desconto": {
+              "percentualDescontoFinanceiro": "",
+              "valorDescontoFinanceiro": "",
+              "percentualDescontoComercial": "",
+              "valorDescontoComercial": "",
+              "percentualDescontoPromocional": "",
+              "valorDescontoPromocional": "",
+              "percentualEncargosFinanceiros": "",
+              "valorEncargosFinanceiros": "",
+              "percentualEncargosFrete": "",
+              "valorEncargosFrete": "",
+              "percentualEncargosSeguro": "",
+              "valorEncargosSeguro": ""
+            },
+            "itens": {
+              "item": [
+                {
+                  "numeroSequencialItem": "0001",
+                  "numeroItemPedido": "",
+                  "tipoCodProduto": "EN ",
+                  "codigoProduto": "1001.01.03X05L",
+                  "descricaoProduto": "AGUA SANIT SUPREMA 5L                   ",
+                  "referenciaProduto": "                    ",
+                  "unidadeMedida": "EA ",
+                  "numeroUnidadesEmbalagem": "00003",
+                  "quantidadePedida": "0000000000560.00",
+                  "quantidadeBonificada": "0000000000000.00",
+                  "quantidadeTroca": "0000000000000.00",
+                  "tipoEmbalagem": "BX ",
+                  "numeroEmbalagens": "00560",
+                  "valorBrutoItem": "0000000010410.40",
+                  "valorLiquidoItem": "0000000010410.40",
+                  "precoBrutoUnitario": "0000000000018.59",
+                  "precoLiquidoUnitario": "0000000000018.59",
+                  "basePrecoUnitario": "00000",
+                  "unidadeMedidaBasePrecoUnitario": "   ",
+                  "valorUnitarioDescontoComercial": "0000000000000.00",
+                  "percentualDescontoComercial": "000.00",
+                  "valorUnitarioIPI": "0000000000000.00",
+                  "aliquotaIPI": "000.00",
+                  "valorUnitarioDespesaAcessoriaTributada": "0000000000000.00",
+                  "valorUnitarioDespesaAcessoriaNaoTributada": "0000000000000.00",
+                  "valorUnitarioFrete": "0000000000000.00",
+                  "grade": {
+                    "item_grade": {
+                      "tipoCodigoProduto": "",
+                      "codigoProduto": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  },
+                  "crossdocking": {
+                    "item_crossdocking": {
+                      "eanLocalEntrega": "",
+                      "cnpjLocalEntrega": "",
+                      "dataHoraInicialEntrega": "",
+                      "dataHoraFinalEntrega": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  }
+                },
+                {
+                  "numeroSequencialItem": "0002",
+                  "numeroItemPedido": "",
+                  "tipoCodProduto": "EN ",
+                  "codigoProduto": "17896524703332",
+                  "descricaoProduto": "LAVA ROUPA LIQ SUPREMA 5L COCO          ",
+                  "referenciaProduto": "                    ",
+                  "unidadeMedida": "EA ",
+                  "numeroUnidadesEmbalagem": "00003",
+                  "quantidadePedida": "0000000000019.00",
+                  "quantidadeBonificada": "0000000000000.00",
+                  "quantidadeTroca": "0000000000000.00",
+                  "tipoEmbalagem": "BX ",
+                  "numeroEmbalagens": "00019",
+                  "valorBrutoItem": "0000000000815.10",
+                  "valorLiquidoItem": "0000000000815.10",
+                  "precoBrutoUnitario": "0000000000042.90",
+                  "precoLiquidoUnitario": "0000000000042.90",
+                  "basePrecoUnitario": "00000",
+                  "unidadeMedidaBasePrecoUnitario": "   ",
+                  "valorUnitarioDescontoComercial": "0000000000000.00",
+                  "percentualDescontoComercial": "000.00",
+                  "valorUnitarioIPI": "0000000000001.39",
+                  "aliquotaIPI": "003.25",
+                  "valorUnitarioDespesaAcessoriaTributada": "0000000000000.00",
+                  "valorUnitarioDespesaAcessoriaNaoTributada": "0000000000000.00",
+                  "valorUnitarioFrete": "0000000000000.00",
+                  "grade": {
+                    "item_grade": {
+                      "tipoCodigoProduto": "",
+                      "codigoProduto": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  },
+                  "crossdocking": {
+                    "item_crossdocking": {
+                      "eanLocalEntrega": "",
+                      "cnpjLocalEntrega": "",
+                      "dataHoraInicialEntrega": "",
+                      "dataHoraFinalEntrega": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  }
+                },
+                {
+                  "numeroSequencialItem": "0003",
+                  "numeroItemPedido": "",
+                  "tipoCodProduto": "EN ",
+                  "codigoProduto": "27896524723153",
+                  "descricaoProduto": "AMAC ROUPA DIL SUPREMA 5L AZUL          ",
+                  "referenciaProduto": "                    ",
+                  "unidadeMedida": "EA ",
+                  "numeroUnidadesEmbalagem": "00003",
+                  "quantidadePedida": "0000000000042.00",
+                  "quantidadeBonificada": "0000000000000.00",
+                  "quantidadeTroca": "0000000000000.00",
+                  "tipoEmbalagem": "BX ",
+                  "numeroEmbalagens": "00042",
+                  "valorBrutoItem": "0000000001131.48",
+                  "valorLiquidoItem": "0000000001131.48",
+                  "precoBrutoUnitario": "0000000000026.94",
+                  "precoLiquidoUnitario": "0000000000026.94",
+                  "basePrecoUnitario": "00000",
+                  "unidadeMedidaBasePrecoUnitario": "   ",
+                  "valorUnitarioDescontoComercial": "0000000000000.00",
+                  "percentualDescontoComercial": "000.00",
+                  "valorUnitarioIPI": "0000000000000.00",
+                  "aliquotaIPI": "000.00",
+                  "valorUnitarioDespesaAcessoriaTributada": "0000000000000.00",
+                  "valorUnitarioDespesaAcessoriaNaoTributada": "0000000000000.00",
+                  "valorUnitarioFrete": "0000000000000.00",
+                  "grade": {
+                    "item_grade": {
+                      "tipoCodigoProduto": "",
+                      "codigoProduto": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  },
+                  "crossdocking": {
+                    "item_crossdocking": {
+                      "eanLocalEntrega": "",
+                      "cnpjLocalEntrega": "",
+                      "dataHoraInicialEntrega": "",
+                      "dataHoraFinalEntrega": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  }
+                },
+                {
+                  "numeroSequencialItem": "0004",
+                  "numeroItemPedido": "",
+                  "tipoCodProduto": "EN ",
+                  "codigoProduto": "27896524723146",
+                  "descricaoProduto": "AMAC ROUPA DIL SUPREMA 5L ROSA          ",
+                  "referenciaProduto": "                    ",
+                  "unidadeMedida": "EA ",
+                  "numeroUnidadesEmbalagem": "00003",
+                  "quantidadePedida": "0000000000042.00",
+                  "quantidadeBonificada": "0000000000000.00",
+                  "quantidadeTroca": "0000000000000.00",
+                  "tipoEmbalagem": "BX ",
+                  "numeroEmbalagens": "00042",
+                  "valorBrutoItem": "0000000001131.48",
+                  "valorLiquidoItem": "0000000001131.48",
+                  "precoBrutoUnitario": "0000000000026.94",
+                  "precoLiquidoUnitario": "0000000000026.94",
+                  "basePrecoUnitario": "00000",
+                  "unidadeMedidaBasePrecoUnitario": "   ",
+                  "valorUnitarioDescontoComercial": "0000000000000.00",
+                  "percentualDescontoComercial": "000.00",
+                  "valorUnitarioIPI": "0000000000000.00",
+                  "aliquotaIPI": "000.00",
+                  "valorUnitarioDespesaAcessoriaTributada": "0000000000000.00",
+                  "valorUnitarioDespesaAcessoriaNaoTributada": "0000000000000.00",
+                  "valorUnitarioFrete": "0000000000000.00",
+                  "grade": {
+                    "item_grade": {
+                      "tipoCodigoProduto": "",
+                      "codigoProduto": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  },
+                  "crossdocking": {
+                    "item_crossdocking": {
+                      "eanLocalEntrega": "",
+                      "cnpjLocalEntrega": "",
+                      "dataHoraInicialEntrega": "",
+                      "dataHoraFinalEntrega": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  }
+                },
+                {
+                  "numeroSequencialItem": "0005",
+                  "numeroItemPedido": "",
+                  "tipoCodProduto": "EN ",
+                  "codigoProduto": "27896524705104",
+                  "descricaoProduto": "DESINF LIQ SUPREMA 5L LAVANDA           ",
+                  "referenciaProduto": "1301.18.03          ",
+                  "unidadeMedida": "EA ",
+                  "numeroUnidadesEmbalagem": "00003",
+                  "quantidadePedida": "0000000000042.00",
+                  "quantidadeBonificada": "0000000000000.00",
+                  "quantidadeTroca": "0000000000000.00",
+                  "tipoEmbalagem": "BX ",
+                  "numeroEmbalagens": "00042",
+                  "valorBrutoItem": "0000000001040.76",
+                  "valorLiquidoItem": "0000000001040.76",
+                  "precoBrutoUnitario": "0000000000024.78",
+                  "precoLiquidoUnitario": "0000000000024.78",
+                  "basePrecoUnitario": "00000",
+                  "unidadeMedidaBasePrecoUnitario": "   ",
+                  "valorUnitarioDescontoComercial": "0000000000000.00",
+                  "percentualDescontoComercial": "000.00",
+                  "valorUnitarioIPI": "0000000000001.24",
+                  "aliquotaIPI": "005.00",
+                  "valorUnitarioDespesaAcessoriaTributada": "0000000000000.00",
+                  "valorUnitarioDespesaAcessoriaNaoTributada": "0000000000000.00",
+                  "valorUnitarioFrete": "0000000000000.00",
+                  "grade": {
+                    "item_grade": {
+                      "tipoCodigoProduto": "",
+                      "codigoProduto": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  },
+                  "crossdocking": {
+                    "item_crossdocking": {
+                      "eanLocalEntrega": "",
+                      "cnpjLocalEntrega": "",
+                      "dataHoraInicialEntrega": "",
+                      "dataHoraFinalEntrega": "",
+                      "quantidade": "",
+                      "unidadeMedida": ""
+                    }
+                  }
+                }
+              ]
+            },
+            "sumario": {
+              "valorTotalMercadorias": "0000000014529.22",
+              "valorTotalIPI": "0000000000078.49",
+              "valorTotalAbatimentos": "0000000000000.00",
+              "valorTotalEncargos": "0000000000000.00",
+              "valorTotalDespesasAcessoriasTributadas": "0000000000000.00",
+              "valorTotalDescontosComerciais": "0000000000000.00",
+              "valorTotalDespesasAcessoriasNaoTributadas": "0000000000000.00",
+              "valorTotalPedido": "0000000014607.71"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
