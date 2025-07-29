@@ -5,6 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 import pyodbc
+from utils.logger import logger
 from models.pedido_sobel import PedidoSobel
 from services.database import Database
 from config.settings import settings
@@ -172,7 +173,13 @@ class PedidoRepository:
                 (pedido.observacao or "")[:500],
                 datetime.now()
             )
-            
+
+            logger.debug(
+                "Executando query de cabecalho:\n%s | Params: %s",
+                query.strip(),
+                valores
+            )
+
             self.cursor.execute(query, valores)
             
         except pyodbc.Error as e:
@@ -231,7 +238,13 @@ class PedidoRepository:
                         None,  # CODIGOVENDEDORESP
                         f"Importado Neogrid - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"[:100]
                     )
-                    
+
+                    logger.debug(
+                        "Executando query de item:\n%s | Params: %s",
+                        query.strip(),
+                        valores
+                    )
+
                     self.cursor.execute(query, valores)
                     itens_inseridos += 1
                     
