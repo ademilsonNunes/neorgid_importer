@@ -21,12 +21,27 @@ class Logger:
         
         # Configurar logging
         self._setup_logging()
-    
+
+    def close(self):
+        """Fecha e remove todos os handlers do logger"""
+        for handler in self.logger.handlers[:]:
+            try:
+                handler.close()
+            finally:
+                self.logger.removeHandler(handler)
+
     def _setup_logging(self):
         """Configura o sistema de logging"""
+        # Garante que handlers anteriores sejam fechados para evitar arquivos
+        # permanecendo abertos, especialmente em ambiente Windows
+        existing_logger = getattr(self, 'logger', logging.getLogger('NeogridImporter'))
+        for handler in existing_logger.handlers[:]:
+            handler.close()
+            existing_logger.removeHandler(handler)
+
         self.logger = logging.getLogger('NeogridImporter')
         self.logger.setLevel(logging.DEBUG)
-        
+
         # Limpar handlers existentes
         self.logger.handlers.clear()
         
@@ -83,10 +98,11 @@ class Logger:
 
     def sql(self, query: str, params=None):
         """Registra a consulta SQL enviada ao banco"""
+        query_limpa = " ".join(query.strip().split())
         if params is not None:
-            self.logger.debug("SQL: %s | Params: %s", query.strip(), params)
+            self.logger.debug("[SQL] %s | Params: %s", query_limpa, params)
         else:
-            self.logger.debug("SQL: %s", query.strip())
+            self.logger.debug("[SQL] %s", query_limpa)
     
     def log_inicio_processamento(self, total_documentos: int):
         """Log específico para início de processamento"""
@@ -153,7 +169,12 @@ class Logger:
         """Limpa o arquivo de log"""
         try:
             if os.path.exists(self.log_file):
+                # Fecha os handlers antes de remover o arquivo para evitar
+                # erros de permissão em sistemas como o Windows
+                self.close()
                 os.remove(self.log_file)
+                # Recria a configuração de logging após a limpeza
+                self._setup_logging()
                 self.info("📝 Arquivo de log limpo")
         except Exception as e:
             self.error(f"Erro ao limpar logs: {e}")

@@ -174,11 +174,7 @@ class PedidoRepository:
                 datetime.now()
             )
 
-            logger.debug(
-                "Executando query de cabecalho:\n%s | Params: %s",
-                query.strip(),
-                valores
-            )
+            logger.sql(query, valores)
 
             self.cursor.execute(query, valores)
             
@@ -239,11 +235,7 @@ class PedidoRepository:
                         f"Importado Neogrid - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"[:100]
                     )
 
-                    logger.debug(
-                        "Executando query de item:\n%s | Params: %s",
-                        query.strip(),
-                        valores
-                    )
+                    logger.sql(query, valores)
 
                     self.cursor.execute(query, valores)
                     itens_inseridos += 1
