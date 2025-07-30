@@ -86,7 +86,7 @@ class PedidoRepository:
             """
             params = (
                 str(pedido.num_pedido_afv),
-                pedido.data_pedido,
+                self._tratar_data(pedido.data_pedido),
                 pedido.hora_inicio,
                 pedido.codigo_cliente,
             )
