@@ -5,7 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from typing import List, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, ConfigDict
 from models.pedido_item_sobel import PedidoItemSobel
 from models.cliente import Cliente
 
@@ -36,19 +36,20 @@ class PedidoSobel(BaseModel):
     codigo_tipo_pedido: Optional[str] = None
     codigo_cond_pagto: Optional[str] = None
     codigo_nome_endereco: Optional[str] = None
-    codigo_unid_fat: Optional[str] = None
-    codigo_tab_preco: Optional[str] = None
+    codigo_unidade_faturamento: Optional[str] = Field(None, alias="codigo_unid_fat")
+    codigo_tabela_preco: Optional[str] = Field(None, alias="codigo_tab_preco")
     ordem_compra: Optional[str] = None
-    observacao_ii: Optional[str] = None
+    observacao_1: Optional[str] = Field(None, alias="observacao_i")
+    observacao_2: Optional[str] = Field(None, alias="observacao_ii")
     valor_liquido: Optional[float] = None
     valor_bruto: Optional[float] = None
     codigo_motivo_tipo_ped: Optional[str] = None
     codigo_vendedor_resp: Optional[str] = None
-    cesp_data_entrega_fim: Optional[str] = None
-    cesp_num_pedido_assoc: Optional[str] = None
+    data_entrega_fim: Optional[str] = Field(None, alias="cesp_data_entrega_fim")
+    pedido_associado: Optional[str] = Field(None, alias="cesp_num_pedido_assoc")
     data_gravacao_acacia: Optional[str] = None
     data_integracao_erp: Optional[str] = None
-    msg_importacao: Optional[str] = None
+    mensagem_importacao: Optional[str] = Field(None, alias="msg_importacao")
     volume: Optional[int] = None
 
     @classmethod
@@ -71,19 +72,35 @@ class PedidoSobel(BaseModel):
             codigo_tipo_pedido=pedido_json.get("codigo_tipo_pedido"),
             codigo_cond_pagto=pedido_json.get("codigo_cond_pagto"),
             codigo_nome_endereco=pedido_json.get("codigo_nome_endereco"),
-            codigo_unid_fat=pedido_json.get("codigo_unid_fat"),
-            codigo_tab_preco=pedido_json.get("codigo_tab_preco"),
+            codigo_unidade_faturamento=(
+                pedido_json.get("codigo_unidade_faturamento")
+                or pedido_json.get("codigo_unid_fat")
+            ),
+            codigo_tabela_preco=(
+                pedido_json.get("codigo_tabela_preco")
+                or pedido_json.get("codigo_tab_preco")
+            ),
             ordem_compra=pedido_json.get("ordem_compra"),
-            observacao_ii=pedido_json.get("observacao_ii"),
+            observacao_1=pedido_json.get("observacao_1") or pedido_json.get("observacao_i"),
+            observacao_2=pedido_json.get("observacao_2") or pedido_json.get("observacao_ii"),
             valor_liquido=pedido_json.get("valor_liquido"),
             valor_bruto=total,
             codigo_motivo_tipo_ped=pedido_json.get("codigo_motivo_tipo_ped"),
             codigo_vendedor_resp=pedido_json.get("codigo_vendedor_resp"),
-            cesp_data_entrega_fim=pedido_json.get("cesp_data_entrega_fim"),
-            cesp_num_pedido_assoc=pedido_json.get("cesp_num_pedido_assoc"),
+            data_entrega_fim=(
+                pedido_json.get("data_entrega_fim")
+                or pedido_json.get("cesp_data_entrega_fim")
+            ),
+            pedido_associado=(
+                pedido_json.get("pedido_associado")
+                or pedido_json.get("cesp_num_pedido_assoc")
+            ),
             data_gravacao_acacia=pedido_json.get("data_gravacao_acacia"),
             data_integracao_erp=pedido_json.get("data_integracao_erp"),
-            msg_importacao=pedido_json.get("msg_importacao"),
+            mensagem_importacao=pedido_json.get("mensagem_importacao")
+            or pedido_json.get("msg_importacao"),
             volume=pedido_json.get("volume")
         )
+
+    model_config = ConfigDict(populate_by_name=True)
 
