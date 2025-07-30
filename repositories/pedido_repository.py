@@ -67,43 +67,60 @@ class PedidoRepository:
             # Re-raise o erro
             raise
 
-    def pedido_existe(self, num_pedido: str) -> bool:
-        """Verifica se o pedido já existe na base com tratamento robusto"""
-        if not num_pedido or num_pedido.strip() == "":
-            return False
-            
+    def pedido_existe(self, pedido: PedidoSobel) -> bool:
+   
         try:
             self._reconnect_if_needed()
-            
-            query = "SELECT 1 FROM T_PEDIDO_SOBEL WHERE NUMPEDIDOSOBEL = ?"
-            params = (num_pedido.strip(),)
-            
-            logger.debug(f"🔍 Verificando existência do pedido: {num_pedido}")
-            self._execute_with_logging(query, params, "VERIFICAR_EXISTENCIA", num_pedido)
-            
+    
+            if not all([pedido.num_pedido_afv, pedido.data_pedido, pedido.hora_inicio, pedido.codigo_cliente]):
+                logger.warning(f"⚠️ Verificação de duplicidade incompleta: campos obrigatórios ausentes")
+                return False
+    
+            query = """
+                SELECT 1
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOAFV = ?
+                  AND DATAPEDIDO = ?
+                  AND HORAINICIAL = ?
+                  AND CODIGOCLIENTE = ?
+            """
+            params = (
+                str(pedido.num_pedido_afv),
+                pedido.data_pedido,
+                pedido.hora_inicio,
+                pedido.codigo_cliente,
+            )
+    
+            logger.debug(f"🔍 Verificando existência do pedido único:")
+            logger.debug(f"  NUMPEDIDOAFV: {pedido.num_pedido_afv}")
+            logger.debug(f"  DATAPEDIDO: {pedido.data_pedido}")
+            logger.debug(f"  HORAINICIAL: {pedido.hora_inicio}")
+            logger.debug(f"  CODIGOCLIENTE: {pedido.codigo_cliente}")
+    
+            self._execute_with_logging(query, params, "VERIFICAR_EXISTENCIA", str(pedido.num_pedido_afv))
             result = self.cursor.fetchone()
             existe = result is not None
-            
+    
             if existe:
-                logger.info(f"📋 Pedido {num_pedido} já existe no banco")
+                logger.info(f"📋 Pedido já existe no banco com base na chave única")
             else:
-                logger.debug(f"📋 Pedido {num_pedido} não existe no banco")
-            
+                logger.debug(f"📋 Pedido ainda não existe no banco")
+    
             return existe
-            
+    
         except pyodbc.Error as e:
             raise BancoDadosError(
-                f"Erro ao verificar existência do pedido {num_pedido}: {str(e)}", 
-                e, 
+                f"Erro ao verificar existência do pedido {pedido.num_pedido_afv}: {str(e)}",
+                e,
                 "verificar_existencia"
             )
         except Exception as e:
             raise BancoDadosError(
-                f"Erro inesperado ao verificar pedido {num_pedido}: {str(e)}", 
-                e, 
+                f"Erro inesperado ao verificar pedido {pedido.num_pedido_afv}: {str(e)}",
+                e,
                 "verificar_existencia"
             )
-
+    
     def inserir_pedido(self, pedido: PedidoSobel) -> bool:
         """
         Insere pedido completo (cabeçalho + itens) no banco de dados
@@ -112,12 +129,16 @@ class PedidoRepository:
         if not pedido or not pedido.num_pedido:
             raise BancoDadosError("Pedido inválido para inserção", ValueError("Pedido vazio"), "validação")
         
+        if not all([pedido.num_pedido_afv, pedido.data_pedido, pedido.hora_inicio, pedido.codigo_cliente]):
+            raise BancoDadosError("Pedido inválido para inserção", ValueError("Campos obrigatórios ausentes"), "validação")
         # Log início da operação
         logger.info(f"💾 Iniciando inserção do pedido {pedido.num_pedido}")
         logger.debug(f"Cliente: {pedido.codigo_cliente} | Itens: {len(pedido.itens)} | Valor: R$ {pedido.valor_total:.2f}")
         
         # Verificar se já existe
-        if self.pedido_existe(pedido.num_pedido):
+        #if self.pedido_existe(pedido.num_pedido):
+        if self.pedido_existe(pedido):
+            logger.warning(f"⚠️ Pedido {pedido.num_pedido} ja existe no banco de dados")
             raise PedidoDuplicadoError(pedido.num_pedido)
 
         try:
@@ -176,17 +197,18 @@ class PedidoRepository:
             except:
                 pass
 
+     # Correção da indentação e melhorias no método _inserir_cabecalho_pedido
+     # Este método deve estar dentro da classe PedidoRepository
+
+    # Correção da indentação e melhorias no método _inserir_cabecalho_pedido
+# Este método deve estar dentro da classe PedidoRepository
+
     def _inserir_cabecalho_pedido(self, pedido: PedidoSobel):
-        """Insere o cabeçalho do pedido de forma completa"""
+        """
+        Insere o cabeçalho do pedido na tabela T_PEDIDO_SOBEL com tratamento completo de tipos.
+        Compatível com os valores de exemplo da query fornecida.
+        """
         try:
-            if not pedido.codigo_cliente:
-                raise ValueError(
-                    f"Código do cliente não pode ser vazio para pedido {pedido.num_pedido}"
-                )
-
-            if not pedido.num_pedido:
-                raise ValueError("Número do pedido não pode ser vazio")
-
             query = """
                 INSERT INTO T_PEDIDO_SOBEL (
                     NUMPEDIDO,
@@ -220,143 +242,286 @@ class PedidoRepository:
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
+            # Preparar valores com tratamento robusto e valores padrão baseados na query fornecida
             valores = (
-                str(pedido.num_pedido).strip(),  # NUMPEDIDO
-                str(pedido.num_pedido).strip(),  # NUMPEDIDOSOBEL
-                str(pedido.loja_cliente or "01"),  # LOJACLIENTE
-                str(pedido.num_pedido_afv or pedido.num_pedido),  # NUMPEDIDOAFV
-                pedido.data_pedido,
-                pedido.hora_inicio or "",
-                pedido.hora_fim or "",
-                pedido.data_entrega,
-                pedido.codigo_cliente,
-                pedido.codigo_tipo_pedido or "N",
-                pedido.codigo_cond_pagto or "055",
-                pedido.codigo_nome_endereco or "E",
-                pedido.codigo_unid_fat or "01",
-                pedido.codigo_tab_preco or "038",
-                pedido.ordem_compra or "",
-                (pedido.observacao or "CIF")[:50],
-                pedido.observacao_ii,
-                pedido.valor_liquido or pedido.valor_total,
-                pedido.valor_bruto or pedido.valor_total,
-                pedido.codigo_motivo_tipo_ped,
-                pedido.codigo_vendedor_resp or "000559",
-                pedido.cesp_data_entrega_fim or pedido.data_entrega,
-                pedido.cesp_num_pedido_assoc,
-                datetime.now(),
-                pedido.data_integracao_erp,
-                pedido.qtde_itens,
-                pedido.msg_importacao,
-                pedido.volume or 0,
+                str(pedido.num_pedido or '').strip(),                           # NUMPEDIDO
+                None,                                                           # NUMPEDIDOSOBEL
+                str(pedido.loja_cliente or '01').strip(),                       # LOJACLIENTE (padrão '01')
+                str(pedido.num_pedido_afv or pedido.num_pedido or '').strip(),  # NUMPEDIDOAFV
+                self._tratar_data(pedido.data_pedido),                          # DATAPEDIDO
+                str(pedido.hora_inicio or '00:00').strip(),                     # HORAINICIAL
+                str(pedido.hora_fim or '').strip() if pedido.hora_fim else None, # HORAFINAL
+                self._tratar_data(pedido.data_entrega),                         # DATAENTREGA
+                str(pedido.codigo_cliente or '').strip(),                       # CODIGOCLIENTE
+                str(pedido.codigo_tipo_pedido or 'N').strip(),                  # CODIGOTIPOPEDIDO (padrão 'N')
+                str(pedido.codigo_cond_pagto or '055').strip(),                 # CODIGOCONDPAGTO (padrão '055')
+                str(pedido.codigo_nome_endereco or 'E').strip(),                # CODIGONOMEENDERECO (padrão 'E')
+                str(pedido.codigo_unidade_faturamento or '01').strip(),         # CODIGOUNIDFAT (padrão '01')
+                str(pedido.codigo_tabela_preco or '038').strip(),               # CODIGOTABPRECO (padrão '038')
+                str(pedido.ordem_compra or '').strip(),                         # ORDEMCOMPRA
+                str(pedido.observacao_1 or 'CIF').strip(),                      # OBSERVACAOI (padrão 'CIF')
+                str(pedido.observacao_2 or '').strip() if pedido.observacao_2 else None, # OBSERVACAOII
+                self._tratar_valor_decimal(pedido.valor_liquido),               # VALORLIQUIDO
+                self._tratar_valor_decimal(pedido.valor_bruto),                 # VALORBRUTO
+                str(pedido.codigo_motivo_tipo_pedido or '').strip() if pedido.codigo_motivo_tipo_pedido else None, # CODIGOMOTIVOTIPOPED
+                str(pedido.codigo_vendedor_resp or '000559').strip(),           # CODIGOVENDEDORESP (padrão '000559')
+                self._tratar_data(pedido.data_entrega_fim or pedido.data_entrega), # CESP_DATAENTREGAFIM
+                str(pedido.pedido_associado or '').strip() if pedido.pedido_associado else None, # CESP_NUMPEDIDOASSOC
+                self._tratar_data_hora(pedido.data_gravacao_acacia or datetime.now()), # DATAGRAVACAOACACIA
+                self._tratar_data_hora(pedido.data_integracao_erp) if pedido.data_integracao_erp else None, # DATAINTEGRACAOERP
+                int(pedido.quantidade_itens or len(pedido.itens) if hasattr(pedido, 'itens') else 0), # QTDEITENS
+                str(pedido.mensagem_importacao or '').strip() if pedido.mensagem_importacao else None, # MSGIMPORTACAO
+                int(pedido.volume or 0)                                         # VOLUME
             )
 
-            self._execute_with_logging(
-                query, valores, "INSERIR_CABECALHO", pedido.num_pedido
-            )
+            # Log dos valores para debug (similar ao exemplo da query)
+            logger.debug(f"💾 Valores do cabeçalho do pedido {pedido.num_pedido}:")
+            logger.debug(f"  NUMPEDIDO: {valores[0]}")
+            logger.debug(f"  LOJACLIENTE: {valores[2]}")
+            logger.debug(f"  NUMPEDIDOAFV: {valores[3]}")
+            logger.debug(f"  DATAPEDIDO: {valores[4]}")
+            logger.debug(f"  CODIGOCLIENTE: {valores[8]}")
+            logger.debug(f"  VALORLIQUIDO: {valores[17]}")
+            logger.debug(f"  VALORBRUTO: {valores[18]}")
+
+            # Executar query
+            self._execute_with_logging(query, valores, "INSERIR_CABECALHO", str(pedido.num_pedido_afv))
 
         except pyodbc.Error as e:
             raise BancoDadosError(
                 f"Erro ao inserir cabeçalho do pedido {pedido.num_pedido}: {str(e)}",
                 e,
-                "inserir_cabecalho",
+                "inserir_cabecalho"
+            )
+        except Exception as e:
+            raise BancoDadosError(
+                f"Erro inesperado ao inserir cabeçalho do pedido {pedido.num_pedido}: {str(e)}",
+                e,
+                "inserir_cabecalho"
             )
 
-    def _inserir_itens_pedido(self, pedido: PedidoSobel) -> int:
-        """Insere os itens do pedido com validação individual"""
-        if not pedido.itens:
-            raise ValueError(f"Pedido {pedido.num_pedido} não possui itens para inserir")
+    def _tratar_data(self, data) -> datetime:
+        """
+        Trata diferentes tipos de data e converte para datetime.
+        Compatível com CONVERT(datetime, '2025-05-15', 120) do SQL Server.
+        """
+        if data is None:
+            return None
+        
+        if isinstance(data, datetime):
+            return data
+        elif isinstance(data, str):
+            try:
+                # Tenta diferentes formatos de data
+                formatos = ['%Y-%m-%d', '%d/%m/%Y', '%Y-%m-%d %H:%M:%S']
+                for formato in formatos:
+                    try:
+                        return datetime.strptime(data, formato)
+                    except ValueError:
+                        continue
+                raise ValueError(f"Formato de data não reconhecido: {data}")
+            except Exception as e:
+                logger.warning(f"⚠️ Erro ao converter data '{data}': {e}")
+                return None
+        else:
+            return data
+
+    def _tratar_data_hora(self, data_hora) -> datetime:
+        """
+        Trata datetime incluindo hora.
+        Se não houver hora, usa 00:00:00.
+        """
+        if data_hora is None:
+            return None
+        
+        if isinstance(data_hora, datetime):
+            return data_hora
+        elif isinstance(data_hora, str):
+            try:
+                # Se tem formato completo de data/hora
+                if ' ' in data_hora:
+                    return datetime.strptime(data_hora, '%Y-%m-%d %H:%M:%S')
+                else:
+                    # Se é só data, adiciona hora 00:00:00
+                    data = datetime.strptime(data_hora, '%Y-%m-%d')
+                    return data.replace(hour=0, minute=0, second=0)
+            except Exception as e:
+                logger.warning(f"⚠️ Erro ao converter data/hora '{data_hora}': {e}")
+                return None
+        else:
+            return data_hora
+
+    def _tratar_valor_decimal(self, valor) -> float:
+        """
+        Trata valores decimais com 2 casas decimais.
+        Compatível com valores como 11709.54 da query.
+        """
+        if valor is None:
+            return 0.0
         
         try:
-            query = """
-                INSERT INTO T_PEDIDOITEM_SOBEL (
-                    NUMPEDIDO,
-                    NUMITEM,
-                    NUMPEDIDOAFV,
-                    DATAPEDIDO,
-                    HORAINICIAL,
-                    CODIGOCLIENTE,
-                    CODIGOPRODUTO,
-                    QTDEVENDA,
-                    QTDEBONIFICADA,
-                    VALORVENDA,
-                    VALORBRUTO,
-                    DESCONTOI,
-                    DESCONTOII,
-                    VALORVERBA,
-                    CODIGOVENDEDORESP,
-                    MSGIMPORTACAO
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """
+            if isinstance(valor, str):
+                # Remove espaços e vírgulas se houver
+                valor = valor.replace(',', '.').replace(' ', '')
+                return round(float(valor), 2)
+            else:
+                return round(float(valor), 2)
+        except (ValueError, TypeError) as e:
+            logger.warning(f"⚠️ Erro ao converter valor '{valor}': {e}")
+            return 0.0
+
+    def inserir_pedido_exemplo(self) -> bool:
+        """
+        Método de exemplo para inserir o pedido teste
+        """
+        try:
+            # Criar um objeto PedidoSobel com os valores da query de exemplo
+            from models.pedido_sobel import PedidoSobel
             
-            itens_inseridos = 0
-            total_itens = len(pedido.itens)
+            pedido_exemplo = PedidoSobel()
+            pedido_exemplo.num_pedido = '5026396'
+            pedido_exemplo.num_pedido_afv = '5026396'
+            pedido_exemplo.loja_cliente = '01'
+            pedido_exemplo.data_pedido = datetime(2025, 5, 15)
+            pedido_exemplo.hora_inicio = '18:47'
+            pedido_exemplo.data_entrega = datetime(2025, 5, 31)
+            pedido_exemplo.codigo_cliente = '256292'
+            pedido_exemplo.codigo_tipo_pedido = 'N'
+            pedido_exemplo.codigo_cond_pagto = '055'
+            pedido_exemplo.codigo_nome_endereco = 'E'
+            pedido_exemplo.codigo_unidade_faturamento = '01'
+            pedido_exemplo.codigo_tabela_preco = '038'
+            pedido_exemplo.ordem_compra = ''
+            pedido_exemplo.observacao_1 = 'CIF'
+            pedido_exemplo.valor_liquido = 11709.54
+            pedido_exemplo.valor_bruto = 11709.54
+            pedido_exemplo.codigo_vendedor_resp = '000559'
+            pedido_exemplo.data_entrega_fim = datetime(2025, 5, 31)
+            pedido_exemplo.data_gravacao_acacia = datetime(2025, 7, 29, 18, 51, 44)
+            pedido_exemplo.quantidade_itens = 8
+            pedido_exemplo.volume = 0
+            pedido_exemplo.itens = []  # Lista vazia para este exemplo
             
-            logger.debug(f"📦 Iniciando inserção de {total_itens} itens")
+            logger.info("🧪 Inserindo pedido de exemplo baseado na query fornecida...")
             
-            for i, item in enumerate(pedido.itens):
-                try:
-                    # Validar item
-                    if not item.cod_produto or item.cod_produto.strip() == "":
-                        logger.warning(f"⚠️ Item {i+1} sem código de produto - ignorando")
+            # Usar o método existente de inserção
+            return self.inserir_pedido(pedido_exemplo)
+            
+        except Exception as e:
+            logger.error(f"❌ Erro ao inserir pedido de exemplo: {e}")
+            raise BancoDadosError(f"Erro ao inserir pedido de exemplo: {str(e)}", e, "inserir_exemplo")
+
+    def _tratar_data(self, data) -> datetime:
+        """
+        Trata diferentes tipos de data e converte para datetime.
+        Compatível com CONVERT(datetime, '2025-05-15', 120) do SQL Server.
+        """
+        if data is None:
+            return None
+        
+        if isinstance(data, datetime):
+            return data
+        elif isinstance(data, str):
+            try:
+                # Tenta diferentes formatos de data
+                formatos = ['%Y-%m-%d', '%d/%m/%Y', '%Y-%m-%d %H:%M:%S']
+                for formato in formatos:
+                    try:
+                        return datetime.strptime(data, formato)
+                    except ValueError:
                         continue
-                    
-                    valores = (
-                        str(pedido.num_pedido).strip(),        # NUMPEDIDO
-                        i,                                    # NUMITEM
-                        str(pedido.num_pedido).strip(),        # NUMPEDIDOAFV
-                        pedido.data_pedido,
-                        pedido.hora_inicio or "",
-                        pedido.codigo_cliente,
-                        item.cod_produto[:20],
-                        float(item.quantidade),
-                        float(getattr(item, 'qtde_bonificada', 0)),
-                        float(item.valor_unitario),
-                        float(getattr(item, 'valor_bruto', item.valor_total)),
-                        float(getattr(item, 'desconto_i', 0)),
-                        float(getattr(item, 'desconto_ii', 0)),
-                        float(getattr(item, 'valor_verba', 0)),
-                        item.codigo_vendedor_resp or "000559",
-                        item.msg_importacao,
-                    )
+                raise ValueError(f"Formato de data não reconhecido: {data}")
+            except Exception as e:
+                logger.warning(f"⚠️ Erro ao converter data '{data}': {e}")
+                return None
+        else:
+            return data
 
-                    # Log detalhado para o primeiro item (debug)
-                    if i == 0:
-                        logger.debug(f"📝 Exemplo de valores para item:")
-                        campos_item = [
-                            'NUMPEDIDO', 'NUMITEM', 'NUMPEDIDOAFV', 'DATAPEDIDO', 'HORAINICIAL',
-                            'CODIGOCLIENTE', 'CODIGOPRODUTO', 'QTDEVENDA', 'QTDEBONIFICADA',
-                            'VALORVENDA', 'VALORBRUTO', 'DESCONTOI', 'DESCONTOII', 'VALORVERBA',
-                            'CODIGOVENDEDORESP', 'MSGIMPORTACAO'
-                        ]
-                        for campo, valor in zip(campos_item, valores):
-                            logger.debug(f"  {campo}: '{valor}' ({type(valor).__name__})")
+    def _tratar_data_hora(self, data_hora) -> datetime:
+        """
+        Trata datetime incluindo hora.
+        Se não houver hora, usa 00:00:00.
+        """
+        if data_hora is None:
+            return None
+        
+        if isinstance(data_hora, datetime):
+            return data_hora
+        elif isinstance(data_hora, str):
+            try:
+                # Se tem formato completo de data/hora
+                if ' ' in data_hora:
+                    return datetime.strptime(data_hora, '%Y-%m-%d %H:%M:%S')
+                else:
+                    # Se é só data, adiciona hora 00:00:00
+                    data = datetime.strptime(data_hora, '%Y-%m-%d')
+                    return data.replace(hour=0, minute=0, second=0)
+            except Exception as e:
+                logger.warning(f"⚠️ Erro ao converter data/hora '{data_hora}': {e}")
+                return None
+        else:
+            return data_hora
 
-                    # Executar inserção do item
-                    self._execute_with_logging(query, valores, f"INSERIR_ITEM_{i+1}", pedido.num_pedido)
-                    
-                    itens_inseridos += 1
-                    logger.debug(f"✅ Item {i+1}/{total_itens} inserido: {item.cod_produto}")
-                    
-                except Exception as e:
-                    logger.error(f"❌ Erro ao inserir item {i+1}/{total_itens} do pedido {pedido.num_pedido}")
-                    logger.error(f"Item: {item.cod_produto} | Qtd: {item.quantidade} | Valor: R$ {item.valor_unitario:.2f}")
-                    logger.error(f"Erro: {str(e)}")
-                    # Continua com próximo item
-                    continue
+    def _tratar_valor_decimal(self, valor) -> float:
+        """
+        Trata valores decimais com 2 casas decimais.
+        Compatível com valores como 11709.54 da query.
+        """
+        if valor is None:
+            return 0.0
+        
+        try:
+            if isinstance(valor, str):
+                # Remove espaços e vírgulas se houver
+                valor = valor.replace(',', '.').replace(' ', '')
+                return round(float(valor), 2)
+            else:
+                return round(float(valor), 2)
+        except (ValueError, TypeError) as e:
+            logger.warning(f"⚠️ Erro ao converter valor '{valor}': {e}")
+            return 0.0
+
+    def inserir_pedido_exemplo(self) -> bool:
+        """
+        Método de exemplo para inserir o pedido específico da query fornecida.
+        Útil para testes e validação.
+        """
+        try:
+            # Criar um objeto PedidoSobel com os valores da query de exemplo
+            from models.pedido_sobel import PedidoSobel
             
-            if itens_inseridos == 0:
-                raise ValueError(f"Nenhum item válido foi inserido para o pedido {pedido.num_pedido}")
+            pedido_exemplo = PedidoSobel()
+            pedido_exemplo.num_pedido = '5026396'
+            pedido_exemplo.num_pedido_afv = '5026396'
+            pedido_exemplo.loja_cliente = '01'
+            pedido_exemplo.data_pedido = datetime(2025, 5, 15)
+            pedido_exemplo.hora_inicio = '18:47'
+            pedido_exemplo.data_entrega = datetime(2025, 5, 31)
+            pedido_exemplo.codigo_cliente = '256292'
+            pedido_exemplo.codigo_tipo_pedido = 'N'
+            pedido_exemplo.codigo_cond_pagto = '055'
+            pedido_exemplo.codigo_nome_endereco = 'E'
+            pedido_exemplo.codigo_unidade_faturamento = '01'
+            pedido_exemplo.codigo_tabela_preco = '038'
+            pedido_exemplo.ordem_compra = ''
+            pedido_exemplo.observacao_1 = 'CIF'
+            pedido_exemplo.valor_liquido = 11709.54
+            pedido_exemplo.valor_bruto = 11709.54
+            pedido_exemplo.codigo_vendedor_resp = '000559'
+            pedido_exemplo.data_entrega_fim = datetime(2025, 5, 31)
+            pedido_exemplo.data_gravacao_acacia = datetime(2025, 7, 29, 18, 51, 44)
+            pedido_exemplo.quantidade_itens = 8
+            pedido_exemplo.volume = 0
+            pedido_exemplo.itens = []  # Lista vazia para este exemplo
             
-            logger.info(f"📦 {itens_inseridos} de {total_itens} itens inseridos com sucesso")
-            return itens_inseridos
+            logger.info("🧪 Inserindo pedido de exemplo baseado na query fornecida...")
             
-        except pyodbc.Error as e:
-            raise BancoDadosError(
-                f"Erro ao inserir itens do pedido {pedido.num_pedido}: {str(e)}", 
-                e, 
-                "inserir_itens"
-            )
+            # Usar o método existente de inserção
+            return self.inserir_pedido(pedido_exemplo)
+            
+        except Exception as e:
+            logger.error(f"❌ Erro ao inserir pedido de exemplo: {e}")
+            raise BancoDadosError(f"Erro ao inserir pedido de exemplo: {str(e)}", e, "inserir_exemplo")
 
     def buscar_pedido(self, num_pedido: str) -> dict:
         """Busca um pedido específico com seus itens"""
@@ -368,8 +533,14 @@ class PedidoRepository:
             
             # Buscar cabeçalho
             query_cabecalho = """
-                SELECT NUMPEDIDOSOBEL, CODIGOCLIENTE, DATAPEDIDO, DATAENTREGA,
-                       QTDEITENS, VALORBRUTO, OBSERVACAOI, DATAGRAVACAOACACIA
+                SELECT NUMPEDIDOSOBEL, 
+                       CODIGOCLIENTE, 
+                       DATAPEDIDO, 
+                       DATAENTREGA,
+                       QTDEITENS, 
+                       VALORBRUTO, 
+                       OBSERVACAOI, 
+                       DATAGRAVACAOACACIA
                 FROM T_PEDIDO_SOBEL
                 WHERE NUMPEDIDOSOBEL = ?
             """
@@ -384,8 +555,14 @@ class PedidoRepository:
             
             # Buscar itens
             query_itens = """
-                SELECT CODIGOPRODUTO, QTDEVENDA, VALORVENDA, VALORBRUTO,
-                       QTDEBONIFICADA, DESCONTOI, DESCONTOII, VALORVERBA,
+                SELECT CODIGOPRODUTO, 
+                       QTDEVENDA, 
+                       VALORVENDA, 
+                       VALORBRUTO,
+                       QTDEBONIFICADA, 
+                       DESCONTOI, 
+                       DESCONTOII, 
+                       VALORVERBA,
                        MSGIMPORTACAO
                 FROM T_PEDIDOITEM_SOBEL
                 WHERE NUMPEDIDOAFV = ?
@@ -415,8 +592,12 @@ class PedidoRepository:
             self._reconnect_if_needed()
             
             query = """
-                SELECT NUMPEDIDOSOBEL, CODIGOCLIENTE, DATAPEDIDO,
-                       QTDEITENS, VALORBRUTO, DATAGRAVACAOACACIA
+                SELECT NUMPEDIDOSOBEL, 
+                       CODIGOCLIENTE, 
+                       DATAPEDIDO,
+                       QTDEITENS, 
+                       VALORBRUTO, 
+                       DATAGRAVACAOACACIA
                 FROM T_PEDIDO_SOBEL
                 WHERE DATAPEDIDO BETWEEN ? AND ?
                 ORDER BY DATAPEDIDO DESC, DATAGRAVACAOACACIA DESC
