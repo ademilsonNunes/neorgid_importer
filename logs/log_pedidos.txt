@@ -3298,3 +3298,191 @@
 [2025-07-29 21:28:50] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 116.033s | pedido=5026396 | itens=8
 [2025-07-29 21:28:50] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026396
 [2025-07-29 21:29:33] [ERROR] Erro de processamento no documento 41084731: Erro no banco de dados: Pedido inválido para inserção
+[2025-07-30 13:37:53] [INFO] 🔧 Modo debug desativado
+[2025-07-30 13:37:58] [INFO] 🔧 Modo debug ativado
+[2025-07-30 13:37:59] [INFO] 🔧 Modo debug ativado
+[2025-07-30 13:37:59] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-07-30 13:37:59] [DEBUG] 🔍 Carregando produtos do arquivo: C:\Users\supor\Documents\src\neogrid_importer\data\produtos.json
+[2025-07-30 13:37:59] [DEBUG] 📦 Processando 24 produtos para indexação
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524726150 -> 1001.01.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524726154 -> 1001.01.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524726518 -> 1001.01.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524700136 -> 1101.01.B12X1.5L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524700133 -> 1101.01.B12X1.5L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1101.01.B12X1 -> 1101.01.B12X1.5L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524700129 -> 1101.01R12X1.5
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1101.01R12X1 -> 1101.01R12X1.5
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723159 -> 1201.11.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723050 -> 1201.11.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524723057 -> 1201.11.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723142 -> 1201.12.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723517 -> 1201.12.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723913 -> 1201.13.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524723910 -> 1201.13.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.13 -> 1201.13.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524723098 -> 1201.14.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524723095 -> 1201.14.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1201.14 -> 1201.14.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705063 -> 1301.15.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524705067 -> 1301.15.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705254 -> 1301.15.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705155 -> 1301.17.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524705152 -> 1301.17.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.17 -> 1301.17.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705100 -> 1301.18.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705353 -> 1301.18.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524705350 -> 1301.18.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705117 -> 1301.19.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524705111 -> 1301.19.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.19 -> 1301.19.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524705858 -> 1301.20.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1301.20 -> 1301.20.06X02L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524700181 -> 1501.23.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524700242 -> 1501.23.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524703304 -> 1501.24.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524703298 -> 1501.24.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524703295 -> 1501.24.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524703335 -> 1501.25.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524703328 -> 1501.25.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 17896524703325 -> 1501.25.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.06X03L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice EAN13: 7896524727215 -> 1401.05P03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice DUN14: 27896524727212 -> 1401.05P03X05L
+[2025-07-30 13:37:59] [DEBUG]   📋 Índice Código Base: 1401 -> 1401.05P03X05L
+[2025-07-30 13:37:59] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-07-30 13:37:59] [DEBUG] 🔧 Serviços inicializados com sucesso
+[2025-07-30 13:38:01] [INFO] ⏱️ Performance [CONSULTA_API]: 1.560s
+[2025-07-30 13:38:01] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-07-30 13:38:01] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-07-30 13:38:01] [DEBUG] 🔄 Iniciando processamento do documento 41084731
+[2025-07-30 13:38:01] [DEBUG] 📋 Pedido Neogrid criado: 5026396 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG] 📦 Processando 8 itens | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 1: 17896524703332 | Qtd: 39.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 2: 17896524726515 | Qtd: 150.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 3: 27896524705104 | Qtd: 42.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 4: 17896524700188 | Qtd: 39.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 5: 27896524723153 | Qtd: 21.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 6: 17896524703301 | Qtd: 39.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 7: 27896524723146 | Qtd: 21.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG]   Item 8: 17896524723514 | Qtd: 60.00 | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026396
+[2025-07-30 13:38:01] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552000219]
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703332', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524726515', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524705104', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700188', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723153', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703301', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723146', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524723514', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-07-30 13:38:01] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.044s | pedido=5026396 | itens=8
+[2025-07-30 13:38:01] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026396
+[2025-07-30 13:38:01] [ERROR] Erro de processamento no documento 41084731: Erro no banco de dados: Pedido inválido para inserção
+[2025-07-30 13:38:01] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-07-30 13:38:01] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-07-30 13:38:01] [DEBUG] Parâmetros: ()
+[2025-07-30 13:38:01] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-07-30 13:38:01] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-07-30 13:38:01] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-07-30 13:38:01] [DEBUG] Parâmetros: ('ERROR', '🗄️ Erro no banco de dados: Erro no banco de dados: Pedido inválido para inserção', '41084731', datetime.datetime(2025, 7, 30, 13, 38, 1, 903948))
+[2025-07-30 13:38:01] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-07-30 13:38:01] [DEBUG] 🔄 Iniciando processamento do documento 41084732
+[2025-07-30 13:38:01] [DEBUG] 📋 Pedido Neogrid criado: 5026398 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG] 📦 Processando 15 itens | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 1: 17896524703325 | Qtd: 20.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 2: 17896524703301 | Qtd: 78.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 3: 1001.01.03X05L | Qtd: 1008.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 4: 17896524700126 | Qtd: 20.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 5: 17896524703332 | Qtd: 78.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 6: 17896524700249 | Qtd: 20.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 7: 17896524705855 | Qtd: 60.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 8: 17896524705251 | Qtd: 20.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 9: 27896524705104 | Qtd: 84.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 10: 27896524723153 | Qtd: 294.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 11: 1301.17.06X02L | Qtd: 40.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 12: 17896524700188 | Qtd: 78.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 13: 1101.01.B12X1, | Qtd: 20.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 14: 17896524726515 | Qtd: 225.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG]   Item 15: 27896524723146 | Qtd: 84.00 | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026398
+[2025-07-30 13:38:01] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552000723]
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703325', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703325 -> 1501.25.06X03L
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |17896524703301|
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1001.01.03X05L'
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por código exato: 1001.01.03X05L -> 1001.01.03X05L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700126', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |17896524703332|
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700249', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705855', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705251', CodProd: ''
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |27896524705104|
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |27896524723153|
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1301.17.06X02L'
+[2025-07-30 13:38:01] [DEBUG] ✅ Produto encontrado por código exato: 1301.17.06X02L -> 1301.17.06X02L
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |17896524700188|
+[2025-07-30 13:38:01] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-07-30 13:38:01] [DEBUG] ❌ Produto não encontrado - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |17896524726515|
+[2025-07-30 13:38:01] [DEBUG] 🎯 Cache hit para busca: |27896524723146|
+[2025-07-30 13:38:01] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.021s | pedido=5026398 | itens=14
+[2025-07-30 13:38:01] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026398
+[2025-07-30 13:38:01] [ERROR] Erro de processamento no documento 41084732: Erro no banco de dados: Pedido inválido para inserção
+[2025-07-30 13:38:01] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-07-30 13:38:01] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-07-30 13:38:01] [DEBUG] Parâmetros: ()
+[2025-07-30 13:38:01] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-07-30 13:38:01] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-07-30 13:38:01] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-07-30 13:38:01] [DEBUG] Parâmetros: ('ERROR', '🗄️ Erro no banco de dados: Erro no banco de dados: Pedido inválido para inserção', '41084732', datetime.datetime(2025, 7, 30, 13, 38, 1, 943977))
+[2025-07-30 13:38:01] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-07-30 13:38:01] [DEBUG] 🔌 Conexão com banco fechada
+[2025-07-30 13:38:01] [INFO] 🏁 Processamento concluído | sucessos=0 | duplicados=0 | erros=2
+[2025-07-30 13:38:01] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 2.329s | total_docs=2 | sucessos=0 | erros=2
