@@ -37,6 +37,10 @@ def test_inserir_itens_pedido_executes_queries():
     )
     pedido.num_pedido_afv = "123"
 
+    # Simular resultado para _get_next_numitem
+    repo.cursor.fetchone.return_value = (0,)
+
     inserted = repo._inserir_itens_pedido(pedido)
     assert inserted == 1
-    repo._execute_with_logging.assert_called_once()
+    # Deve executar uma consulta para obter o próximo NUMITEM e outra para inserir
+    assert repo._execute_with_logging.call_count == 2

@@ -252,7 +252,7 @@ class PedidoRepository:
             volume_valor = int(pedido.volume) if pedido.volume is not None else None
 
             valores = (
-                str(pedido.num_pedido or '').strip(),                           # NUMPEDIDO
+                int(pedido.num_pedido),                           # NUMPEDIDO
                 None,                                                           # NUMPEDIDOSOBEL
                 str(pedido.loja_cliente or '01').strip(),                       # LOJACLIENTE (padrão '01')
                 str(pedido.num_pedido_afv or pedido.num_pedido or '').strip(),  # NUMPEDIDOAFV
@@ -308,8 +308,18 @@ class PedidoRepository:
                 "inserir_cabecalho"
             )
 
+    def _get_next_numitem(self) -> int:
+        """Obtém o próximo valor de ``NUMITEM`` de forma segura."""
+        query = (
+            "SELECT ISNULL(MAX(NUMITEM), 0) + 1 "
+            "FROM T_PEDIDOITEM_SOBEL WITH (TABLOCKX, HOLDLOCK)"
+        )
+        self._execute_with_logging(query, (), "NEXT_NUMITEM")
+        result = self.cursor.fetchone()
+        return int(result[0] or 1)
+
     def _inserir_itens_pedido(self, pedido: PedidoSobel) -> int:
-        """Insere os itens do pedido na tabela ``T_PEDIDOITEM_SOBEL``."""
+        """Insere os itens do pedido na tabela ``T_PEDIDOITEM_SOBEL`` evitando duplicidade."""
         try:
             query = """
                 INSERT INTO T_PEDIDOITEM_SOBEL (
@@ -332,11 +342,13 @@ class PedidoRepository:
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """
 
+            start_idx = self._get_next_numitem()
+
             count = 0
-            for idx, item in enumerate(pedido.itens, start=1):
+            for offset, item in enumerate(pedido.itens):
                 valores = (
-                    str(pedido.num_pedido or "").strip(),
-                    idx,
+                    int(pedido.num_pedido),
+                    start_idx + offset,
                     str(pedido.num_pedido_afv or pedido.num_pedido or "").strip(),
                     self._tratar_data(pedido.data_pedido),
                     str(pedido.hora_inicio or "00:00").strip(),
