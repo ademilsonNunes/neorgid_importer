@@ -267,14 +267,14 @@ class PedidoRepository:
                 str(pedido.codigo_unidade_faturamento or '01').strip(),         # CODIGOUNIDFAT (padrão '01')
                 str(pedido.codigo_tabela_preco or '038').strip(),               # CODIGOTABPRECO (padrão '038')
                 str(pedido.ordem_compra or '').strip(),                         # ORDEMCOMPRA
-                str(pedido.observacao_1 or 'CIF').strip(),                      # OBSERVACAOI (padrão 'CIF')
+                str(pedido.observacao_1 or '').strip(),                      # OBSERVACAOI (padrão 'CIF')
                 str(pedido.observacao_2 or '').strip() if pedido.observacao_2 else None, # OBSERVACAOII
                 self._tratar_valor_decimal(pedido.valor_liquido),               # VALORLIQUIDO
                 self._tratar_valor_decimal(pedido.valor_bruto),                 # VALORBRUTO
                 str(pedido.codigo_motivo_tipo_pedido or '').strip() if pedido.codigo_motivo_tipo_pedido else None, # CODIGOMOTIVOTIPOPED
                 str(pedido.codigo_vendedor_resp or '000559').strip(),           # CODIGOVENDEDORESP (padrão '000559')
                 self._tratar_data(pedido.data_entrega_fim or pedido.data_entrega), # CESP_DATAENTREGAFIM
-                str(pedido.pedido_associado or '').strip() if pedido.pedido_associado else None, # CESP_NUMPEDIDOASSOC
+                str(pedido.num_pedido_assoc or '').strip() if pedido.num_pedido_assoc else None, # CESP_NUMPEDIDOASSOC
                 self._tratar_data_hora(pedido.data_gravacao_acacia or datetime.now()), # DATAGRAVACAOACACIA
                 self._tratar_data_hora(pedido.data_integracao_erp) if pedido.data_integracao_erp else None, # DATAINTEGRACAOERP
                 qtde_itens_valor,
