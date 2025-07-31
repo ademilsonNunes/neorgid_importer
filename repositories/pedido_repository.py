@@ -243,6 +243,14 @@ class PedidoRepository:
             """
 
             # Preparar valores com tratamento robusto e valores padrão baseados na query fornecida
+            qtde_itens_valor = None
+            if getattr(pedido, 'quantidade_itens', None) is not None:
+                qtde_itens_valor = int(pedido.quantidade_itens)
+            elif hasattr(pedido, 'itens'):
+                qtde_itens_valor = len(pedido.itens)
+
+            volume_valor = int(pedido.volume) if pedido.volume is not None else None
+
             valores = (
                 str(pedido.num_pedido or '').strip(),                           # NUMPEDIDO
                 None,                                                           # NUMPEDIDOSOBEL
@@ -269,9 +277,9 @@ class PedidoRepository:
                 str(pedido.pedido_associado or '').strip() if pedido.pedido_associado else None, # CESP_NUMPEDIDOASSOC
                 self._tratar_data_hora(pedido.data_gravacao_acacia or datetime.now()), # DATAGRAVACAOACACIA
                 self._tratar_data_hora(pedido.data_integracao_erp) if pedido.data_integracao_erp else None, # DATAINTEGRACAOERP
-                int(pedido.quantidade_itens or len(pedido.itens) if hasattr(pedido, 'itens') else 0), # QTDEITENS
-                str(pedido.mensagem_importacao or '').strip() if pedido.mensagem_importacao else None, # MSGIMPORTACAO
-                int(pedido.volume or 0)                                         # VOLUME
+                qtde_itens_valor,
+                str(pedido.mensagem_importacao or '').strip() if pedido.mensagem_importacao else None,
+                volume_valor                                         # VOLUME
             )
 
             # Log dos valores para debug (similar ao exemplo da query)
@@ -351,13 +359,15 @@ class PedidoRepository:
         else:
             return data_hora
 
-    def _tratar_valor_decimal(self, valor) -> float:
+    def _tratar_valor_decimal(self, valor):
         """
         Trata valores decimais com 2 casas decimais.
-        Compatível com valores como 11709.54 da query.
+        Se nenhum valor for fornecido, retorna ``None`` para que o banco
+        receba ``NULL`` em vez de ``0``.
+        Compatível com valores como ``11709.54`` da query de exemplo.
         """
         if valor is None:
-            return 0.0
+            return None
         
         try:
             if isinstance(valor, str):
@@ -368,7 +378,7 @@ class PedidoRepository:
                 return round(float(valor), 2)
         except (ValueError, TypeError) as e:
             logger.warning(f"⚠️ Erro ao converter valor '{valor}': {e}")
-            return 0.0
+            return None
 
     def inserir_pedido_exemplo(self) -> bool:
         """
@@ -462,13 +472,15 @@ class PedidoRepository:
         else:
             return data_hora
 
-    def _tratar_valor_decimal(self, valor) -> float:
+    def _tratar_valor_decimal(self, valor):
         """
         Trata valores decimais com 2 casas decimais.
-        Compatível com valores como 11709.54 da query.
+        Se ``valor`` for ``None`` ou inválido, retorna ``None`` para que o banco
+        receba ``NULL``.
+        Compatível com valores como ``11709.54``.
         """
         if valor is None:
-            return 0.0
+            return None
         
         try:
             if isinstance(valor, str):
@@ -479,7 +491,7 @@ class PedidoRepository:
                 return round(float(valor), 2)
         except (ValueError, TypeError) as e:
             logger.warning(f"⚠️ Erro ao converter valor '{valor}': {e}")
-            return 0.0
+            return None
 
     def inserir_pedido_exemplo(self) -> bool:
         """
