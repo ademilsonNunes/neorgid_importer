@@ -308,6 +308,69 @@ class PedidoRepository:
                 "inserir_cabecalho"
             )
 
+    def _inserir_itens_pedido(self, pedido: PedidoSobel) -> int:
+        """Insere os itens do pedido na tabela ``T_PEDIDOITEM_SOBEL``."""
+        try:
+            query = """
+                INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """
+
+            count = 0
+            for idx, item in enumerate(pedido.itens, start=1):
+                valores = (
+                    str(pedido.num_pedido or "").strip(),
+                    idx,
+                    str(pedido.num_pedido_afv or pedido.num_pedido or "").strip(),
+                    self._tratar_data(pedido.data_pedido),
+                    str(pedido.hora_inicio or "00:00").strip(),
+                    str(pedido.codigo_cliente or "").strip(),
+                    str(item.cod_produto).strip(),
+                    float(item.quantidade),
+                    float(getattr(item, "qtde_bonificada", 0) or 0),
+                    self._tratar_valor_decimal(item.valor_unitario),
+                    self._tratar_valor_decimal(getattr(item, "valor_bruto", item.valor_total)),
+                    self._tratar_valor_decimal(getattr(item, "desconto_i", 0)),
+                    self._tratar_valor_decimal(getattr(item, "desconto_ii", 0)),
+                    self._tratar_valor_decimal(getattr(item, "valor_verba", 0)),
+                    str(getattr(item, "codigo_vendedor_resp", pedido.codigo_vendedor_resp or "")).strip() or None,
+                    str(getattr(item, "msg_importacao", "") or "").strip() or None,
+                )
+
+                self._execute_with_logging(query, valores, "INSERIR_ITENS", str(pedido.num_pedido_afv))
+                count += 1
+
+            return count
+
+        except pyodbc.Error as e:
+            raise BancoDadosError(
+                f"Erro ao inserir itens do pedido {pedido.num_pedido}: {str(e)}",
+                e,
+                "inserir_itens"
+            )
+        except Exception as e:
+            raise BancoDadosError(
+                f"Erro inesperado ao inserir itens do pedido {pedido.num_pedido}: {str(e)}",
+                e,
+                "inserir_itens"
+            )
+
     def _tratar_data(self, data) -> datetime:
         """
         Trata diferentes tipos de data e converte para datetime.
