@@ -53,3 +53,28 @@ def test_criacao_pedido_sobel_completo():
     assert pedido.qtde_itens == 2
     assert pedido.valor_total == 400.00
     assert pedido.itens[0].descricao_produto == "Água Sanitária Suprema"
+
+
+def test_from_json_mapeia_codigo_motivo_tipo_pedido():
+    cliente = Cliente(codigo="1", nome="Teste", cnpj="00000000000000")
+    itens = [
+        PedidoItemSobel(
+            cod_produto="1001",
+            descricao_produto="Produto",
+            quantidade=1,
+            valor_unitario=10.0,
+            valor_total=10.0,
+            unidade="CX",
+        )
+    ]
+
+    pedido_json = {
+        "num_pedido": "1",
+        "data_pedido": "2025-01-01",
+        "hora_inicio": "08:00",
+        "codigo_motivo_tipo_pedido": "Z1",
+    }
+
+    pedido = PedidoSobel.from_json(pedido_json, cliente, itens)
+
+    assert pedido.codigo_motivo_tipo_pedido == "Z1"

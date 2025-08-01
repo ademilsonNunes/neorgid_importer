@@ -79,7 +79,7 @@ class PedidoSobel(BaseModel):
             observacao_2=pedido_json.get("observacao_2"),
             valor_liquido=pedido_json.get("valor_liquido"),
             valor_bruto=total,
-            codigo_motivo_tipo_ped=pedido_json.get("codigo_motivo_tipo_ped"),
+            codigo_motivo_tipo_pedido=pedido_json.get("codigo_motivo_tipo_pedido"),
             codigo_vendedor_resp=pedido_json.get("codigo_vendedor_resp"),
             data_entrega_fim=pedido_json.get("data_entrega_fim"),
             num_pedido_assoc=pedido_json.get("num_pedido_assoc"),

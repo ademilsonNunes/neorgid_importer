@@ -47,7 +47,7 @@ class Cliente:
         self.fax = kwargs.get("fax", "")
         self.cep = kwargs.get("cep", "")
         self.codigo_status = kwargs.get("codigo_status", "")
-        self.nome_fantasia = nome
+        self.nome_fantasia = kwargs.get("nome_fantasia", nome)
         self.data_cadastro = kwargs.get("data_cadastro", "")
         self.codigo_entrega = kwargs.get("codigo_entrega", "")
         self.codigo_regiao = kwargs.get("codigo_regiao", 0)
