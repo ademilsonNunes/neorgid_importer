@@ -11537,3 +11537,30 @@
 [2025-07-31 19:21:04] [DEBUG] 🔌 Conexão com banco fechada
 [2025-07-31 19:21:04] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
 [2025-07-31 19:21:04] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 12.528s | total_docs=2 | sucessos=2 | erros=0
+[2025-08-01 08:45:03] [INFO] 🔧 Modo debug desativado
+[2025-08-01 10:47:51] [INFO] 🔧 Modo debug desativado
+[2025-08-01 10:49:00] [INFO] 🔧 Modo debug desativado
+[2025-08-01 10:49:08] [INFO] 🔧 Modo debug desativado
+[2025-08-01 10:49:08] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 10:49:08] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 10:49:10] [INFO] ⏱️ Performance [CONSULTA_API]: 2.247s
+[2025-08-01 10:49:10] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 10:49:11] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 10:49:11] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.057s | pedido=5026401 | itens=10
+[2025-08-01 10:49:11] [INFO] 💾 Iniciando inserção do pedido 5026401
+[2025-08-01 10:49:11] [INFO] ✅ Cabeçalho do pedido 5026401 inserido com sucesso
+[2025-08-01 10:49:11] [INFO] ✅ 10 itens do pedido 5026401 inseridos com sucesso
+[2025-08-01 10:49:11] [INFO] 🎉 Pedido 5026401 gravado com sucesso no banco!
+[2025-08-01 10:49:11] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 0.178s | pedido=5026401 | sucesso=True
+[2025-08-01 10:49:11] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026401 | cliente=256274 | itens=10 | valor=R$ 47174.54
+[2025-08-01 10:49:11] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 0.240s | pedido=5026401 | doc_id=41084736
+[2025-08-01 10:49:11] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.010s | pedido=5026405 | itens=9
+[2025-08-01 10:49:11] [INFO] 💾 Iniciando inserção do pedido 5026405
+[2025-08-01 10:49:12] [INFO] ✅ Cabeçalho do pedido 5026405 inserido com sucesso
+[2025-08-01 10:49:12] [INFO] ✅ 9 itens do pedido 5026405 inseridos com sucesso
+[2025-08-01 10:49:12] [INFO] 🎉 Pedido 5026405 gravado com sucesso no banco!
+[2025-08-01 10:49:12] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 0.064s | pedido=5026405 | sucesso=True
+[2025-08-01 10:49:12] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026405 | cliente=256270 | itens=9 | valor=R$ 32167.54
+[2025-08-01 10:49:12] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 0.076s | pedido=5026405 | doc_id=41084737
+[2025-08-01 10:49:12] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
+[2025-08-01 10:49:12] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 3.697s | total_docs=2 | sucessos=2 | erros=0
