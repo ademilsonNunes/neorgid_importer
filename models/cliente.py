@@ -21,6 +21,7 @@ class Cliente:
     fax: str = ""
     cep: str = ""
     codigo_status: str = ""
+    codigo_vendedor_resp: str = ""
     nome_fantasia: str = ""
     data_cadastro: str = ""
     codigo_entrega: str = ""
@@ -47,11 +48,12 @@ class Cliente:
         self.fax = kwargs.get("fax", "")
         self.cep = kwargs.get("cep", "")
         self.codigo_status = kwargs.get("codigo_status", "")
+        self.codigo_vendedor_resp = kwargs.get("codigo_vendedor_resp", "")
         self.nome_fantasia = kwargs.get("nome_fantasia", nome)
         self.data_cadastro = kwargs.get("data_cadastro", "")
         self.codigo_entrega = kwargs.get("codigo_entrega", "")
         self.codigo_regiao = kwargs.get("codigo_regiao", 0)
-        self.codigo_tab_preco = kwargs.get("codigo_tab_preco", "")
+        self.codigo_tabela_preco = kwargs.get("codigo_tabela_preco", "")
         self.codigo_cond_pagto = kwargs.get("codigo_cond_pagto", "")
         self.codigo_cliente_pai = kwargs.get("codigo_cliente_pai", "")
         self.obs_fechamento = kwargs.get("obs_fechamento", "")
@@ -119,6 +121,7 @@ class Cliente:
             fax=Cliente._safe_str(row.get("FAX", "")),
             cep=Cliente._safe_str(row.get("CEP", "")),
             codigo_status=Cliente._safe_str(row.get("CODIGOSTATUSCLI", "")),
+            codigo_vendedor_resp=Cliente._safe_str(row.get("CODIGOVENDEDORESP", "")),
             nome_fantasia=Cliente._safe_str(row.get("NOMEFANTASIA", "")),
             data_cadastro=Cliente._safe_str(row.get("DATACADASTRO", "")),
             codigo_entrega=Cliente._safe_str(row.get("CODIGOENDENTREGA", "")),

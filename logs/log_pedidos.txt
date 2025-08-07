@@ -11564,3 +11564,1837 @@
 [2025-08-01 10:49:12] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 0.076s | pedido=5026405 | doc_id=41084737
 [2025-08-01 10:49:12] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
 [2025-08-01 10:49:12] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 3.697s | total_docs=2 | sucessos=2 | erros=0
+[2025-08-01 11:37:31] [INFO] 🔧 Modo debug desativado
+[2025-08-01 11:37:32] [INFO] 🔧 Modo debug desativado
+[2025-08-01 11:37:41] [INFO] 🔧 Modo debug ativado
+[2025-08-01 11:37:43] [INFO] 🔧 Modo debug ativado
+[2025-08-01 11:37:43] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 11:37:43] [DEBUG] 🔍 Carregando produtos do arquivo: C:\Users\supor\Documents\src\neogrid_importer\data\produtos.json
+[2025-08-01 11:37:43] [DEBUG] 📦 Processando 24 produtos para indexação
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524726150 -> 1001.01.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524726154 -> 1001.01.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524726518 -> 1001.01.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524700136 -> 1101.01.B12X1.5L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524700133 -> 1101.01.B12X1.5L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1101.01.B12X1 -> 1101.01.B12X1.5L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524700129 -> 1101.01R12X1.5
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1101.01R12X1 -> 1101.01R12X1.5
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723159 -> 1201.11.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723050 -> 1201.11.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524723057 -> 1201.11.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723142 -> 1201.12.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723517 -> 1201.12.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723913 -> 1201.13.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524723910 -> 1201.13.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.13 -> 1201.13.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524723098 -> 1201.14.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524723095 -> 1201.14.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1201.14 -> 1201.14.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705063 -> 1301.15.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524705067 -> 1301.15.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705254 -> 1301.15.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705155 -> 1301.17.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524705152 -> 1301.17.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.17 -> 1301.17.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705100 -> 1301.18.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705353 -> 1301.18.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524705350 -> 1301.18.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705117 -> 1301.19.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524705111 -> 1301.19.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.19 -> 1301.19.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524705858 -> 1301.20.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1301.20 -> 1301.20.06X02L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524700181 -> 1501.23.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524700242 -> 1501.23.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524703304 -> 1501.24.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524703298 -> 1501.24.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524703295 -> 1501.24.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524703335 -> 1501.25.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524703328 -> 1501.25.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 17896524703325 -> 1501.25.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.06X03L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice EAN13: 7896524727215 -> 1401.05P03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice DUN14: 27896524727212 -> 1401.05P03X05L
+[2025-08-01 11:37:43] [DEBUG]   📋 Índice Código Base: 1401 -> 1401.05P03X05L
+[2025-08-01 11:37:43] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 11:37:43] [DEBUG] 🔧 Serviços inicializados com sucesso
+[2025-08-01 11:37:45] [INFO] ⏱️ Performance [CONSULTA_API]: 2.106s
+[2025-08-01 11:37:45] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 11:37:45] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔄 Iniciando processamento do documento 41084738
+[2025-08-01 11:37:45] [DEBUG] 📋 Pedido Neogrid criado: 5026402 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG] 📦 Processando 17 itens | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 1: 1001.01.03X05L | Qtd: 1624.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 2: 1101.01.B12X1, | Qtd: 40.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 3: 17896524726515 | Qtd: 225.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 4: 17896524700249 | Qtd: 10.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 5: 27896524705067 | Qtd: 42.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 6: 17896524703301 | Qtd: 78.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 7: 17896524705251 | Qtd: 30.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 8: 17896524705855 | Qtd: 60.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 9: 17896524703332 | Qtd: 78.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 10: 1301.17.06X02L | Qtd: 30.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 11: 17896524700188 | Qtd: 39.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 12: 17896524723514 | Qtd: 60.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 13: 17896524700126 | Qtd: 40.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 14: 17896524703295 | Qtd: 10.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 15: 27896524705104 | Qtd: 126.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 16: 27896524723153 | Qtd: 210.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG]   Item 17: 27896524723146 | Qtd: 168.00 | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026402
+[2025-08-01 11:37:45] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552001452]
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1001.01.03X05L'
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por código exato: 1001.01.03X05L -> 1001.01.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-08-01 11:37:45] [DEBUG] ❌ Produto não encontrado - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524726515', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700249', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524705067', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 27896524705067 -> 1301.15.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703301', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705251', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705855', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703332', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1301.17.06X02L'
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por código exato: 1301.17.06X02L -> 1301.17.06X02L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700188', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524723514', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700126', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703295', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703295 -> 1501.24.06X03L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524705104', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723153', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-08-01 11:37:45] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723146', CodProd: ''
+[2025-08-01 11:37:45] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-08-01 11:37:45] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.098s | pedido=5026402 | itens=16
+[2025-08-01 11:37:45] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026402
+[2025-08-01 11:37:45] [INFO] 💾 Iniciando inserção do pedido 5026402
+[2025-08-01 11:37:45] [DEBUG] Cliente: 256286 | Itens: 16 | Valor: R$ 65586.42
+[2025-08-01 11:37:45] [DEBUG] 🔍 Verificando existência do pedido único:
+[2025-08-01 11:37:45] [DEBUG]   NUMPEDIDOAFV: 41084738
+[2025-08-01 11:37:45] [DEBUG]   DATAPEDIDO: 2025-05-15
+[2025-08-01 11:37:45] [DEBUG]   HORAINICIAL: 11:37
+[2025-08-01 11:37:45] [DEBUG]   CODIGOCLIENTE: 256286
+[2025-08-01 11:37:45] [DEBUG] 🔍 [VERIFICAR_EXISTENCIA] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: SELECT 1
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOAFV = ?
+                  AND DATAPEDIDO = ?
+                  AND HORAINICIAL = ?
+                  AND CODIGOCLIENTE = ?
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: ('41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286')
+[2025-08-01 11:37:45] [DEBUG] ✅ [VERIFICAR_EXISTENCIA] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 📋 Pedido ainda não existe no banco
+[2025-08-01 11:37:45] [DEBUG] 🔄 Transação iniciada para pedido 5026402
+[2025-08-01 11:37:45] [DEBUG] 💾 Valores do cabeçalho do pedido 5026402:
+[2025-08-01 11:37:45] [DEBUG]   NUMPEDIDO: 5026402
+[2025-08-01 11:37:45] [DEBUG]   LOJACLIENTE: 01
+[2025-08-01 11:37:45] [DEBUG]   NUMPEDIDOAFV: 41084738
+[2025-08-01 11:37:45] [DEBUG]   DATAPEDIDO: 2025-05-15 00:00:00
+[2025-08-01 11:37:45] [DEBUG]   CODIGOCLIENTE: 256286
+[2025-08-01 11:37:45] [DEBUG]   VALORLIQUIDO: None
+[2025-08-01 11:37:45] [DEBUG]   VALORBRUTO: 65586.42
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_CABECALHO] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDO,
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    CODIGOTIPOPEDIDO,
+                    CODIGOCONDPAGTO,
+                    CODIGONOMEENDERECO,
+                    CODIGOUNIDFAT,
+                    CODIGOTABPRECO,
+                    ORDEMCOMPRA,
+                    OBSERVACAOI,
+                    OBSERVACAOII,
+                    VALORLIQUIDO,
+                    VALORBRUTO,
+                    CODIGOMOTIVOTIPOPED,
+                    CODIGOVENDEDORESP,
+                    CESP_DATAENTREGAFIM,
+                    CESP_NUMPEDIDOASSOC,
+                    DATAGRAVACAOACACIA,
+                    DATAINTEGRACAOERP,
+                    QTDEITENS,
+                    MSGIMPORTACAO,
+                    VOLUME
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, None, '01', '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', None, datetime.datetime(2025, 5, 31, 0, 0), '256286', 'N', '055', 'E', '01', '038', '5026402', '', None, None, 65586.42, None, '000559', datetime.datetime(2025, 5, 31, 0, 0), None, datetime.datetime(2025, 8, 1, 11, 37, 45, 850736), None, 16, None, None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_CABECALHO] Query executada com sucesso
+[2025-08-01 11:37:45] [INFO] ✅ Cabeçalho do pedido 5026402 inserido com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [NEXT_NUMITEM] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: SELECT ISNULL(MAX(NUMITEM), 0) + 1 FROM T_PEDIDOITEM_SOBEL WITH (TABLOCKX, HOLDLOCK)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: ()
+[2025-08-01 11:37:45] [DEBUG] ✅ [NEXT_NUMITEM] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557875, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1001.01.03X05L', 1624.0, 0.0, 18.59, 30190.16, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557876, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1001.01.06X02L', 225.0, 0.0, 20.16, 4536.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557877, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1501.23.06X03L', 10.0, 0.0, 60.6, 606.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557878, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1301.15.03X05L', 42.0, 0.0, 24.78, 1040.76, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557879, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1501.24.03X05L', 78.0, 0.0, 42.9, 3346.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557880, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1301.15.06X02L', 30.0, 0.0, 22.98, 689.4, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557881, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1301.20.06X02L', 60.0, 0.0, 22.98, 1378.8, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557882, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1501.25.03X05L', 78.0, 0.0, 42.9, 3346.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557883, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1301.17.06X02L', 30.0, 0.0, 22.98, 689.4, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557884, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1501.23.03X05L', 39.0, 0.0, 42.9, 1673.1, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557885, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1201.12.06X02L', 60.0, 0.0, 24.9, 1494.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557886, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1101.01R12X1.5', 40.0, 0.0, 67.12, 2684.8, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557887, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1501.24.06X03L', 10.0, 0.0, 60.6, 606.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557888, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1301.18.03X05L', 126.0, 0.0, 24.78, 3122.28, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557889, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1201.11.03X05L', 210.0, 0.0, 26.94, 5657.4, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:45] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:45] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:45] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:45] [DEBUG] Parâmetros: (5026402, 1557890, '41084738', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256286', '1201.12.03X05L', 168.0, 0.0, 26.94, 4525.92, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [INFO] ✅ 16 itens do pedido 5026402 inseridos com sucesso
+[2025-08-01 11:37:46] [INFO] 🎉 Pedido 5026402 gravado com sucesso no banco!
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 0.300s | pedido=5026402 | sucesso=True
+[2025-08-01 11:37:46] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026402 | cliente=256286 | itens=16 | valor=R$ 65586.42
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 0.401s | pedido=5026402 | doc_id=41084738
+[2025-08-01 11:37:46] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ()
+[2025-08-01 11:37:46] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ('INFO', '✅ Pedido 5026402 processado e gravado com sucesso', '5026402', datetime.datetime(2025, 8, 1, 11, 37, 46, 126548))
+[2025-08-01 11:37:46] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] ✅ Status atualizado na Neogrid para documento 41084738
+[2025-08-01 11:37:46] [DEBUG] 🔄 Iniciando processamento do documento 41084739
+[2025-08-01 11:37:46] [DEBUG] 📋 Pedido Neogrid criado: 5026407 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG] 📦 Processando 8 itens | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 1: 17896524726515 | Qtd: 150.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 2: 27896524723153 | Qtd: 168.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 3: 1001.01.03X05L | Qtd: 784.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 4: 1301.17.06X02L | Qtd: 60.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 5: 17896524705855 | Qtd: 60.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 6: 27896524705104 | Qtd: 126.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 7: 27896524723146 | Qtd: 84.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG]   Item 8: 27896524705067 | Qtd: 42.00 | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026407
+[2025-08-01 11:37:46] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552002181]
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |17896524726515|
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |27896524723153|
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: ||1001.01.03X05L
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: ||1301.17.06X02L
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |17896524705855|
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |27896524705104|
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |27896524723146|
+[2025-08-01 11:37:46] [DEBUG] 🎯 Cache hit para busca: |27896524705067|
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.047s | pedido=5026407 | itens=8
+[2025-08-01 11:37:46] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026407
+[2025-08-01 11:37:46] [INFO] 💾 Iniciando inserção do pedido 5026407
+[2025-08-01 11:37:46] [DEBUG] Cliente: 256299 | Itens: 8 | Valor: R$ 31308.08
+[2025-08-01 11:37:46] [DEBUG] 🔍 Verificando existência do pedido único:
+[2025-08-01 11:37:46] [DEBUG]   NUMPEDIDOAFV: 41084739
+[2025-08-01 11:37:46] [DEBUG]   DATAPEDIDO: 2025-05-15
+[2025-08-01 11:37:46] [DEBUG]   HORAINICIAL: 11:37
+[2025-08-01 11:37:46] [DEBUG]   CODIGOCLIENTE: 256299
+[2025-08-01 11:37:46] [DEBUG] 🔍 [VERIFICAR_EXISTENCIA] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: SELECT 1
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOAFV = ?
+                  AND DATAPEDIDO = ?
+                  AND HORAINICIAL = ?
+                  AND CODIGOCLIENTE = ?
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ('41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299')
+[2025-08-01 11:37:46] [DEBUG] ✅ [VERIFICAR_EXISTENCIA] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 📋 Pedido ainda não existe no banco
+[2025-08-01 11:37:46] [DEBUG] 🔄 Transação iniciada para pedido 5026407
+[2025-08-01 11:37:46] [DEBUG] 💾 Valores do cabeçalho do pedido 5026407:
+[2025-08-01 11:37:46] [DEBUG]   NUMPEDIDO: 5026407
+[2025-08-01 11:37:46] [DEBUG]   LOJACLIENTE: 01
+[2025-08-01 11:37:46] [DEBUG]   NUMPEDIDOAFV: 41084739
+[2025-08-01 11:37:46] [DEBUG]   DATAPEDIDO: 2025-05-15 00:00:00
+[2025-08-01 11:37:46] [DEBUG]   CODIGOCLIENTE: 256299
+[2025-08-01 11:37:46] [DEBUG]   VALORLIQUIDO: None
+[2025-08-01 11:37:46] [DEBUG]   VALORBRUTO: 31308.08
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_CABECALHO] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDO,
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    CODIGOTIPOPEDIDO,
+                    CODIGOCONDPAGTO,
+                    CODIGONOMEENDERECO,
+                    CODIGOUNIDFAT,
+                    CODIGOTABPRECO,
+                    ORDEMCOMPRA,
+                    OBSERVACAOI,
+                    OBSERVACAOII,
+                    VALORLIQUIDO,
+                    VALORBRUTO,
+                    CODIGOMOTIVOTIPOPED,
+                    CODIGOVENDEDORESP,
+                    CESP_DATAENTREGAFIM,
+                    CESP_NUMPEDIDOASSOC,
+                    DATAGRAVACAOACACIA,
+                    DATAINTEGRACAOERP,
+                    QTDEITENS,
+                    MSGIMPORTACAO,
+                    VOLUME
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, None, '01', '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', None, datetime.datetime(2025, 5, 31, 0, 0), '256299', 'N', '055', 'E', '01', '038', '5026407', '', None, None, 31308.08, None, '000559', datetime.datetime(2025, 5, 31, 0, 0), None, datetime.datetime(2025, 8, 1, 11, 37, 46, 423718), None, 8, None, None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_CABECALHO] Query executada com sucesso
+[2025-08-01 11:37:46] [INFO] ✅ Cabeçalho do pedido 5026407 inserido com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [NEXT_NUMITEM] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: SELECT ISNULL(MAX(NUMITEM), 0) + 1 FROM T_PEDIDOITEM_SOBEL WITH (TABLOCKX, HOLDLOCK)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ()
+[2025-08-01 11:37:46] [DEBUG] ✅ [NEXT_NUMITEM] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557891, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1001.01.06X02L', 150.0, 0.0, 20.16, 3024.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557892, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1201.11.03X05L', 168.0, 0.0, 26.94, 4525.92, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557893, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1001.01.03X05L', 784.0, 0.0, 18.59, 14574.56, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557894, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1301.17.06X02L', 60.0, 0.0, 22.98, 1378.8, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557895, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1301.20.06X02L', 60.0, 0.0, 22.98, 1378.8, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557896, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1301.18.03X05L', 126.0, 0.0, 24.78, 3122.28, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557897, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1201.12.03X05L', 84.0, 0.0, 26.94, 2262.96, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: (5026407, 1557898, '41084739', datetime.datetime(2025, 5, 15, 0, 0), '11:37', '256299', '1301.15.03X05L', 42.0, 0.0, 24.78, 1040.76, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 11:37:46] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 11:37:46] [INFO] ✅ 8 itens do pedido 5026407 inseridos com sucesso
+[2025-08-01 11:37:46] [INFO] 🎉 Pedido 5026407 gravado com sucesso no banco!
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 0.116s | pedido=5026407 | sucesso=True
+[2025-08-01 11:37:46] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026407 | cliente=256299 | itens=8 | valor=R$ 31308.08
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 0.166s | pedido=5026407 | doc_id=41084739
+[2025-08-01 11:37:46] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ()
+[2025-08-01 11:37:46] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-08-01 11:37:46] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-08-01 11:37:46] [DEBUG] Parâmetros: ('INFO', '✅ Pedido 5026407 processado e gravado com sucesso', '5026407', datetime.datetime(2025, 8, 1, 11, 37, 46, 530476))
+[2025-08-01 11:37:46] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-08-01 11:37:46] [DEBUG] ✅ Status atualizado na Neogrid para documento 41084739
+[2025-08-01 11:37:46] [DEBUG] 🔌 Conexão com banco fechada
+[2025-08-01 11:37:46] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
+[2025-08-01 11:37:46] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 3.379s | total_docs=2 | sucessos=2 | erros=0
+[2025-08-01 11:41:48] [INFO] 🔧 Modo debug desativado
+[2025-08-01 11:41:57] [INFO] 🔧 Modo debug desativado
+[2025-08-01 11:41:57] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 11:41:57] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 11:41:59] [INFO] ⏱️ Performance [CONSULTA_API]: 1.759s
+[2025-08-01 11:41:59] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 11:41:59] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 11:44:23] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 130.258s | pedido=5026403 | itens=12
+[2025-08-01 11:44:48] [INFO] 💾 Iniciando inserção do pedido 5026403
+[2025-08-01 12:54:21] [INFO] 🔧 Modo debug desativado
+[2025-08-01 12:54:21] [INFO] 🔧 Modo debug desativado
+[2025-08-01 12:54:26] [INFO] 🔧 Modo debug desativado
+[2025-08-01 12:54:26] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 12:54:26] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 12:54:28] [INFO] ⏱️ Performance [CONSULTA_API]: 1.408s
+[2025-08-01 12:54:28] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 12:54:28] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 12:56:16] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 108.428s | pedido=5026403 | itens=12
+[2025-08-01 12:56:16] [INFO] 💾 Iniciando inserção do pedido 5026403
+[2025-08-01 12:57:30] [INFO] ✅ Cabeçalho do pedido 5026403 inserido com sucesso
+[2025-08-01 12:57:30] [INFO] ✅ 12 itens do pedido 5026403 inseridos com sucesso
+[2025-08-01 12:57:30] [INFO] 🎉 Pedido 5026403 gravado com sucesso no banco!
+[2025-08-01 12:57:30] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 73.410s | pedido=5026403 | sucesso=True
+[2025-08-01 12:57:30] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026403 | cliente=256300 | itens=12 | valor=R$ 81050.06
+[2025-08-01 12:57:30] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 181.842s | pedido=5026403 | doc_id=41084740
+[2025-08-01 12:57:33] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 3.162s | pedido=5026406 | itens=12
+[2025-08-01 12:57:33] [INFO] 💾 Iniciando inserção do pedido 5026406
+[2025-08-01 13:02:06] [INFO] ✅ Cabeçalho do pedido 5026406 inserido com sucesso
+[2025-08-01 13:02:06] [INFO] ✅ 12 itens do pedido 5026406 inseridos com sucesso
+[2025-08-01 13:02:06] [INFO] 🎉 Pedido 5026406 gravado com sucesso no banco!
+[2025-08-01 13:02:06] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 272.428s | pedido=5026406 | sucesso=True
+[2025-08-01 13:02:06] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026406 | cliente=256298 | itens=12 | valor=R$ 63648.82
+[2025-08-01 13:02:06] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 275.592s | pedido=5026406 | doc_id=41084741
+[2025-08-01 13:02:06] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
+[2025-08-01 13:02:06] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 459.562s | total_docs=2 | sucessos=2 | erros=0
+[2025-08-01 15:07:56] [INFO] 🔧 Modo debug desativado
+[2025-08-01 15:08:09] [INFO] 🔧 Modo debug desativado
+[2025-08-01 15:08:09] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 15:08:09] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 15:08:11] [INFO] ⏱️ Performance [CONSULTA_API]: 2.309s
+[2025-08-01 15:08:11] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 15:08:12] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 15:14:00] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 318.244s | pedido=5026408 | itens=12
+[2025-08-01 15:14:25] [INFO] 💾 Iniciando inserção do pedido 5026408
+[2025-08-01 19:23:07] [INFO] 🔧 Modo debug desativado
+[2025-08-01 19:23:26] [INFO] 🔧 Modo debug ativado
+[2025-08-01 19:23:29] [INFO] 🔧 Modo debug ativado
+[2025-08-01 19:23:29] [INFO] 🚀 Iniciando processo de importação de pedidos
+[2025-08-01 19:23:29] [DEBUG] 🔍 Carregando produtos do arquivo: C:\Users\supor\Documents\src\neogrid_importer\data\produtos.json
+[2025-08-01 19:23:29] [DEBUG] 📦 Processando 24 produtos para indexação
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524726150 -> 1001.01.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524726154 -> 1001.01.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524726518 -> 1001.01.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1001.01 -> 1001.01.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524700136 -> 1101.01.B12X1.5L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524700133 -> 1101.01.B12X1.5L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1101.01.B12X1 -> 1101.01.B12X1.5L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524700129 -> 1101.01R12X1.5
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1101.01R12X1 -> 1101.01R12X1.5
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723159 -> 1201.11.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723050 -> 1201.11.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524723057 -> 1201.11.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.11 -> 1201.11.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723142 -> 1201.12.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723517 -> 1201.12.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.12 -> 1201.12.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723913 -> 1201.13.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524723910 -> 1201.13.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.13 -> 1201.13.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524723098 -> 1201.14.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524723095 -> 1201.14.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1201.14 -> 1201.14.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705063 -> 1301.15.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524705067 -> 1301.15.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705254 -> 1301.15.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.15 -> 1301.15.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705155 -> 1301.17.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524705152 -> 1301.17.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.17 -> 1301.17.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705100 -> 1301.18.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705353 -> 1301.18.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524705350 -> 1301.18.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.18 -> 1301.18.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705117 -> 1301.19.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524705111 -> 1301.19.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.19 -> 1301.19.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524705858 -> 1301.20.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1301.20 -> 1301.20.06X02L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524700181 -> 1501.23.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524700242 -> 1501.23.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.23 -> 1501.23.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524703304 -> 1501.24.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524703298 -> 1501.24.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524703295 -> 1501.24.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.24 -> 1501.24.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524703335 -> 1501.25.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524703328 -> 1501.25.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 17896524703325 -> 1501.25.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1501.25 -> 1501.25.06X03L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice EAN13: 7896524727215 -> 1401.05P03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice DUN14: 27896524727212 -> 1401.05P03X05L
+[2025-08-01 19:23:29] [DEBUG]   📋 Índice Código Base: 1401 -> 1401.05P03X05L
+[2025-08-01 19:23:29] [INFO] ✅ 24 produtos carregados, 88 índices criados
+[2025-08-01 19:23:29] [DEBUG] 🔧 Serviços inicializados com sucesso
+[2025-08-01 19:23:32] [INFO] ⏱️ Performance [CONSULTA_API]: 2.879s
+[2025-08-01 19:23:32] [INFO] 🚀 Iniciando processamento de 2 documento(s)
+[2025-08-01 19:23:33] [INFO] 🔗 Conexão com banco estabelecida com sucesso
+[2025-08-01 19:23:33] [DEBUG] 🔄 Iniciando processamento do documento 41084743
+[2025-08-01 19:23:33] [DEBUG] 📋 Pedido Neogrid criado: 5026408 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG] 📦 Processando 12 itens | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 1: 17896524703301 | Qtd: 78.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 2: 27896524705067 | Qtd: 42.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 3: 27896524723146 | Qtd: 126.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 4: 17896524723514 | Qtd: 60.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 5: 17896524705855 | Qtd: 120.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 6: 17896524703332 | Qtd: 78.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 7: 17896524726515 | Qtd: 225.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 8: 27896524705104 | Qtd: 126.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 9: 27896524723153 | Qtd: 504.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 10: 1001.01.03X05L | Qtd: 1344.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 11: 17896524700188 | Qtd: 39.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG]   Item 12: 17896524705251 | Qtd: 120.00 | Pedido: 5026408
+[2025-08-01 19:23:33] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026408
+[2025-08-01 19:23:34] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552002262]
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703301', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703301 -> 1501.24.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524705067', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 27896524705067 -> 1301.15.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723146', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723146 -> 1201.12.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524723514', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524723514 -> 1201.12.06X02L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705855', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705855 -> 1301.20.06X02L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703332', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703332 -> 1501.25.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524726515', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524726515 -> 1001.01.06X02L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524705104', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 27896524705104 -> 1301.18.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '27896524723153', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 27896524723153 -> 1201.11.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1001.01.03X05L'
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por código exato: 1001.01.03X05L -> 1001.01.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700188', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700188 -> 1501.23.03X05L
+[2025-08-01 19:23:34] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524705251', CodProd: ''
+[2025-08-01 19:23:34] [DEBUG] ✅ Produto encontrado por DUN14: 17896524705251 -> 1301.15.06X02L
+[2025-08-01 19:23:34] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.885s | pedido=5026408 | itens=12
+[2025-08-01 19:23:34] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026408
+[2025-08-01 19:23:34] [INFO] 💾 Iniciando inserção do pedido 5026408
+[2025-08-01 19:23:34] [DEBUG] Cliente: 256263 | Itens: 12 | Valor: R$ 66030.90
+[2025-08-01 19:23:34] [DEBUG] 🔍 Verificando existência do pedido único:
+[2025-08-01 19:23:34] [DEBUG]   NUMPEDIDOAFV: 41084743
+[2025-08-01 19:23:34] [DEBUG]   DATAPEDIDO: 2025-05-15
+[2025-08-01 19:23:34] [DEBUG]   HORAINICIAL: 19:23
+[2025-08-01 19:23:34] [DEBUG]   CODIGOCLIENTE: 256263
+[2025-08-01 19:23:34] [DEBUG] 🔍 [VERIFICAR_EXISTENCIA] Query a ser executada:
+[2025-08-01 19:23:34] [DEBUG] SQL: SELECT 1
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOAFV = ?
+                  AND DATAPEDIDO = ?
+                  AND HORAINICIAL = ?
+                  AND CODIGOCLIENTE = ?
+[2025-08-01 19:23:34] [DEBUG] Parâmetros: ('41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263')
+[2025-08-01 19:23:34] [DEBUG] ✅ [VERIFICAR_EXISTENCIA] Query executada com sucesso
+[2025-08-01 19:23:34] [DEBUG] 📋 Pedido ainda não existe no banco
+[2025-08-01 19:23:34] [DEBUG] 🔄 Transação iniciada para pedido 5026408
+[2025-08-01 19:23:34] [DEBUG] 💾 Valores do cabeçalho do pedido 5026408:
+[2025-08-01 19:23:34] [DEBUG]   NUMPEDIDO: 5026408
+[2025-08-01 19:23:34] [DEBUG]   LOJACLIENTE: 01
+[2025-08-01 19:23:34] [DEBUG]   NUMPEDIDOAFV: 41084743
+[2025-08-01 19:23:34] [DEBUG]   DATAPEDIDO: 2025-05-15 00:00:00
+[2025-08-01 19:23:34] [DEBUG]   CODIGOCLIENTE: 256263
+[2025-08-01 19:23:34] [DEBUG]   VALORLIQUIDO: None
+[2025-08-01 19:23:34] [DEBUG]   VALORBRUTO: 66030.9
+[2025-08-01 19:23:34] [DEBUG] 🔍 [INSERIR_CABECALHO] Query a ser executada:
+[2025-08-01 19:23:34] [DEBUG] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDO,
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    CODIGOTIPOPEDIDO,
+                    CODIGOCONDPAGTO,
+                    CODIGONOMEENDERECO,
+                    CODIGOUNIDFAT,
+                    CODIGOTABPRECO,
+                    ORDEMCOMPRA,
+                    OBSERVACAOI,
+                    OBSERVACAOII,
+                    VALORLIQUIDO,
+                    VALORBRUTO,
+                    CODIGOMOTIVOTIPOPED,
+                    CODIGOVENDEDORESP,
+                    CESP_DATAENTREGAFIM,
+                    CESP_NUMPEDIDOASSOC,
+                    DATAGRAVACAOACACIA,
+                    DATAINTEGRACAOERP,
+                    QTDEITENS,
+                    MSGIMPORTACAO,
+                    VOLUME
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:34] [DEBUG] Parâmetros: (5026408, None, '01', '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', None, datetime.datetime(2025, 5, 31, 0, 0), '256263', 'N', '055', 'E', '01', '038', '5026408', '', None, None, 66030.9, None, '000559', datetime.datetime(2025, 5, 31, 0, 0), None, datetime.datetime(2025, 8, 1, 19, 23, 34, 748615), None, 12, None, None)
+[2025-08-01 19:23:35] [DEBUG] ✅ [INSERIR_CABECALHO] Query executada com sucesso
+[2025-08-01 19:23:35] [INFO] ✅ Cabeçalho do pedido 5026408 inserido com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [NEXT_NUMITEM] Query a ser executada:
+[2025-08-01 19:23:35] [DEBUG] SQL: SELECT ISNULL(MAX(NUMITEM), 0) + 1 FROM T_PEDIDOITEM_SOBEL WITH (TABLOCKX, HOLDLOCK)
+[2025-08-01 19:23:35] [DEBUG] Parâmetros: ()
+[2025-08-01 19:23:35] [DEBUG] ✅ [NEXT_NUMITEM] Query executada com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:35] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:35] [DEBUG] Parâmetros: (5026408, 1558066, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1501.24.03X05L', 78.0, 0.0, 42.9, 3346.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:35] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:35] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:35] [DEBUG] Parâmetros: (5026408, 1558067, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1301.15.03X05L', 42.0, 0.0, 24.78, 1040.76, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:35] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:35] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:35] [DEBUG] Parâmetros: (5026408, 1558068, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1201.12.03X05L', 126.0, 0.0, 26.94, 3394.44, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:35] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:35] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:35] [DEBUG] Parâmetros: (5026408, 1558069, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1201.12.06X02L', 60.0, 0.0, 24.9, 1494.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:35] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:35] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558070, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1301.20.06X02L', 120.0, 0.0, 22.98, 2757.6, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:36] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:36] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558071, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1501.25.03X05L', 78.0, 0.0, 42.9, 3346.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:36] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:36] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558072, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1001.01.06X02L', 225.0, 0.0, 20.16, 4536.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:36] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:36] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558073, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1301.18.03X05L', 126.0, 0.0, 24.78, 3122.28, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:36] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:36] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558074, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1201.11.03X05L', 504.0, 0.0, 26.94, 13577.76, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:36] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:36] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:36] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:36] [DEBUG] Parâmetros: (5026408, 1558075, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1001.01.03X05L', 1344.0, 0.0, 18.59, 24984.96, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:37] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:37] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:37] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:37] [DEBUG] Parâmetros: (5026408, 1558076, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1501.23.03X05L', 39.0, 0.0, 42.9, 1673.1, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:37] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:37] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:37] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:37] [DEBUG] Parâmetros: (5026408, 1558077, '41084743', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256263', '1301.15.06X02L', 120.0, 0.0, 22.98, 2757.6, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:37] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:37] [INFO] ✅ 12 itens do pedido 5026408 inseridos com sucesso
+[2025-08-01 19:23:37] [INFO] 🎉 Pedido 5026408 gravado com sucesso no banco!
+[2025-08-01 19:23:37] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 3.000s | pedido=5026408 | sucesso=True
+[2025-08-01 19:23:37] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026408 | cliente=256263 | itens=12 | valor=R$ 66030.90
+[2025-08-01 19:23:37] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 3.889s | pedido=5026408 | doc_id=41084743
+[2025-08-01 19:23:37] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-08-01 19:23:37] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-08-01 19:23:37] [DEBUG] Parâmetros: ()
+[2025-08-01 19:23:37] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-08-01 19:23:37] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-08-01 19:23:37] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-08-01 19:23:37] [DEBUG] Parâmetros: ('INFO', '✅ Pedido 5026408 processado e gravado com sucesso', '5026408', datetime.datetime(2025, 8, 1, 19, 23, 37, 849232))
+[2025-08-01 19:23:37] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-08-01 19:23:38] [DEBUG] ✅ Status atualizado na Neogrid para documento 41084743
+[2025-08-01 19:23:38] [DEBUG] 🔄 Iniciando processamento do documento 41084744
+[2025-08-01 19:23:38] [DEBUG] 📋 Pedido Neogrid criado: 5026404 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG] 📦 Processando 18 itens | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 1: 1001.01.03X05L | Qtd: 2464.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 2: 1301.17.06X02L | Qtd: 40.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 3: 17896524705855 | Qtd: 40.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 4: 17896524726515 | Qtd: 150.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 5: 17896524700188 | Qtd: 117.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 6: 17896524703295 | Qtd: 25.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 7: 27896524723153 | Qtd: 336.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 8: 1101.01.B12X1, | Qtd: 20.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 9: 17896524705251 | Qtd: 40.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 10: 17896524703332 | Qtd: 117.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 11: 27896524705067 | Qtd: 168.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 12: 17896524703325 | Qtd: 30.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 13: 27896524723146 | Qtd: 168.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 14: 17896524723514 | Qtd: 60.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 15: 17896524700126 | Qtd: 20.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 16: 17896524703301 | Qtd: 117.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 17: 17896524700249 | Qtd: 25.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG]   Item 18: 27896524705104 | Qtd: 294.00 | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG] ⚙️ Executando processamento de regras de negócio | Pedido: 5026404
+[2025-08-01 19:23:38] [DEBUG] [SQL] Query: SELECT A1_COD as CODIGO, A1_NOME as RAZAOSOCIAL, A1_CGC as CGCCPF, A1_INSCR as INSCR_ESTADUAL, A1_END as ENDERECO, A1_COD_MUN as CODIGONOMECIDADE, A1_EST as ESTADO, A1_BAIRRO as BAIRRO, A1_TEL as TELEFONE, A1_FAX as FAX, A1_CEP as CEP, A1_MSBLQL as CODIGOSTATUSCLI, A1_NREDUZ as NOMEFANTASIA, A1_DTCAD as DATACADASTRO, A1_COD as CODIGOENDENTREGA, A1_REGIAO as CODIGOREGIAO, A1_TABELA as CODIGOTABPRECO, A1_COND as CODIGOCONDPAGTO, '' as CODIGOCLIENTEPAI, A1_OBSERV as OBSFETCHATURAMENTO, A1_EMAIL as EMAILCOPIAPEDIDO, 'N' as FLAGENVIACOPIAPEDIDO, 0 as CESP_FLAGENTREGAAGENDADA, '0' as Cesp_QtdeDiasMinEntrega FROM SA1010 WHERE A1_CGC = ? AND D_E_L_E_T_ = '' | Params: [04737552001614]
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: ||1001.01.03X05L
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1301.17.06X02L'
+[2025-08-01 19:23:38] [DEBUG] ✅ Produto encontrado por código exato: 1301.17.06X02L -> 1301.17.06X02L
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524705855|
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524726515|
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524700188|
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703295', CodProd: ''
+[2025-08-01 19:23:38] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703295 -> 1501.24.06X03L
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |27896524723153|
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-08-01 19:23:38] [DEBUG] ❌ Produto não encontrado - EAN13: '', DUN14: '', CodProd: '1101.01.B12X1,'
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524705251|
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524703332|
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |27896524705067|
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524703325', CodProd: ''
+[2025-08-01 19:23:38] [DEBUG] ✅ Produto encontrado por DUN14: 17896524703325 -> 1501.25.06X03L
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |27896524723146|
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524723514|
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700126', CodProd: ''
+[2025-08-01 19:23:38] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700126 -> 1101.01R12X1.5
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |17896524703301|
+[2025-08-01 19:23:38] [DEBUG] 🔍 Buscando produto - EAN13: '', DUN14: '17896524700249', CodProd: ''
+[2025-08-01 19:23:38] [DEBUG] ✅ Produto encontrado por DUN14: 17896524700249 -> 1501.23.06X03L
+[2025-08-01 19:23:38] [DEBUG] 🎯 Cache hit para busca: |27896524705104|
+[2025-08-01 19:23:38] [INFO] ⏱️ Performance [PROCESSAR_PEDIDO]: 0.402s | pedido=5026404 | itens=17
+[2025-08-01 19:23:38] [DEBUG] 💾 Iniciando gravação no banco | Pedido: 5026404
+[2025-08-01 19:23:38] [INFO] 💾 Iniciando inserção do pedido 5026404
+[2025-08-01 19:23:38] [DEBUG] Cliente: 256271 | Itens: 17 | Valor: R$ 99355.78
+[2025-08-01 19:23:38] [DEBUG] 🔍 Verificando existência do pedido único:
+[2025-08-01 19:23:38] [DEBUG]   NUMPEDIDOAFV: 41084744
+[2025-08-01 19:23:38] [DEBUG]   DATAPEDIDO: 2025-05-15
+[2025-08-01 19:23:38] [DEBUG]   HORAINICIAL: 19:23
+[2025-08-01 19:23:38] [DEBUG]   CODIGOCLIENTE: 256271
+[2025-08-01 19:23:38] [DEBUG] 🔍 [VERIFICAR_EXISTENCIA] Query a ser executada:
+[2025-08-01 19:23:38] [DEBUG] SQL: SELECT 1
+                FROM T_PEDIDO_SOBEL
+                WHERE NUMPEDIDOAFV = ?
+                  AND DATAPEDIDO = ?
+                  AND HORAINICIAL = ?
+                  AND CODIGOCLIENTE = ?
+[2025-08-01 19:23:38] [DEBUG] Parâmetros: ('41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271')
+[2025-08-01 19:23:38] [DEBUG] ✅ [VERIFICAR_EXISTENCIA] Query executada com sucesso
+[2025-08-01 19:23:38] [DEBUG] 📋 Pedido ainda não existe no banco
+[2025-08-01 19:23:38] [DEBUG] 🔄 Transação iniciada para pedido 5026404
+[2025-08-01 19:23:38] [DEBUG] 💾 Valores do cabeçalho do pedido 5026404:
+[2025-08-01 19:23:38] [DEBUG]   NUMPEDIDO: 5026404
+[2025-08-01 19:23:38] [DEBUG]   LOJACLIENTE: 01
+[2025-08-01 19:23:38] [DEBUG]   NUMPEDIDOAFV: 41084744
+[2025-08-01 19:23:38] [DEBUG]   DATAPEDIDO: 2025-05-15 00:00:00
+[2025-08-01 19:23:38] [DEBUG]   CODIGOCLIENTE: 256271
+[2025-08-01 19:23:38] [DEBUG]   VALORLIQUIDO: None
+[2025-08-01 19:23:38] [DEBUG]   VALORBRUTO: 99355.78
+[2025-08-01 19:23:38] [DEBUG] 🔍 [INSERIR_CABECALHO] Query a ser executada:
+[2025-08-01 19:23:38] [DEBUG] SQL: INSERT INTO T_PEDIDO_SOBEL (
+                    NUMPEDIDO,
+                    NUMPEDIDOSOBEL,
+                    LOJACLIENTE,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    HORAFINAL,
+                    DATAENTREGA,
+                    CODIGOCLIENTE,
+                    CODIGOTIPOPEDIDO,
+                    CODIGOCONDPAGTO,
+                    CODIGONOMEENDERECO,
+                    CODIGOUNIDFAT,
+                    CODIGOTABPRECO,
+                    ORDEMCOMPRA,
+                    OBSERVACAOI,
+                    OBSERVACAOII,
+                    VALORLIQUIDO,
+                    VALORBRUTO,
+                    CODIGOMOTIVOTIPOPED,
+                    CODIGOVENDEDORESP,
+                    CESP_DATAENTREGAFIM,
+                    CESP_NUMPEDIDOASSOC,
+                    DATAGRAVACAOACACIA,
+                    DATAINTEGRACAOERP,
+                    QTDEITENS,
+                    MSGIMPORTACAO,
+                    VOLUME
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:38] [DEBUG] Parâmetros: (5026404, None, '01', '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', None, datetime.datetime(2025, 5, 31, 0, 0), '256271', 'N', '055', 'E', '01', '038', '5026404', '', None, None, 99355.78, None, '000559', datetime.datetime(2025, 5, 31, 0, 0), None, datetime.datetime(2025, 8, 1, 19, 23, 38, 691471), None, 17, None, None)
+[2025-08-01 19:23:39] [DEBUG] ✅ [INSERIR_CABECALHO] Query executada com sucesso
+[2025-08-01 19:23:39] [INFO] ✅ Cabeçalho do pedido 5026404 inserido com sucesso
+[2025-08-01 19:23:39] [DEBUG] 🔍 [NEXT_NUMITEM] Query a ser executada:
+[2025-08-01 19:23:39] [DEBUG] SQL: SELECT ISNULL(MAX(NUMITEM), 0) + 1 FROM T_PEDIDOITEM_SOBEL WITH (TABLOCKX, HOLDLOCK)
+[2025-08-01 19:23:39] [DEBUG] Parâmetros: ()
+[2025-08-01 19:23:39] [DEBUG] ✅ [NEXT_NUMITEM] Query executada com sucesso
+[2025-08-01 19:23:39] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:39] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:39] [DEBUG] Parâmetros: (5026404, 1558078, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1001.01.03X05L', 2464.0, 0.0, 18.59, 45805.76, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:39] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:39] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:39] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:39] [DEBUG] Parâmetros: (5026404, 1558079, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1301.17.06X02L', 40.0, 0.0, 22.98, 919.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:39] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:39] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:39] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:39] [DEBUG] Parâmetros: (5026404, 1558080, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1301.20.06X02L', 40.0, 0.0, 22.98, 919.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558081, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1001.01.06X02L', 150.0, 0.0, 20.16, 3024.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558082, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.23.03X05L', 117.0, 0.0, 42.9, 5019.3, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558083, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.24.06X03L', 25.0, 0.0, 60.6, 1515.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558084, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1201.11.03X05L', 336.0, 0.0, 26.94, 9051.84, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558085, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1301.15.06X02L', 40.0, 0.0, 22.98, 919.2, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:40] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:40] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:40] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:40] [DEBUG] Parâmetros: (5026404, 1558086, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.25.03X05L', 117.0, 0.0, 42.9, 5019.3, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:41] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:41] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:41] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:41] [DEBUG] Parâmetros: (5026404, 1558087, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1301.15.03X05L', 168.0, 0.0, 24.78, 4163.04, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:41] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:41] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:41] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:41] [DEBUG] Parâmetros: (5026404, 1558088, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.25.06X03L', 30.0, 0.0, 60.6, 1818.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:41] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:41] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:41] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:41] [DEBUG] Parâmetros: (5026404, 1558089, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1201.12.03X05L', 168.0, 0.0, 26.94, 4525.92, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:41] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:41] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:41] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:41] [DEBUG] Parâmetros: (5026404, 1558090, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1201.12.06X02L', 60.0, 0.0, 24.9, 1494.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:41] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:41] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:41] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:41] [DEBUG] Parâmetros: (5026404, 1558091, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1101.01R12X1.5', 20.0, 0.0, 67.12, 1342.4, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:42] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:42] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:42] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:42] [DEBUG] Parâmetros: (5026404, 1558092, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.24.03X05L', 117.0, 0.0, 42.9, 5019.3, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:42] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:42] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:42] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:42] [DEBUG] Parâmetros: (5026404, 1558093, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1501.23.06X03L', 25.0, 0.0, 60.6, 1515.0, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:42] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:42] [DEBUG] 🔍 [INSERIR_ITENS] Query a ser executada:
+[2025-08-01 19:23:42] [DEBUG] SQL: INSERT INTO T_PEDIDOITEM_SOBEL (
+                    NUMPEDIDO,
+                    NUMITEM,
+                    NUMPEDIDOAFV,
+                    DATAPEDIDO,
+                    HORAINICIAL,
+                    CODIGOCLIENTE,
+                    CODIGOPRODUTO,
+                    QTDEVENDA,
+                    QTDEBONIFICADA,
+                    VALORVENDA,
+                    VALORBRUTO,
+                    DESCONTOI,
+                    DESCONTOII,
+                    VALORVERBA,
+                    CODIGOVENDEDORESP,
+                    MSGIMPORTACAO
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-08-01 19:23:42] [DEBUG] Parâmetros: (5026404, 1558094, '41084744', datetime.datetime(2025, 5, 15, 0, 0), '19:23', '256271', '1301.18.03X05L', 294.0, 0.0, 24.78, 7285.32, 0.0, 0.0, 0.0, 'None', None)
+[2025-08-01 19:23:42] [DEBUG] ✅ [INSERIR_ITENS] Query executada com sucesso
+[2025-08-01 19:23:42] [INFO] ✅ 17 itens do pedido 5026404 inseridos com sucesso
+[2025-08-01 19:23:42] [INFO] 🎉 Pedido 5026404 gravado com sucesso no banco!
+[2025-08-01 19:23:42] [INFO] ⏱️ Performance [GRAVAR_BANCO]: 4.137s | pedido=5026404 | sucesso=True
+[2025-08-01 19:23:42] [INFO] ✅ Pedido processado com sucesso | Pedido: 5026404 | cliente=256271 | itens=17 | valor=R$ 99355.78
+[2025-08-01 19:23:42] [INFO] ⏱️ Performance [TOTAL_PROCESSAMENTO]: 4.544s | pedido=5026404 | doc_id=41084744
+[2025-08-01 19:23:42] [DEBUG] 🔍 [VERIFICAR_COLUNAS_LOG] Query a ser executada:
+[2025-08-01 19:23:42] [DEBUG] SQL: SELECT COLUMN_NAME 
+                FROM INFORMATION_SCHEMA.COLUMNS 
+                WHERE TABLE_NAME = 'T_LOG_PROCESSAMENTO'
+                ORDER BY ORDINAL_POSITION
+[2025-08-01 19:23:42] [DEBUG] Parâmetros: ()
+[2025-08-01 19:23:42] [DEBUG] ✅ [VERIFICAR_COLUNAS_LOG] Query executada com sucesso
+[2025-08-01 19:23:42] [DEBUG] 🔍 [LOG_PROCESSAMENTO] Query a ser executada:
+[2025-08-01 19:23:42] [DEBUG] SQL: INSERT INTO T_LOG_PROCESSAMENTO (TIPO, MENSAGEM, NUM_PEDIDO, DATA_HORA)
+                    VALUES (?, ?, ?, ?)
+[2025-08-01 19:23:42] [DEBUG] Parâmetros: ('INFO', '✅ Pedido 5026404 processado e gravado com sucesso', '5026404', datetime.datetime(2025, 8, 1, 19, 23, 42, 723581))
+[2025-08-01 19:23:42] [DEBUG] ✅ [LOG_PROCESSAMENTO] Query executada com sucesso
+[2025-08-01 19:23:43] [DEBUG] ✅ Status atualizado na Neogrid para documento 41084744
+[2025-08-01 19:23:43] [DEBUG] 🔌 Conexão com banco fechada
+[2025-08-01 19:23:43] [INFO] 🏁 Processamento concluído | sucessos=2 | duplicados=0 | erros=0
+[2025-08-01 19:23:43] [INFO] ⏱️ Performance [PROCESSAMENTO_COMPLETO]: 13.824s | total_docs=2 | sucessos=2 | erros=0
+[2025-08-03 10:32:43] [INFO] 🔧 Modo debug ativado
+[2025-08-03 10:54:51] [INFO] 🔧 Modo debug ativado
+[2025-08-03 11:17:01] [INFO] 🔧 Modo debug ativado
